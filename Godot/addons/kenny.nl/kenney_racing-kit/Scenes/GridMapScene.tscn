@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dctqitttx06a7"]
+
+[ext_resource type="MeshLibrary" uid="uid://cc4iwsnp8agut" path="res://addons/kenny.nl/kenney_racing-kit/MeshLibraries/KennyRacingKitMeshLibrary.tres" id="1_1ca5w"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_1ca5w")
+data = {
+"cells": PackedInt32Array(0, 0, 80)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)

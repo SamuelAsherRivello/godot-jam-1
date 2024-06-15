@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://7qxyxw62myvy"]
+[gd_scene load_steps=2 format=3 uid="uid://7qxyxw62myvy"]
+
+[ext_resource type="PackedScene" uid="uid://1vfxly7fm7wp" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/bannerTowerGreen.glb" id="1_ongag"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -13,3 +15,5 @@ fov = 30.0
 
 [node name="Cube" type="CSGBox3D" parent="."]
 transform = Transform3D(0.761659, 0.158901, 0.628193, 0.238709, 0.832477, -0.5, -0.602406, 0.530785, 0.596133, 0, 0, 0)
+
+[node name="bannerTowerGreen" parent="." instance=ExtResource("1_ongag")]
