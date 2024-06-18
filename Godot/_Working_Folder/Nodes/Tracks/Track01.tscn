@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbvmouma0cgm"]
 
 [ext_resource type="Script" path="res://_Working_Folder/Nodes/Tracks/Track.cs" id="1_hq0qh"]
-[ext_resource type="MeshLibrary" uid="uid://l2oawr7hnpo4" path="res://addons/kenny.nl/kenney_racing-kit/MeshLibraries/MeshLibrary1x1.tres" id="1_llqyo"]
+[ext_resource type="MeshLibrary" uid="uid://l2oawr7hnpo4" path="res://_Working_Folder/Settings/MeshLibraries/MeshLibrary1x1.tres" id="1_llqyo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ss5lb"]
 size = Vector3(199.866, 1, 200.042)
