@@ -31,16 +31,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.89555e-05, 7.68323e-05, 0)
 script = ExtResource("1_3nf17")
 _player = NodePath("Player")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_dub50")
+[node name="Common" type="Node3D" parent="."]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.870355, 0.492423, 0, -0.492423, 0.870355, 0, 5, 0)
+[node name="Camera3D" type="Camera3D" parent="Common"]
+transform = Transform3D(1, 0, 0, 0, 0.515038, 0.857167, 0, -0.857167, 0.515038, 0.9, 73.1066, 43.4534)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Common"]
+transform = Transform3D(1, 0, 0, 0, 0.870356, 0.492423, 0, -0.492423, 0.870356, 0, 5, 0)
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.636078, 0.771625, 0, -0.771625, 0.636078, 0.14, 7.706, 4.482)
-fov = 23.0
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Common"]
+environment = SubResource("Environment_dub50")
 
 [node name="Player" parent="." instance=ExtResource("1_l4iav")]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.085, 0.315, 0.28)

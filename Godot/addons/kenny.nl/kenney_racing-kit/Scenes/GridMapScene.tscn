@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dctqitttx06a7"]
 
-[ext_resource type="MeshLibrary" uid="uid://cc4iwsnp8agut" path="res://addons/kenny.nl/kenney_racing-kit/MeshLibraries/KennyRacingKitMeshLibrary.tres" id="1_1ca5w"]
+[ext_resource type="MeshLibrary" uid="uid://cc4iwsnp8agut" path="res://addons/kenny.nl/kenney_racing-kit/MeshLibraries/Old/KennyRacingKitMeshLibrary.tres" id="1_1ca5w"]
 
 [node name="Node3D" type="Node3D"]
 

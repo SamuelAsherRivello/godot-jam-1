@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl7nvgko1b1rl"]
+
+[ext_resource type="PackedScene" uid="uid://duin0n6cabiqd" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerSmallSquare.glb" id="1_anedt"]
+
+[node name="roadCornerSmallSquare" instance=ExtResource("1_anedt")]

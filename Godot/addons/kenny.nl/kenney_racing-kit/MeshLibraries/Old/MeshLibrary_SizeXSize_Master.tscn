@@ -1,0 +1,467 @@
+[gd_scene load_steps=113 format=3 uid="uid://dnuxgiowdwqd1"]
+
+[ext_resource type="PackedScene" uid="uid://bvot4q000oodd" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerLargerBorder.glb" id="1_a827q"]
+[ext_resource type="PackedScene" uid="uid://bh27pakk11hfm" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerLargerSand.glb" id="2_bxnx3"]
+[ext_resource type="PackedScene" uid="uid://nberyqwmbccc" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerLarger.glb" id="3_mdugv"]
+[ext_resource type="PackedScene" uid="uid://ccg73wbxh56hr" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerBridgeLarger.glb" id="4_ti843"]
+[ext_resource type="PackedScene" uid="uid://b13aqfwrw8lpj" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerLargerWall.glb" id="5_q0rno"]
+[ext_resource type="PackedScene" uid="uid://dyfhh8r2qgy4m" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerLargeWall.glb" id="6_2xcb3"]
+[ext_resource type="PackedScene" uid="uid://bmpejpuka75lo" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadSplit.glb" id="7_dma5e"]
+[ext_resource type="PackedScene" uid="uid://dyeifso2pt51e" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadSplitLarger.glb" id="8_f7c1g"]
+[ext_resource type="PackedScene" uid="uid://b21iuq5syso3m" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadSplitRound.glb" id="9_cdk5a"]
+[ext_resource type="PackedScene" uid="uid://ci5uu843e8pmn" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadSplitRoundLarge.glb" id="10_ewoha"]
+[ext_resource type="PackedScene" uid="uid://djhoein72h1pe" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerBridgeLarge.glb" id="11_7xohr"]
+[ext_resource type="PackedScene" uid="uid://cottfij7uvtk5" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerLarge.glb" id="12_tvjxb"]
+[ext_resource type="PackedScene" uid="uid://bugry3qex4j1w" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerLargeBorder.glb" id="13_rhofv"]
+[ext_resource type="PackedScene" uid="uid://dht0naapp4h28" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerLargerBorderInner.glb" id="14_r6771"]
+[ext_resource type="PackedScene" uid="uid://cacu5s7mns0oo" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerLargeSand.glb" id="15_mec80"]
+[ext_resource type="PackedScene" uid="uid://ujaj7kpcrolw" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCrossing.glb" id="16_tj5mo"]
+[ext_resource type="PackedScene" uid="uid://cxuatu0ymf6bv" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCurvedSplit.glb" id="17_yxkt0"]
+[ext_resource type="PackedScene" uid="uid://b6y074b0cpas5" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadPitEntry.glb" id="18_7b6xj"]
+[ext_resource type="PackedScene" uid="uid://bahduwxcgwye1" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadSplitLarge.glb" id="19_6ruxo"]
+[ext_resource type="PackedScene" uid="uid://b0baak5uq0wio" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadSide.glb" id="20_e7m2q"]
+[ext_resource type="PackedScene" uid="uid://b4lyghyqhx2kn" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStraightSkew.glb" id="21_he6b0"]
+[ext_resource type="PackedScene" uid="uid://d41340ak4og6" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerLargerWallInner.glb" id="22_fuy76"]
+[ext_resource type="PackedScene" uid="uid://dgwpk738k3s8e" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerSmallSand.glb" id="23_2cxrg"]
+[ext_resource type="PackedScene" uid="uid://elrntp7nuq1k" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerSmallWall.glb" id="24_3jm7w"]
+[ext_resource type="PackedScene" uid="uid://doi8ut3ptsw1w" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCurved.glb" id="25_pt4ad"]
+[ext_resource type="PackedScene" uid="uid://bc7aaspf4lnu6" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadBump.glb" id="26_3p7qv"]
+[ext_resource type="PackedScene" uid="uid://17ej52d1bftb" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStart.glb" id="27_01262"]
+[ext_resource type="PackedScene" uid="uid://sewdmrinpgcr" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStartPositions.glb" id="28_g8mtq"]
+[ext_resource type="PackedScene" uid="uid://cx1a6fywbgabb" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStraightLong.glb" id="29_6ljtb"]
+[ext_resource type="PackedScene" uid="uid://dyytqsh0mup55" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStraightLongBump.glb" id="30_o5nlk"]
+[ext_resource type="PackedScene" uid="uid://qt2k32w3m0yf" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStraightLongBumpRound.glb" id="31_kq0sh"]
+[ext_resource type="PackedScene" uid="uid://d3phr8uwwtpew" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStraightLongMid.glb" id="32_rbpt1"]
+[ext_resource type="PackedScene" uid="uid://dt6fdw2y5u7hj" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerLargerSandInner.glb" id="33_vjdx2"]
+[ext_resource type="PackedScene" uid="uid://ck00806eudoly" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadPitStraightLong.glb" id="34_w0vaf"]
+[ext_resource type="PackedScene" uid="uid://b5y6j4lssb6w5" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadRampLong.glb" id="35_4tfv3"]
+[ext_resource type="PackedScene" uid="uid://cchukgwm88ydy" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadRampLongCurved.glb" id="36_6c6t7"]
+[ext_resource type="PackedScene" uid="uid://d2nm0gxvhnypg" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadRampLongCurvedWall.glb" id="37_v3bd0"]
+[ext_resource type="PackedScene" uid="uid://d0mbqkicmrccp" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadRampLongWall.glb" id="38_hptvm"]
+[ext_resource type="PackedScene" uid="uid://cjhrn24u7xpqb" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadEnd.glb" id="39_hcoqf"]
+[ext_resource type="PackedScene" uid="uid://dgcv3ck7w6t35" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerSmallBorder.glb" id="40_10vxe"]
+[ext_resource type="PackedScene" uid="uid://cmgy50368c6wh" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerBridgeSmall.glb" id="41_uci28"]
+[ext_resource type="PackedScene" uid="uid://cmkealkxx6o45" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerLargeBorderInner.glb" id="42_hm1my"]
+[ext_resource type="PackedScene" uid="uid://bnx103spwl8g0" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerSmall.glb" id="43_igyw7"]
+[ext_resource type="PackedScene" uid="uid://duin0n6cabiqd" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerSmallSquare.glb" id="44_u3kcj"]
+[ext_resource type="PackedScene" uid="uid://bf0aq2frg3p2d" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStraight.glb" id="45_1p0ue"]
+[ext_resource type="PackedScene" uid="uid://ddl27w0vw4agt" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStraightArrow.glb" id="46_2lk8w"]
+[ext_resource type="PackedScene" uid="uid://n8wpulp0cbtb" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadPitGarage.glb" id="47_inia2"]
+[ext_resource type="PackedScene" uid="uid://beplm07kj30yh" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerLargeSandInner.glb" id="48_3wvb3"]
+[ext_resource type="PackedScene" uid="uid://bslewa1w11gci" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadPitStraight.glb" id="49_gwnv3"]
+[ext_resource type="PackedScene" uid="uid://c6sa5x3fw8n1t" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadSplitSmall.glb" id="50_yp71k"]
+[ext_resource type="PackedScene" uid="uid://5gamw2bdokll" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStraightBridge.glb" id="51_7juuq"]
+[ext_resource type="PackedScene" uid="uid://beimrl6xxu0sv" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStraightBridgeMid.glb" id="52_fx1a8"]
+[ext_resource type="PackedScene" uid="uid://dgxafppe40v0i" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStraightBridgeStart.glb" id="53_183hm"]
+[ext_resource type="PackedScene" uid="uid://c3hlb3pvo1utg" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadRampWall.glb" id="54_8f6yf"]
+[ext_resource type="PackedScene" uid="uid://cim5bxx1hkg66" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadRamp.glb" id="55_half5"]
+[ext_resource type="PackedScene" uid="uid://u6obagrkjf1i" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerLargeWallInner.glb" id="56_vagf5"]
+[ext_resource type="PackedScene" uid="uid://1vfxly7fm7wp" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/bannerTowerGreen.glb" id="57_7p8uh"]
+[ext_resource type="PackedScene" uid="uid://bqxey2ryb4mtc" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/bannerTowerRed.glb" id="58_ge4rk"]
+[ext_resource type="PackedScene" uid="uid://dglbdqkacmgbt" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/barrierRed.glb" id="59_qfucd"]
+[ext_resource type="PackedScene" uid="uid://ceuh5xq4epcbd" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/barrierWall.glb" id="60_end8g"]
+[ext_resource type="PackedScene" uid="uid://bfh5mmxiuuvar" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/barrierWhite.glb" id="61_3vhdp"]
+[ext_resource type="PackedScene" uid="uid://b2pferuiv55q8" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/billboard.glb" id="62_3tr1b"]
+[ext_resource type="PackedScene" uid="uid://b8hgq37x14372" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/billboardDouble_exclusive.glb" id="63_ww81r"]
+[ext_resource type="PackedScene" uid="uid://dygv00vygdfoe" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/billboardLow.glb" id="64_xx1hj"]
+[ext_resource type="PackedScene" uid="uid://bgowc061cfu3a" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/billboardLower.glb" id="65_yrb5l"]
+[ext_resource type="PackedScene" uid="uid://c6ae5qdfpv87n" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/camera_exclusive.glb" id="66_2o1wn"]
+[ext_resource type="PackedScene" uid="uid://badcfw8kijr6t" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/fenceCurved.glb" id="67_mvoik"]
+[ext_resource type="PackedScene" uid="uid://cm6sr5fqpwrtp" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/fenceStraight.glb" id="68_dhydt"]
+[ext_resource type="PackedScene" uid="uid://c21a8u5bhwgnl" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/flagCheckers.glb" id="69_0sfmv"]
+[ext_resource type="PackedScene" uid="uid://cwoq1opyfiaox" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/flagCheckersSmall.glb" id="70_jdb3c"]
+[ext_resource type="PackedScene" uid="uid://dx8ppr7ap3cmu" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/flagGreen.glb" id="71_nn1yo"]
+[ext_resource type="PackedScene" uid="uid://ctwi6puv8ar0u" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/flagRed.glb" id="72_8ey8c"]
+[ext_resource type="PackedScene" uid="uid://c047nkn6by5ic" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/flagTankco.glb" id="73_e2mxs"]
+[ext_resource type="PackedScene" uid="uid://c8ass1rmdwcha" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/grandStand.glb" id="74_uj7ul"]
+[ext_resource type="PackedScene" uid="uid://bc7tcxttkygeu" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/grandStandAwning.glb" id="75_r5biy"]
+[ext_resource type="PackedScene" uid="uid://blgpoil6igdvw" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/grandStandCovered.glb" id="76_f8tpr"]
+[ext_resource type="PackedScene" uid="uid://b1c7sjpjrlslv" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/grandStandCoveredRound.glb" id="77_ptu1x"]
+[ext_resource type="PackedScene" uid="uid://c5hd2t8na2v58" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/grandStandRound.glb" id="78_vsgpj"]
+[ext_resource type="PackedScene" uid="uid://dii5l4lgg6shd" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/grass.glb" id="79_ngp5n"]
+[ext_resource type="PackedScene" uid="uid://dcc1tjy4ck2k" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/lightColored.glb" id="80_7dtpe"]
+[ext_resource type="PackedScene" uid="uid://ihleyj3r2sej" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/lightPostLarge.glb" id="81_0c433"]
+[ext_resource type="PackedScene" uid="uid://ddv1p0lg03y6n" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/lightPostModern.glb" id="82_6qecy"]
+[ext_resource type="PackedScene" uid="uid://bc1yo8rfrhbe7" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/lightPost_exclusive.glb" id="83_k307b"]
+[ext_resource type="PackedScene" uid="uid://cjncfat0rx0pw" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/lightRed.glb" id="84_v8xwn"]
+[ext_resource type="PackedScene" uid="uid://dgxgic24cg3ls" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/lightRedDouble.glb" id="85_l5so6"]
+[ext_resource type="PackedScene" uid="uid://dx3trbsjfhn2e" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/overhead.glb" id="86_5frnr"]
+[ext_resource type="PackedScene" uid="uid://b3h6i5pu8rvxw" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/overheadLights.glb" id="87_3wn1l"]
+[ext_resource type="PackedScene" uid="uid://bnwdjbvoct0ui" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/overheadRound.glb" id="88_5y1rf"]
+[ext_resource type="PackedScene" uid="uid://cyx6y6c5eohi8" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/overheadRoundColored.glb" id="89_ug5wc"]
+[ext_resource type="PackedScene" uid="uid://b50mrersqcagh" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/pitsGarage.glb" id="90_1i4ft"]
+[ext_resource type="PackedScene" uid="uid://bwhu43jbp2ryx" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/pitsGarageClosed.glb" id="91_tfhds"]
+[ext_resource type="PackedScene" uid="uid://cwjt8hwdiu8dn" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/pitsGarageCorner.glb" id="92_wxom0"]
+[ext_resource type="PackedScene" uid="uid://jl2qwpbfbcly" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/pitsOffice.glb" id="93_g1jx5"]
+[ext_resource type="PackedScene" uid="uid://bm7lo6kwvjiom" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/pitsOfficeCorner.glb" id="94_7cdd6"]
+[ext_resource type="PackedScene" uid="uid://buatpboyf1agy" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/pitsOfficeRoof.glb" id="95_shtea"]
+[ext_resource type="PackedScene" uid="uid://b0rkc4atvyf7y" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/pylon.glb" id="96_k4oko"]
+[ext_resource type="PackedScene" uid="uid://bda8xm7ji61an" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/raceCarGreen.glb" id="97_r0hvl"]
+[ext_resource type="PackedScene" uid="uid://bhx87yfxbajsj" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/raceCarOrange.glb" id="98_ngnho"]
+[ext_resource type="PackedScene" uid="uid://lh11kje64ung" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/raceCarRed.glb" id="99_jqet2"]
+[ext_resource type="PackedScene" uid="uid://c3c3telpdqlxi" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/raceCarWhite.glb" id="100_o5fe6"]
+[ext_resource type="PackedScene" uid="uid://cqmppmw7vtn7g" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/radarEquipment.glb" id="101_mfe0k"]
+[ext_resource type="PackedScene" uid="uid://chntxninlomts" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/rail.glb" id="102_miv7d"]
+[ext_resource type="PackedScene" uid="uid://bpc8lj1lemlyq" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/railDouble.glb" id="103_qrw8l"]
+[ext_resource type="PackedScene" uid="uid://b533mwxnfseuv" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/ramp.glb" id="104_scup6"]
+[ext_resource type="PackedScene" uid="uid://bff1o7j7l6vji" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/tent.glb" id="105_056pk"]
+[ext_resource type="PackedScene" uid="uid://kycwci3o2enk" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/tentClosed.glb" id="106_lox2s"]
+[ext_resource type="PackedScene" uid="uid://cwvsuvt7h8ka7" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/tentClosedLong.glb" id="107_uai30"]
+[ext_resource type="PackedScene" uid="uid://cnm2kiarlrnoj" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/tentLong.glb" id="108_0u5jj"]
+[ext_resource type="PackedScene" uid="uid://f8bfr8etmvlx" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/tentRoof.glb" id="109_5fa5t"]
+[ext_resource type="PackedScene" uid="uid://cq8lordgg6jjj" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/tentRoofDouble.glb" id="110_cvhwa"]
+[ext_resource type="PackedScene" uid="uid://db7frml3mqp3d" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/treeLarge.glb" id="111_82ajy"]
+[ext_resource type="PackedScene" uid="uid://cn17tq26o5mom" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/treeSmall.glb" id="112_nr6rq"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Keep" type="Node3D" parent="."]
+
+[node name="BIGxBIG" type="Node3D" parent="Keep"]
+visible = false
+
+[node name="roadCornerLargerBorder" parent="Keep/BIGxBIG" instance=ExtResource("1_a827q")]
+visible = false
+
+[node name="roadCornerLargerSand" parent="Keep/BIGxBIG" instance=ExtResource("2_bxnx3")]
+visible = false
+
+[node name="roadCornerLarger" parent="Keep/BIGxBIG" instance=ExtResource("3_mdugv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.438507, 0, 0)
+
+[node name="roadCornerBridgeLarger" parent="Keep/BIGxBIG" instance=ExtResource("4_ti843")]
+
+[node name="roadCornerLargerWall" parent="Keep/BIGxBIG" instance=ExtResource("5_q0rno")]
+visible = false
+
+[node name="roadCornerLargeWall" parent="Keep/BIGxBIG" instance=ExtResource("6_2xcb3")]
+visible = false
+
+[node name="roadSplit" parent="Keep/BIGxBIG" instance=ExtResource("7_dma5e")]
+visible = false
+
+[node name="roadSplitLarger" parent="Keep/BIGxBIG" instance=ExtResource("8_f7c1g")]
+visible = false
+
+[node name="roadSplitRound" parent="Keep/BIGxBIG" instance=ExtResource("9_cdk5a")]
+visible = false
+
+[node name="roadSplitRoundLarge" parent="Keep/BIGxBIG" instance=ExtResource("10_ewoha")]
+visible = false
+
+[node name="2x2" type="Node3D" parent="Keep"]
+visible = false
+
+[node name="roadCornerBridgeLarge" parent="Keep/2x2" instance=ExtResource("11_7xohr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.240875, 0, -2.77216)
+
+[node name="roadCornerLarge" parent="Keep/2x2" instance=ExtResource("12_tvjxb")]
+
+[node name="roadCornerLargeBorder" parent="Keep/2x2" instance=ExtResource("13_rhofv")]
+
+[node name="roadCornerLargerBorderInner" parent="Keep/2x2" instance=ExtResource("14_r6771")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.609436, 0, 0)
+
+[node name="roadCornerLargeSand" parent="Keep/2x2" instance=ExtResource("15_mec80")]
+visible = false
+
+[node name="roadCrossing" parent="Keep/2x2" instance=ExtResource("16_tj5mo")]
+visible = false
+
+[node name="roadCurvedSplit" parent="Keep/2x2" instance=ExtResource("17_yxkt0")]
+visible = false
+
+[node name="roadPitEntry" parent="Keep/2x2" instance=ExtResource("18_7b6xj")]
+visible = false
+
+[node name="roadSplitLarge" parent="Keep/2x2" instance=ExtResource("19_6ruxo")]
+visible = false
+
+[node name="roadSide" parent="Keep/2x2" instance=ExtResource("20_e7m2q")]
+visible = false
+
+[node name="roadStraightSkew" parent="Keep/2x2" instance=ExtResource("21_he6b0")]
+visible = false
+
+[node name="roadCornerLargerWallInner" parent="Keep/2x2" instance=ExtResource("22_fuy76")]
+
+[node name="roadCornerSmallSand" parent="Keep/2x2" instance=ExtResource("23_2cxrg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.71082)
+
+[node name="roadCornerSmallWall" parent="Keep/2x2" instance=ExtResource("24_3jm7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.58817, 0, 0)
+
+[node name="2x1" type="Node3D" parent="Keep"]
+visible = false
+
+[node name="roadCurved" parent="Keep/2x1" instance=ExtResource("25_pt4ad")]
+
+[node name="roadBump" parent="Keep/2x1" instance=ExtResource("26_3p7qv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48721, 0, 0)
+
+[node name="roadStart" parent="Keep/2x1" instance=ExtResource("27_01262")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.88364, 0, 0)
+
+[node name="roadStartPositions" parent="Keep/2x1" instance=ExtResource("28_g8mtq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.81265, 0, 0)
+
+[node name="roadStraightLong" parent="Keep/2x1" instance=ExtResource("29_6ljtb")]
+
+[node name="roadStraightLongBump" parent="Keep/2x1" instance=ExtResource("30_o5nlk")]
+
+[node name="roadStraightLongBumpRound" parent="Keep/2x1" instance=ExtResource("31_kq0sh")]
+
+[node name="roadStraightLongMid" parent="Keep/2x1" instance=ExtResource("32_rbpt1")]
+
+[node name="roadCornerLargerSandInner" parent="Keep/2x1" instance=ExtResource("33_vjdx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.66489, 0, 0)
+visible = false
+
+[node name="roadPitStraightLong" parent="Keep/2x1" instance=ExtResource("34_w0vaf")]
+visible = false
+
+[node name="roadRampLong" parent="Keep/2x1" instance=ExtResource("35_4tfv3")]
+visible = false
+
+[node name="roadRampLongCurved" parent="Keep/2x1" instance=ExtResource("36_6c6t7")]
+visible = false
+
+[node name="roadRampLongCurvedWall" parent="Keep/2x1" instance=ExtResource("37_v3bd0")]
+visible = false
+
+[node name="roadRampLongWall" parent="Keep/2x1" instance=ExtResource("38_hptvm")]
+visible = false
+
+[node name="roadEnd" parent="Keep/2x1" instance=ExtResource("39_hcoqf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.82434, 0, 0)
+
+[node name="roadCornerSmallBorder" parent="Keep/2x1" instance=ExtResource("40_10vxe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.47455, 0, 0)
+
+[node name="1x1" type="Node3D" parent="Keep"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.39355, 0, 0)
+
+[node name="Flat" type="Node3D" parent="Keep/1x1"]
+
+[node name="1x1_roadCornerBridgeSmall" parent="Keep/1x1/Flat" instance=ExtResource("41_uci28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.06958)
+
+[node name="1x1_roadCornerLargeBorderInner" parent="Keep/1x1/Flat" instance=ExtResource("42_hm1my")]
+
+[node name="1x1_roadCornerSmall" parent="Keep/1x1/Flat" instance=ExtResource("43_igyw7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.39355, 0, -2.89233)
+
+[node name="1x1_roadCornerSmallSquare" parent="Keep/1x1/Flat" instance=ExtResource("44_u3kcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.36847, 0, 2.45178)
+
+[node name="1x1_roadStraight" parent="Keep/1x1/Flat" instance=ExtResource("45_1p0ue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79251, 0, 2.89526)
+
+[node name="1x1_roadStraightArrow" parent="Keep/1x1/Flat" instance=ExtResource("46_2lk8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.39355, 0, 4.1626)
+
+[node name="1x1_roadPitGarage" parent="Keep/1x1/Flat" instance=ExtResource("47_inia2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.20288, 0, 0)
+
+[node name="1x1_roadCornerLargeSandInner" parent="Keep/1x1/Flat" instance=ExtResource("48_3wvb3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53482, 0, 0)
+
+[node name="1x1_roadPitStraight" parent="Keep/1x1/Flat" instance=ExtResource("49_gwnv3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.07227, 0, 0)
+
+[node name="1x1_roadSplitSmall" parent="Keep/1x1/Flat" instance=ExtResource("50_yp71k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.24121, 0, 0)
+
+[node name="Volume" type="Node3D" parent="Keep/1x1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11609, 0, 0)
+
+[node name="roadStraightBridge" parent="Keep/1x1/Volume" instance=ExtResource("51_7juuq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.50964, 0, 1.60962)
+
+[node name="roadStraightBridgeMid" parent="Keep/1x1/Volume" instance=ExtResource("52_fx1a8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9198, 0, 0)
+
+[node name="roadStraightBridgeStart" parent="Keep/1x1/Volume" instance=ExtResource("53_183hm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.71313, 0, 0)
+
+[node name="roadRampWall" parent="Keep/1x1/Volume" instance=ExtResource("54_8f6yf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.005, 0, 0)
+
+[node name="roadRamp" parent="Keep/1x1/Volume" instance=ExtResource("55_half5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.50964, 0, 0)
+
+[node name="0x0" type="Node3D" parent="Keep"]
+visible = false
+
+[node name="roadCornerLargeWallInner" parent="Keep/0x0" instance=ExtResource("56_vagf5")]
+visible = false
+
+[node name="Trash" type="Node3D" parent="."]
+visible = false
+
+[node name="bannerTowerGreen" parent="Trash" instance=ExtResource("57_7p8uh")]
+visible = false
+
+[node name="bannerTowerRed" parent="Trash" instance=ExtResource("58_ge4rk")]
+visible = false
+
+[node name="barrierRed" parent="Trash" instance=ExtResource("59_qfucd")]
+visible = false
+
+[node name="barrierWall" parent="Trash" instance=ExtResource("60_end8g")]
+visible = false
+
+[node name="barrierWhite" parent="Trash" instance=ExtResource("61_3vhdp")]
+visible = false
+
+[node name="billboard" parent="Trash" instance=ExtResource("62_3tr1b")]
+visible = false
+
+[node name="billboardDouble_exclusive" parent="Trash" instance=ExtResource("63_ww81r")]
+visible = false
+
+[node name="billboardLow" parent="Trash" instance=ExtResource("64_xx1hj")]
+visible = false
+
+[node name="billboardLower" parent="Trash" instance=ExtResource("65_yrb5l")]
+visible = false
+
+[node name="camera_exclusive" parent="Trash" instance=ExtResource("66_2o1wn")]
+visible = false
+
+[node name="fenceCurved" parent="Trash" instance=ExtResource("67_mvoik")]
+visible = false
+
+[node name="fenceStraight" parent="Trash" instance=ExtResource("68_dhydt")]
+visible = false
+
+[node name="flagCheckers" parent="Trash" instance=ExtResource("69_0sfmv")]
+visible = false
+
+[node name="flagCheckersSmall" parent="Trash" instance=ExtResource("70_jdb3c")]
+visible = false
+
+[node name="flagGreen" parent="Trash" instance=ExtResource("71_nn1yo")]
+visible = false
+
+[node name="flagRed" parent="Trash" instance=ExtResource("72_8ey8c")]
+visible = false
+
+[node name="flagTankco" parent="Trash" instance=ExtResource("73_e2mxs")]
+visible = false
+
+[node name="grandStand" parent="Trash" instance=ExtResource("74_uj7ul")]
+visible = false
+
+[node name="grandStandAwning" parent="Trash" instance=ExtResource("75_r5biy")]
+visible = false
+
+[node name="grandStandCovered" parent="Trash" instance=ExtResource("76_f8tpr")]
+visible = false
+
+[node name="grandStandCoveredRound" parent="Trash" instance=ExtResource("77_ptu1x")]
+visible = false
+
+[node name="grandStandRound" parent="Trash" instance=ExtResource("78_vsgpj")]
+visible = false
+
+[node name="grass" parent="Trash" instance=ExtResource("79_ngp5n")]
+visible = false
+
+[node name="lightColored" parent="Trash" instance=ExtResource("80_7dtpe")]
+visible = false
+
+[node name="lightPostLarge" parent="Trash" instance=ExtResource("81_0c433")]
+visible = false
+
+[node name="lightPostModern" parent="Trash" instance=ExtResource("82_6qecy")]
+visible = false
+
+[node name="lightPost_exclusive" parent="Trash" instance=ExtResource("83_k307b")]
+visible = false
+
+[node name="lightRed" parent="Trash" instance=ExtResource("84_v8xwn")]
+visible = false
+
+[node name="lightRedDouble" parent="Trash" instance=ExtResource("85_l5so6")]
+visible = false
+
+[node name="overhead" parent="Trash" instance=ExtResource("86_5frnr")]
+visible = false
+
+[node name="overheadLights" parent="Trash" instance=ExtResource("87_3wn1l")]
+visible = false
+
+[node name="overheadRound" parent="Trash" instance=ExtResource("88_5y1rf")]
+visible = false
+
+[node name="overheadRoundColored" parent="Trash" instance=ExtResource("89_ug5wc")]
+visible = false
+
+[node name="pitsGarage" parent="Trash" instance=ExtResource("90_1i4ft")]
+visible = false
+
+[node name="pitsGarageClosed" parent="Trash" instance=ExtResource("91_tfhds")]
+visible = false
+
+[node name="pitsGarageCorner" parent="Trash" instance=ExtResource("92_wxom0")]
+visible = false
+
+[node name="pitsOffice" parent="Trash" instance=ExtResource("93_g1jx5")]
+visible = false
+
+[node name="pitsOfficeCorner" parent="Trash" instance=ExtResource("94_7cdd6")]
+visible = false
+
+[node name="pitsOfficeRoof" parent="Trash" instance=ExtResource("95_shtea")]
+visible = false
+
+[node name="pylon" parent="Trash" instance=ExtResource("96_k4oko")]
+
+[node name="raceCarGreen" parent="Trash" instance=ExtResource("97_r0hvl")]
+visible = false
+
+[node name="raceCarOrange" parent="Trash" instance=ExtResource("98_ngnho")]
+visible = false
+
+[node name="raceCarRed" parent="Trash" instance=ExtResource("99_jqet2")]
+visible = false
+
+[node name="raceCarWhite" parent="Trash" instance=ExtResource("100_o5fe6")]
+visible = false
+
+[node name="radarEquipment" parent="Trash" instance=ExtResource("101_mfe0k")]
+visible = false
+
+[node name="rail" parent="Trash" instance=ExtResource("102_miv7d")]
+visible = false
+
+[node name="railDouble" parent="Trash" instance=ExtResource("103_qrw8l")]
+visible = false
+
+[node name="ramp" parent="Trash" instance=ExtResource("104_scup6")]
+visible = false
+
+[node name="tent" parent="Trash" instance=ExtResource("105_056pk")]
+visible = false
+
+[node name="tentClosed" parent="Trash" instance=ExtResource("106_lox2s")]
+visible = false
+
+[node name="tentClosedLong" parent="Trash" instance=ExtResource("107_uai30")]
+visible = false
+
+[node name="tentLong" parent="Trash" instance=ExtResource("108_0u5jj")]
+visible = false
+
+[node name="tentRoof" parent="Trash" instance=ExtResource("109_5fa5t")]
+visible = false
+
+[node name="tentRoofDouble" parent="Trash" instance=ExtResource("110_cvhwa")]
+visible = false
+
+[node name="treeLarge" parent="Trash" instance=ExtResource("111_82ajy")]
+visible = false
+
+[node name="treeSmall" parent="Trash" instance=ExtResource("112_nr6rq")]
+visible = false
