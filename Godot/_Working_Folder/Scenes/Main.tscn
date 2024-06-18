@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk7df4tl4ql7k"]
+
+[ext_resource type="Script" path="res://_Working_Folder/Scenes/Main.cs" id="1_3nf17"]
+[ext_resource type="PackedScene" uid="uid://bhcbuhds35tj0" path="res://_Working_Folder/Nodes/Player/Player.tscn" id="1_l4iav"]
+[ext_resource type="PackedScene" uid="uid://r47lq2ck0odm" path="res://_Working_Folder/Nodes/Ground/Ground.tscn" id="2_xmt26"]
+
+[node name="Main" type="Node3D" node_paths=PackedStringArray("_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.89555e-05, 7.68323e-05, 0)
+script = ExtResource("1_3nf17")
+_player = NodePath("Player")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.909331, 0.416074, 0, -0.416074, 0.909331, 0, 4.30145, 9.58655)
+
+[node name="Player" parent="." instance=ExtResource("1_l4iav")]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 1, -0.541304, 1.78768e-05, 0)
+JumpVelocity = 1.0
+
+[node name="Ground" parent="." instance=ExtResource("2_xmt26")]
