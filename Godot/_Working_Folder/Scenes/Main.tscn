@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://_Working_Folder/Scenes/Main.cs" id="1_3nf17"]
 [ext_resource type="PackedScene" uid="uid://cbvmouma0cgm" path="res://_Working_Folder/Nodes/Tracks/Track01.tscn" id="2_xmt26"]
-[ext_resource type="PackedScene" path="res://_Working_Folder/Nodes/Player/LocalPlayerVehicle.tscn" id="4_mbhpr"]
+[ext_resource type="PackedScene" uid="uid://b688aut87f7pk" path="res://_Working_Folder/Nodes/Player/LocalPlayerVehicle.tscn" id="4_mbhpr"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_hrp32"]
 

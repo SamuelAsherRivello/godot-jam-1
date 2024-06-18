@@ -8,4 +8,6 @@ script = ExtResource("1_mqqov")
 controllableVehicle = NodePath("ControllableVehicle")
 
 [node name="ControllableVehicle" parent="." instance=ExtResource("2_c0663")]
-EngineStrength = 1000.0
+mass = 1000.0
+EngineStrength = 10000.0
+SteeringStrength = 0.7
