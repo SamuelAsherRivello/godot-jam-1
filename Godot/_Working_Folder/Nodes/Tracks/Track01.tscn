@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cbvmouma0cgm"]
 
-[ext_resource type="MeshLibrary" uid="uid://cn1p13858gnn5" path="res://addons/kenny.nl/kenney_racing-kit/MeshLibraries/MeshLibrary1x1.tres" id="1_llqyo"]
+[ext_resource type="MeshLibrary" uid="uid://l2oawr7hnpo4" path="res://addons/kenny.nl/kenney_racing-kit/MeshLibraries/MeshLibrary1x1.tres" id="1_llqyo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ss5lb"]
 size = Vector3(30, 1, 30)
@@ -15,7 +15,7 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh_library = ExtResource("1_llqyo")
 cell_size = Vector3(1, 1, 1)
 data = {
-"cells": PackedInt32Array(65532, 65533, 1048579, 65533, 65533, 1048579, 65534, 65533, 1048579, 65535, 65533, 1048579, 0, 65533, 1048579, 1, 65533, 1048579, 2, 65533, 1048579, 3, 65533, 1048579, 4, 65533, 1441792, 4, 65534, 3, 4, 65535, 3, 4, 0, 3, 4, 1, 3, 4, 2, 655360, 3, 2, 1048579, 2, 2, 1048579, 1, 2, 1048579, 0, 2, 1048579, 65535, 2, 1048579, 65534, 2, 1048579, 65533, 2, 1048579, 65532, 2, 1048579, 65531, 65533, 0, 65531, 65534, 3, 65531, 65535, 3, 65531, 0, 3, 65531, 1, 3, 65531, 2, 1048576, 14, 65528, 3)
+"cells": PackedInt32Array(14, 65528, 3, 65532, 65534, 1, 3, 65534, 1441793, 3, 65535, 655361, 2, 65535, 1441795, 1, 65535, 1, 1, 0, 1048577, 3, 0, 1441793, 3, 1, 655361, 65532, 1, 1048577, 65533, 65534, 1048579, 65534, 65534, 1048579, 65535, 65534, 1048579, 0, 65534, 1048579, 1, 65534, 1048579, 2, 65534, 1048579, 65533, 1, 1048579, 65534, 1, 1048579, 65535, 1, 1048579, 0, 1, 1048579, 1, 1, 1048579, 2, 1, 1048579, 65532, 65535, 3, 65532, 0, 3, 2, 0, 1441795)
 }
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -27,5 +27,5 @@ shape = SubResource("BoxShape3D_ss5lb")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0464741, 0)
-size = Vector3(1000, 1, 1000)
+size = Vector3(20, 1, 20)
 material = SubResource("StandardMaterial3D_vhlj0")
