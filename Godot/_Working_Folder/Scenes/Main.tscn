@@ -1,16 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://bk7df4tl4ql7k"]
+[gd_scene load_steps=9 format=3 uid="uid://bk7df4tl4ql7k"]
 
 [ext_resource type="Script" path="res://_Working_Folder/Scenes/Main.cs" id="1_3nf17"]
 [ext_resource type="PackedScene" uid="uid://bhcbuhds35tj0" path="res://_Working_Folder/Nodes/Player/Player.tscn" id="1_l4iav"]
-[ext_resource type="PackedScene" uid="uid://r47lq2ck0odm" path="res://_Working_Folder/Nodes/Ground/Ground.tscn" id="2_xmt26"]
+[ext_resource type="PackedScene" uid="uid://r47lq2ck0odm" path="res://_Working_Folder/Nodes/Tracks/TilemapTest.tscn" id="2_xmt26"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hrp32"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rfjxq"]
+seamless = true
+noise = SubResource("FastNoiseLite_hrp32")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ex4cq"]
+sky_top_color = Color(0.758029, 0.765682, 0.735722, 1)
+sky_horizon_color = Color(0.572352, 0.659134, 0.808271, 1)
+sky_cover = SubResource("NoiseTexture2D_rfjxq")
+sky_cover_modulate = Color(1, 1, 1, 0.435294)
+ground_bottom_color = Color(0.2, 0.403922, 0.376471, 1)
+ground_horizon_color = Color(0.530843, 0.701012, 0.615179, 1)
+sun_angle_max = 58.85
+
+[sub_resource type="Sky" id="Sky_yk50f"]
+sky_material = SubResource("ProceduralSkyMaterial_ex4cq")
+
+[sub_resource type="Environment" id="Environment_dub50"]
+background_mode = 2
+sky = SubResource("Sky_yk50f")
 
 [node name="Main" type="Node3D" node_paths=PackedStringArray("_player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.89555e-05, 7.68323e-05, 0)
 script = ExtResource("1_3nf17")
 _player = NodePath("Player")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dub50")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 0.870355, 0.492423, 0, -0.492423, 0.870355, 0, 5, 0)
+shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.909331, 0.416074, 0, -0.416074, 0.909331, 0, 4.30145, 9.58655)
