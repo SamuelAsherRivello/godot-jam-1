@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba1s0hngtl6dy"]
+
+[ext_resource type="PackedScene" uid="uid://cjxb45ghu5wsa" path="res://addons/kenny.nl/kenney_car-kit/Models/GLB format/race.glb" id="1_mc8jt"]
+
+[node name="race" instance=ExtResource("1_mc8jt")]

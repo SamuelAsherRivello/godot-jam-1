@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cbvmouma0cgm"]
 
-[ext_resource type="MeshLibrary" uid="uid://l2oawr7hnpo4" path="res://addons/kenny.nl/kenney_racing-kit/MeshLibraries/MeshLibrary1x1.tres" id="1_llqyo"]
+[ext_resource type="MeshLibrary" uid="uid://cn1p13858gnn5" path="res://addons/kenny.nl/kenney_racing-kit/MeshLibraries/MeshLibrary1x1.tres" id="1_llqyo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ss5lb"]
 size = Vector3(30, 1, 30)
@@ -27,5 +27,5 @@ shape = SubResource("BoxShape3D_ss5lb")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0464741, 0)
-size = Vector3(20, 1, 20)
+size = Vector3(1000, 1, 1000)
 material = SubResource("StandardMaterial3D_vhlj0")

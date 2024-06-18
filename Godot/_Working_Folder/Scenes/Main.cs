@@ -12,12 +12,12 @@ public partial class Main : Node3D
         // Called every time the node is added to the scene.
         // Initialization here
 
-        GD.Print("Main._Ready() Player = " + _player);
+        //GD.Print("Main._Ready() Player = " + _player);
         
-        _player.CallMe(10);
+        //_player.CallMe(10);
         
-        //connect signal to player event
-        _player.Connect("mouse_entered", Callable.From(Player_OnMouseEntered));
+        ////connect signal to player event
+        //_player.Connect("mouse_entered", Callable.From(Player_OnMouseEntered));
     }
 
     public void _Process(float delta)
