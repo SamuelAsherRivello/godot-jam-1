@@ -1,38 +1,38 @@
 [gd_scene load_steps=10 format=3 uid="uid://prm3o27l4a1v"]
 
-[ext_resource type="PackedScene" uid="uid://dmnuaethi6f68" path="res://addons/kenny.nl/kenney_racing-kit/MeshLibraries/Tiles/1x1_road_corner_bridge_small.tscn" id="1_t55v8"]
-[ext_resource type="PackedScene" uid="uid://7n626pheom8n" path="res://addons/kenny.nl/kenney_racing-kit/MeshLibraries/Tiles/1x1_road_corner_small.tscn" id="3_3dayt"]
-[ext_resource type="PackedScene" uid="uid://cmacw1pj4v4s3" path="res://addons/kenny.nl/kenney_racing-kit/MeshLibraries/Tiles/1x1_road_corner_large_sand_inner.tscn" id="9_dnwr6"]
-[ext_resource type="PackedScene" uid="uid://duin0n6cabiqd" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerSmallSquare.glb" id="70_dvra3"]
-[ext_resource type="PackedScene" uid="uid://n8wpulp0cbtb" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadPitGarage.glb" id="77_lfprw"]
-[ext_resource type="PackedScene" uid="uid://bslewa1w11gci" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadPitStraight.glb" id="78_5wwo4"]
-[ext_resource type="PackedScene" uid="uid://c6sa5x3fw8n1t" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadSplitSmall.glb" id="92_7mw28"]
-[ext_resource type="PackedScene" uid="uid://bf0aq2frg3p2d" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStraight.glb" id="95_jdu6t"]
-[ext_resource type="PackedScene" uid="uid://ddl27w0vw4agt" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStraightArrow.glb" id="96_26blt"]
+[ext_resource type="PackedScene" uid="uid://dmnuaethi6f68" path="res://addons/kenny.nl/kenney_racing-kit/MeshLibraries/Tiles/1x1_road_corner_bridge_small.tscn" id="1_nimmv"]
+[ext_resource type="PackedScene" uid="uid://cmacw1pj4v4s3" path="res://addons/kenny.nl/kenney_racing-kit/MeshLibraries/Tiles/1x1_road_corner_large_sand_inner.tscn" id="2_okomt"]
+[ext_resource type="PackedScene" uid="uid://7n626pheom8n" path="res://addons/kenny.nl/kenney_racing-kit/MeshLibraries/Tiles/1x1_road_corner_small.tscn" id="3_bos2p"]
+[ext_resource type="PackedScene" uid="uid://duin0n6cabiqd" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerSmallSquare.glb" id="4_jjg3e"]
+[ext_resource type="PackedScene" uid="uid://bf0aq2frg3p2d" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStraight.glb" id="5_ro2em"]
+[ext_resource type="PackedScene" uid="uid://ddl27w0vw4agt" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStraightArrow.glb" id="6_xli2l"]
+[ext_resource type="PackedScene" uid="uid://n8wpulp0cbtb" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadPitGarage.glb" id="7_3wl1p"]
+[ext_resource type="PackedScene" uid="uid://bslewa1w11gci" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadPitStraight.glb" id="8_gvua4"]
+[ext_resource type="PackedScene" uid="uid://c6sa5x3fw8n1t" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadSplitSmall.glb" id="9_aj1pm"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="1x1_roadCornerBridgeSmall" parent="." instance=ExtResource("1_t55v8")]
+[node name="1x1_roadCornerBridgeSmall" parent="." instance=ExtResource("1_nimmv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.77109e-05, 0, 0.00650454)
 
-[node name="1x1_roadCornerLargeSandInner" parent="." instance=ExtResource("9_dnwr6")]
+[node name="1x1_roadCornerLargeSandInner" parent="." instance=ExtResource("2_okomt")]
 
-[node name="1x1_roadCornerSmall" parent="." instance=ExtResource("3_3dayt")]
+[node name="1x1_roadCornerSmall" parent="." instance=ExtResource("3_bos2p")]
 
-[node name="1x1_roadCornerSmallSquare" parent="." instance=ExtResource("70_dvra3")]
+[node name="1x1_roadCornerSmallSquare" parent="." instance=ExtResource("4_jjg3e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.158956, 0, 1.16005)
 
-[node name="1x1_roadStraight" parent="." instance=ExtResource("95_jdu6t")]
+[node name="1x1_roadStraight" parent="." instance=ExtResource("5_ro2em")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.160988, 0, 1.16291)
 
-[node name="1x1_roadStraightArrow" parent="." instance=ExtResource("96_26blt")]
+[node name="1x1_roadStraightArrow" parent="." instance=ExtResource("6_xli2l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165844, 0, 1.18603)
 
-[node name="1x1_roadPitGarage" parent="." instance=ExtResource("77_lfprw")]
+[node name="1x1_roadPitGarage" parent="." instance=ExtResource("7_3wl1p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.157722, 0, 1.16404)
 
-[node name="1x1_roadPitStraight" parent="." instance=ExtResource("78_5wwo4")]
+[node name="1x1_roadPitStraight" parent="." instance=ExtResource("8_gvua4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.157722, 0, 1.16344)
 
-[node name="1x1_roadSplitSmall" parent="." instance=ExtResource("92_7mw28")]
+[node name="1x1_roadSplitSmall" parent="." instance=ExtResource("9_aj1pm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16758, 0, 1.16344)

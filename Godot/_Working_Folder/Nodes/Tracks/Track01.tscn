@@ -11,7 +11,7 @@ albedo_color = Color(6.01634e-08, 0.287751, 6.73831e-07, 1)
 [node name="Track01" type="Node3D"]
 
 [node name="GridMap" type="GridMap" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -4, 0)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -4.89231, 0)
 mesh_library = ExtResource("1_llqyo")
 cell_size = Vector3(1, 1, 1)
 data = {
