@@ -33,7 +33,7 @@ script = ExtResource("1_3nf17")
 [node name="Common" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Common"]
-transform = Transform3D(1, 0, 0, 0, 0.515038, 0.857167, 0, -0.857167, 0.515038, 0.9, 73.1066, 43.4534)
+transform = Transform3D(1, 0, 0, 0, 0.515038, 0.857167, 0, -0.857167, 0.515038, -0.045, 37.957, 24.423)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Common"]
 transform = Transform3D(1, 0, 0, 0, 0.870356, 0.492423, 0, -0.492423, 0.870356, 0, 5, 0)
