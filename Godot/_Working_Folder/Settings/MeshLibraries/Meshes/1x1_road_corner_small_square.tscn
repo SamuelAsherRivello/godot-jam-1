@@ -2,4 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://duin0n6cabiqd" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerSmallSquare.glb" id="1_anedt"]
 
-[node name="roadCornerSmallSquare" instance=ExtResource("1_anedt")]
+[node name="1x1_roadCornerSmallSquare" instance=ExtResource("1_anedt")]
+
+[node name="roadCornerSmallSquare(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5)

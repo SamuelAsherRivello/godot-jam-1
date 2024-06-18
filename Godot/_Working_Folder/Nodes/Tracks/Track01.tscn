@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbvmouma0cgm"]
 
 [ext_resource type="Script" path="res://_Working_Folder/Nodes/Tracks/Track.cs" id="1_hq0qh"]
-[ext_resource type="MeshLibrary" uid="uid://l2oawr7hnpo4" path="res://_Working_Folder/Settings/MeshLibraries/MeshLibrary1x1.tres" id="1_llqyo"]
+[ext_resource type="MeshLibrary" uid="uid://1f55lh1wup6m" path="res://_Working_Folder/Settings/MeshLibraries/MeshLibrary1x1.tres" id="1_llqyo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ss5lb"]
 size = Vector3(199.866, 1, 200.042)
@@ -17,7 +17,7 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -5, 0)
 mesh_library = ExtResource("1_llqyo")
 cell_size = Vector3(1, 1, 1)
 data = {
-"cells": PackedInt32Array(2, 65535, 1441795, 65533, 65534, 1048579, 65534, 65534, 1048579, 65535, 65534, 1048579, 0, 65534, 1048579, 1, 65534, 1048579, 2, 65534, 1048579, 65533, 1, 1441795, 65534, 1, 1048579, 65535, 1, 1048579, 0, 1, 1048579, 1, 1, 1048579, 65532, 65535, 3, 65532, 0, 3, 2, 0, 1441795, 2, 1, 1048579, 3, 65534, 1441792, 3, 65535, 655360, 1, 65535, 0, 1, 0, 1048576, 3, 0, 1441792, 3, 1, 655360, 65532, 1, 1048576, 65532, 65534, 0)
+"cells": PackedInt32Array(2, 65535, 1441793, 65533, 65534, 1441793, 65535, 65534, 1441795, 0, 65534, 1441793, 1, 65534, 1441793, 2, 65534, 1441793, 65533, 1, 1441793, 1, 1, 1441793, 65532, 65535, 655361, 65532, 0, 655361, 2, 0, 1441793, 2, 1, 1441793, 3, 65534, 1441792, 3, 65535, 655360, 3, 0, 1441792, 3, 1, 655360, 65532, 1, 1048576, 65532, 65534, 0, 1, 65535, 2, 1, 0, 1048578, 65535, 1, 1048579, 0, 1, 1441793, 65534, 1, 1441793, 65534, 65534, 1441793)
 }
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]

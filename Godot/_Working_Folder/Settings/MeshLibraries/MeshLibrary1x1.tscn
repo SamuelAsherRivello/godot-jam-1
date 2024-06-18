@@ -1,16 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://ro7xq2itu7n6"]
+[gd_scene load_steps=6 format=3 uid="uid://ro7xq2itu7n6"]
 
 [ext_resource type="PackedScene" uid="uid://7n626pheom8n" path="res://_Working_Folder/Settings/MeshLibraries/Meshes/1x1_road_corner_small.tscn" id="1_iai0i"]
-[ext_resource type="PackedScene" uid="uid://dmnuaethi6f68" path="res://_Working_Folder/Settings/MeshLibraries/Meshes/1x1_road_corner_bridge_small.tscn" id="2_kwkqf"]
-[ext_resource type="PackedScene" uid="uid://cmacw1pj4v4s3" path="res://_Working_Folder/Settings/MeshLibraries/Meshes/1x1_road_corner_large_sand_inner.tscn" id="3_lbt4y"]
+[ext_resource type="PackedScene" uid="uid://vpgkoaorcnew" path="res://_Working_Folder/Settings/MeshLibraries/Meshes/1x_1_big_wall.tscn" id="3_0jqwt"]
+[ext_resource type="PackedScene" uid="uid://bl7nvgko1b1rl" path="res://_Working_Folder/Settings/MeshLibraries/Meshes/1x1_road_corner_small_square.tscn" id="4_lnmsv"]
 [ext_resource type="PackedScene" uid="uid://1rgyt7l5n1gg" path="res://_Working_Folder/Settings/MeshLibraries/Meshes/1x1_road_straight.tscn" id="4_mvq6s"]
+[ext_resource type="PackedScene" uid="uid://b2c1fywbg235g" path="res://_Working_Folder/Settings/MeshLibraries/Meshes/1x_1_road_straight_arrow.tscn" id="5_48sx1"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="1x1_roadCornerSmall" parent="." instance=ExtResource("1_iai0i")]
-
-[node name="1x1_roadCornerBridgeSmall" parent="." instance=ExtResource("2_kwkqf")]
-
-[node name="1x1_roadCornerLargeSandInner" parent="." instance=ExtResource("3_lbt4y")]
+visible = false
 
 [node name="1x1_roadStraight" parent="." instance=ExtResource("4_mvq6s")]
+visible = false
+
+[node name="1x1_bigWall" parent="." instance=ExtResource("3_0jqwt")]
+visible = false
+
+[node name="1x1_roadCornerSmallSquare" parent="." instance=ExtResource("4_lnmsv")]
+visible = false
+
+[node name="1x1_roadStraightArrow" parent="." instance=ExtResource("5_48sx1")]
