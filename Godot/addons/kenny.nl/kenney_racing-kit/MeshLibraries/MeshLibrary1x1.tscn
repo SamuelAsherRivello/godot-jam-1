@@ -1,0 +1,44 @@
+[gd_scene load_steps=11 format=3 uid="uid://prm3o27l4a1v"]
+
+[ext_resource type="PackedScene" uid="uid://cmgy50368c6wh" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerBridgeSmall.glb" id="52_rbos0"]
+[ext_resource type="PackedScene" uid="uid://cmkealkxx6o45" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerLargeBorderInner.glb" id="55_iwa8h"]
+[ext_resource type="PackedScene" uid="uid://beplm07kj30yh" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerLargeSandInner.glb" id="64_755bh"]
+[ext_resource type="PackedScene" uid="uid://bnx103spwl8g0" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerSmall.glb" id="67_e58fi"]
+[ext_resource type="PackedScene" uid="uid://duin0n6cabiqd" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerSmallSquare.glb" id="70_dvra3"]
+[ext_resource type="PackedScene" uid="uid://n8wpulp0cbtb" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadPitGarage.glb" id="77_lfprw"]
+[ext_resource type="PackedScene" uid="uid://bslewa1w11gci" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadPitStraight.glb" id="78_5wwo4"]
+[ext_resource type="PackedScene" uid="uid://c6sa5x3fw8n1t" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadSplitSmall.glb" id="92_7mw28"]
+[ext_resource type="PackedScene" uid="uid://bf0aq2frg3p2d" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStraight.glb" id="95_jdu6t"]
+[ext_resource type="PackedScene" uid="uid://ddl27w0vw4agt" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStraightArrow.glb" id="96_26blt"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="1x1_roadCornerBridgeSmall" parent="." instance=ExtResource("52_rbos0")]
+top_level = true
+
+[node name="1x1_roadCornerLargeBorderInner" parent="." instance=ExtResource("55_iwa8h")]
+top_level = true
+
+[node name="1x1_roadCornerSmall" parent="." instance=ExtResource("67_e58fi")]
+top_level = true
+
+[node name="1x1_roadCornerSmallSquare" parent="." instance=ExtResource("70_dvra3")]
+top_level = true
+
+[node name="1x1_roadStraight" parent="." instance=ExtResource("95_jdu6t")]
+top_level = true
+
+[node name="1x1_roadStraightArrow" parent="." instance=ExtResource("96_26blt")]
+top_level = true
+
+[node name="1x1_roadPitGarage" parent="." instance=ExtResource("77_lfprw")]
+top_level = true
+
+[node name="1x1_roadCornerLargeSandInner" parent="." instance=ExtResource("64_755bh")]
+top_level = true
+
+[node name="1x1_roadPitStraight" parent="." instance=ExtResource("78_5wwo4")]
+top_level = true
+
+[node name="1x1_roadSplitSmall" parent="." instance=ExtResource("92_7mw28")]
+top_level = true

@@ -17,7 +17,7 @@ public partial class Main : Node3D
         _player.CallMe(10);
         
         //connect signal to player event
-        _player.Connect("mouse_entered", Callable.From(_on_player_mouse_entered));
+        _player.Connect("mouse_entered", Callable.From(Player_OnMouseEntered));
     }
 
     public void _Process(float delta)
@@ -26,9 +26,14 @@ public partial class Main : Node3D
         // Update game logic here.
     }
 
-    public void _on_player_mouse_entered()
+    public void CustomMethodTest()
+    {
+        int customLocalVar = 10;
+        
+    }
+
+    public void Player_OnMouseEntered()
     {
         GD.Print("test");
-
     }
 }

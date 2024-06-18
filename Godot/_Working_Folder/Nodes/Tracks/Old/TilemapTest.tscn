@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://r47lq2ck0odm"]
+
+[ext_resource type="Script" path="res://_Working_Folder/Nodes/Tracks/Track.cs" id="1_j1nr6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_080xb"]
+size = Vector3(10, 1, 10)
+
+[node name="Track" type="StaticBody3D"]
+script = ExtResource("1_j1nr6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.93872, 0.0299377)
+shape = SubResource("BoxShape3D_080xb")
