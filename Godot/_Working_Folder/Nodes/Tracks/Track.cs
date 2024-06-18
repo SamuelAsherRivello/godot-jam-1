@@ -1,6 +1,6 @@
 using Godot;
 using System;
 
-public partial class Track : StaticBody3D
+public partial class Track : Node3D
 {
 }

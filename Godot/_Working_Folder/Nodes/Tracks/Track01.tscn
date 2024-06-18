@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbvmouma0cgm"]
+[gd_scene load_steps=5 format=3 uid="uid://cbvmouma0cgm"]
 
+[ext_resource type="Script" path="res://_Working_Folder/Nodes/Tracks/Track.cs" id="1_hq0qh"]
 [ext_resource type="MeshLibrary" uid="uid://l2oawr7hnpo4" path="res://addons/kenny.nl/kenney_racing-kit/MeshLibraries/MeshLibrary1x1.tres" id="1_llqyo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ss5lb"]
@@ -9,9 +10,10 @@ size = Vector3(199.866, 1, 200.042)
 albedo_color = Color(6.01634e-08, 0.287751, 6.73831e-07, 1)
 
 [node name="Track01" type="Node3D"]
+script = ExtResource("1_hq0qh")
 
 [node name="GridMap" type="GridMap" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -4.89231, 0)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -5, 0)
 mesh_library = ExtResource("1_llqyo")
 cell_size = Vector3(1, 1, 1)
 data = {
@@ -19,7 +21,7 @@ data = {
 }
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.436314, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.547272, 0, -0.423706)
