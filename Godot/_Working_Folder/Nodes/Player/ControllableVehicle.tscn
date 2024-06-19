@@ -189,6 +189,7 @@ script = ExtResource("1_me448")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.3, -0.9)
 use_as_traction = true
 wheel_radius = 0.3
+wheel_friction_slip = 20.0
 
 [node name="wheel-back-left" type="MeshInstance3D" parent="back_left"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.0198863)
@@ -199,6 +200,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.3, 0.65)
 use_as_steering = true
 wheel_radius = 0.3
+wheel_friction_slip = 20.0
 
 [node name="wheel-front-left" type="MeshInstance3D" parent="front_left"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.0101138)
@@ -209,6 +211,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.3, -0.9)
 use_as_traction = true
 wheel_radius = 0.3
+wheel_friction_slip = 20.0
 
 [node name="wheel-back-right" type="MeshInstance3D" parent="back_right"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.0198863)
@@ -219,6 +222,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.3, 0.65)
 use_as_steering = true
 wheel_radius = 0.3
+wheel_friction_slip = 20.0
 
 [node name="wheel-front-right" type="MeshInstance3D" parent="front_right"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.0101138)

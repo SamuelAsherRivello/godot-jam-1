@@ -4,7 +4,7 @@ using System;
 public partial class ControllableVehicle : VehicleBody3D
 {
     [Export]
-    private float EngineStrength = 100;
+    private float EngineStrength = 10000;
 
     [Export]
     private float SteeringStrength = 1.0f;
