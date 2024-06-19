@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxre30mlddcrg"]
+
+[ext_resource type="PackedScene" uid="uid://ceuh5xq4epcbd" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/barrierWall.glb" id="1_expc3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u0bh0"]
+size = Vector3(1.035, 0.144897, 0.140076)
+
+[node name="1x1_barrierWall" instance=ExtResource("1_expc3")]
+
+[node name="barrierWall(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.498, 0, 0.56)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="barrierWall(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="barrierWall(Clone)/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.501898, 0.0581665, -0.0603943)
+shape = SubResource("BoxShape3D_u0bh0")

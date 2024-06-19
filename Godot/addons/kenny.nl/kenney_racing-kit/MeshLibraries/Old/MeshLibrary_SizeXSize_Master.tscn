@@ -297,7 +297,6 @@ visible = false
 visible = false
 
 [node name="Trash" type="Node3D" parent="."]
-visible = false
 
 [node name="bannerTowerGreen" parent="Trash" instance=ExtResource("57_7p8uh")]
 visible = false
@@ -306,13 +305,13 @@ visible = false
 visible = false
 
 [node name="barrierRed" parent="Trash" instance=ExtResource("59_qfucd")]
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.2677)
 
 [node name="barrierWall" parent="Trash" instance=ExtResource("60_end8g")]
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.53027)
 
 [node name="barrierWhite" parent="Trash" instance=ExtResource("61_3vhdp")]
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.42297)
 
 [node name="billboard" parent="Trash" instance=ExtResource("62_3tr1b")]
 visible = false
@@ -354,16 +353,15 @@ visible = false
 visible = false
 
 [node name="grandStandAwning" parent="Trash" instance=ExtResource("75_r5biy")]
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82135, 0, 0)
 
 [node name="grandStandCovered" parent="Trash" instance=ExtResource("76_f8tpr")]
-visible = false
 
 [node name="grandStandCoveredRound" parent="Trash" instance=ExtResource("77_ptu1x")]
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17786, 0, 0)
 
 [node name="grandStandRound" parent="Trash" instance=ExtResource("78_vsgpj")]
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.03058, 0, 0)
 
 [node name="grass" parent="Trash" instance=ExtResource("79_ngp5n")]
 visible = false

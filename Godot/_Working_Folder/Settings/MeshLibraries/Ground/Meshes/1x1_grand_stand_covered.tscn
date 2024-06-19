@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d63mu8fpd5t7"]
+
+[ext_resource type="PackedScene" uid="uid://blgpoil6igdvw" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/grandStandCovered.glb" id="1_6g6ea"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n0kr4"]
+size = Vector3(0.998474, 1.17853, 1.0332)
+
+[node name="1x1_grandStandCovered" instance=ExtResource("1_6g6ea")]
+
+[node name="grandStandCovered(Clone)" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="grandStandCovered(Clone)" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grandStandCovered(Clone)/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.506866, 0.578766, -0.479858)
+shape = SubResource("BoxShape3D_n0kr4")
