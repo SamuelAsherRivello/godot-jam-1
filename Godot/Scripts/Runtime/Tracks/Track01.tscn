@@ -10,20 +10,20 @@ size = Vector3(199.866, 1, 200.042)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vhlj0"]
 albedo_color = Color(6.01634e-08, 0.287751, 6.73831e-07, 1)
 
-[node name="Track01" type="Node3D" node_paths=PackedStringArray("_groundGridmap", "_flowGridMap")]
+[node name="Track01" type="Node3D" node_paths=PackedStringArray("_groundGridMap", "_flowGridMap")]
 script = ExtResource("1_hq0qh")
-_groundGridmap = NodePath("GroundGridMap")
+_groundGridMap = NodePath("GroundGridMap")
 _flowGridMap = NodePath("FlowGridMap")
 
 [node name="FlowGridMap" type="GridMap" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -5, 0)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -4.805, 0)
 visible = false
 mesh_library = ExtResource("2_twe6m")
 cell_size = Vector3(1, 1, 1)
 data = {
-"cells": PackedInt32Array(3, 65533, 5, 131068, 1, 0, 131068, 0, 0, 131068, 65535, 0, 131068, 65534, 1441792, 131069, 65534, 1441792, 131070, 65534, 1441792, 131071, 65534, 1441792, 65536, 65534, 1441792, 65537, 65534, 1441792, 65538, 65534, 1441792, 65539, 65534, 655360, 65539, 65535, 1048576, 65538, 65535, 1048576, 65537, 65535, 655360, 65537, 0, 1441792, 65538, 0, 1441792, 65539, 0, 655360, 65539, 1, 1048576, 65538, 1, 1048576, 131071, 1, 1048576, 131070, 1, 1048576, 131069, 1, 1048576, 65536, 1, 1048576, 65537, 1, 1048576)
+"cells": PackedInt32Array(3, 65533, 5, 65532, 1, 0, 65532, 0, 0, 65532, 65535, 0, 65532, 65534, 1441792, 65533, 65534, 1441792, 65534, 65534, 1441792, 65535, 65534, 1441792, 0, 65534, 1441792, 1, 65534, 1441792, 2, 65534, 1441792, 3, 65534, 655360, 3, 65535, 1048576, 2, 65535, 1048576, 1, 65535, 655360, 1, 0, 655360, 2, 0, 1441792, 3, 0, 655360, 3, 1, 1048576, 2, 1, 1048576, 1, 1, 1048576, 0, 1, 1048576, 65535, 1, 1048576, 65534, 1, 1048576, 65533, 1, 1048576)
 }
-metadata/_editor_floor_ = Vector3(0, 1, 0)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="GroundGridMap" type="GridMap" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -5, 0)

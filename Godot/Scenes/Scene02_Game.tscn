@@ -26,11 +26,11 @@ sky_material = SubResource("ProceduralSkyMaterial_ex4cq")
 background_mode = 2
 sky = SubResource("Sky_yk50f")
 
-[node name="Scene02_Game" type="Node3D" node_paths=PackedStringArray("_track", "_localPlayerController")]
+[node name="Scene02_Game" type="Node3D" node_paths=PackedStringArray("_track", "_controllableVehicle")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.89555e-05, 7.68323e-05, 0)
 script = ExtResource("1_47koa")
 _track = NodePath("Track01")
-_localPlayerController = NodePath("")
+_controllableVehicle = NodePath("VehicleBody3D")
 
 [node name="Common" type="Node3D" parent="."]
 
