@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bjw7l7psnaab6"]
+[gd_scene load_steps=17 format=3 uid="uid://b85d2cqyrnwli"]
 
 [ext_resource type="Script" path="res://Scripts/Runtime/Racing2D/Players/AIControllableVehicle.cs" id="1_vaq67"]
 [ext_resource type="Resource" uid="uid://bs8fc3ix1upwg" path="res://Scripts/Runtime/Racing2D/Vehicles/CarCharacteristics/DefaultRaceCar.tres" id="2_b3p5b"]

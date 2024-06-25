@@ -2,18 +2,30 @@ using Godot;
 using System;
 using RMC.Racing2D.Players;
 using RMC.Racing2D.Vehicles;
+using System.Collections.Generic;
 
 namespace RMC.Racing2D
 {
     public partial class Scene02_Game : Node3D
     {
-    
+
         [Export] private Track _track;
 
         [Export] private ControllableVehicle _controllableVehicle;
 
+        [Export] private Node3D _vehiclesNode;
+
+        private List<ControllableVehicle> _controllableVehicles = new List<ControllableVehicle>();
+
         public override void _Ready()
         {
+            foreach (var node in _vehiclesNode.GetChildren())
+            {
+                if (node is ControllableVehicle)
+                {
+                    _controllableVehicles.Add((ControllableVehicle)node);
+                }
+            }
         }
 
         private string _lastMeshName = "";

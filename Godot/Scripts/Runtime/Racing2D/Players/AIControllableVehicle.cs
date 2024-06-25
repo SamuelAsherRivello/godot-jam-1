@@ -24,6 +24,11 @@ namespace RMC.Racing2D.Players
 
             base._PhysicsProcess(delta);
         }
+
+        public override ControllableVehicleType GetControllableVehicleType()
+        {
+            return ControllableVehicleType.AI_PLAYER;
+        }
     }
 }
 

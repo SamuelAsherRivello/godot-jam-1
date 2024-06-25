@@ -4,10 +4,18 @@ using RMC.Racing2D.Audio;
 
 namespace RMC.Racing2D.Vehicles
 {
-    public partial class ControllableVehicle : VehicleBody3D
+    public abstract partial class ControllableVehicle : VehicleBody3D
     {
         [Export] private CarCharacteristics CarCharacteristics;
         [Export] private Area3D _collisionArea3D;
+
+        public enum ControllableVehicleType
+        {
+            LOCAL_PLAYER,
+            AI_PLAYER
+        }
+
+        public abstract ControllableVehicleType GetControllableVehicleType();
         
         protected void SetInputs(float newSteeringInput, float newAccelerationInput)
         {
