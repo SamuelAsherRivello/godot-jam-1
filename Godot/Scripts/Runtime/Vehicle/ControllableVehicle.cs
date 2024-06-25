@@ -4,10 +4,7 @@ using System;
 public partial class ControllableVehicle : VehicleBody3D
 {
     [Export]
-    private float EngineStrength = 10000;
-
-    [Export]
-    private float SteeringStrength = 1.0f;
+    private CarCharacteristics CarCharacteristics;
 
     public void SetInputs(float newSteeringInput, float newAccelerationInput)
     {
@@ -33,9 +30,9 @@ public partial class ControllableVehicle : VehicleBody3D
         ApplyExternalInput();
     }
 
-    private void ApplyExternalInput()
+    private void ApplyExternalInput()   
     {
-        Steering = _currentSteeringInput * SteeringStrength;
-        EngineForce = _currentAccelerationInput * EngineStrength;
+        Steering = _currentSteeringInput * CarCharacteristics.MaxSteeringValue;
+        EngineForce = _currentAccelerationInput * CarCharacteristics.MaxEngineStrength;
     }
 }
