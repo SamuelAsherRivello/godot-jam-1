@@ -30,7 +30,7 @@ sky = SubResource("Sky_yk50f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.89555e-05, 7.68323e-05, 0)
 script = ExtResource("1_47koa")
 _track = NodePath("Track01")
-_localPlayerController = NodePath("LocalPlayerController")
+_localPlayerController = NodePath("")
 
 [node name="Common" type="Node3D" parent="."]
 
@@ -47,4 +47,6 @@ environment = SubResource("Environment_dub50")
 
 [node name="Track01" parent="." instance=ExtResource("2_f6xoa")]
 
-[node name="LocalPlayerController" parent="." instance=ExtResource("3_qgkg0")]
+[node name="VehicleBody3D" parent="." instance=ExtResource("3_qgkg0")]
+mass = 1000.0
+SteeringStrength = 0.7
