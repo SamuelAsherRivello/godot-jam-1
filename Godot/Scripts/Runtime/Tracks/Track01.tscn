@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cbvmouma0cgm"]
 
-[ext_resource type="Script" path="res://_Working_Folder/Nodes/Tracks/Track.cs" id="1_hq0qh"]
-[ext_resource type="MeshLibrary" uid="uid://glbffrw2cube" path="res://_Working_Folder/Settings/MeshLibraries/Flow/FlowMeshLibrary_1x1.tres" id="2_twe6m"]
-[ext_resource type="MeshLibrary" uid="uid://gcwh8vkevmg0" path="res://_Working_Folder/Settings/MeshLibraries/Ground/GroundMeshLibrary_1x1.tres" id="2_yonee"]
+[ext_resource type="Script" path="res://Scripts/Runtime/Tracks/Track.cs" id="1_hq0qh"]
+[ext_resource type="MeshLibrary" uid="uid://glbffrw2cube" path="res://Settings/MeshLibraries/Flow/FlowMeshLibrary_1x1.tres" id="2_twe6m"]
+[ext_resource type="MeshLibrary" uid="uid://gcwh8vkevmg0" path="res://Settings/MeshLibraries/Ground/GroundMeshLibrary_1x1.tres" id="2_yonee"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ss5lb"]
 size = Vector3(199.866, 1, 200.042)
@@ -10,8 +10,10 @@ size = Vector3(199.866, 1, 200.042)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vhlj0"]
 albedo_color = Color(6.01634e-08, 0.287751, 6.73831e-07, 1)
 
-[node name="Track01" type="Node3D"]
+[node name="Track01" type="Node3D" node_paths=PackedStringArray("_groundGridmap", "_flowGridMap")]
 script = ExtResource("1_hq0qh")
+_groundGridmap = NodePath("GroundGridMap")
+_flowGridMap = NodePath("FlowGridMap")
 
 [node name="FlowGridMap" type="GridMap" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -5, 0)

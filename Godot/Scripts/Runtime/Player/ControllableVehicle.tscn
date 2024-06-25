@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://cem1ca750kaqv"]
 
-[ext_resource type="Script" path="res://_Working_Folder/Nodes/Player/ControllableVehicle.cs" id="1_me448"]
+[ext_resource type="Script" path="res://Scripts/Runtime/Player/ControllableVehicle.cs" id="1_me448"]
 [ext_resource type="Texture2D" uid="uid://bsojh8irv8uvu" path="res://addons/kenny.nl/kenney_car-kit/Models/GLB format/Textures/colormap.png" id="2_qqpjd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahokf"]

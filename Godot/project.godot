@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Godot"
-run/main_scene="res://_Working_Folder/Scenes/Main.tscn"
+run/main_scene="res://Scenes/Scene02_Game.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 

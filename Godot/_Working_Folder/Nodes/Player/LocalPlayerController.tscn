@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d13m5oadc4m4a"]
-
-[ext_resource type="Script" path="res://_Working_Folder/Nodes/Player/LocalPlayerController.cs" id="1_gd8re"]
-
-[node name="LocalPlayerController" type="Node3D"]
-script = ExtResource("1_gd8re")

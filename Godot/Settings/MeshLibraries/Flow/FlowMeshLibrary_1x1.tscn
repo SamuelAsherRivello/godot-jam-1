@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bhd3oqomnmmur"]
 
-[ext_resource type="PackedScene" uid="uid://b2c1fywbg235g" path="res://_Working_Folder/Settings/MeshLibraries/Ground/Meshes/1x1_road_straight_arrow.tscn" id="1_a2fer"]
+[ext_resource type="PackedScene" uid="uid://b2c1fywbg235g" path="res://Settings/MeshLibraries/Ground/Meshes/1x1_road_straight_arrow.tscn" id="1_a2fer"]
 
 [node name="Node3D" type="Node3D"]
 

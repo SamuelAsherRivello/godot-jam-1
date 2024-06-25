@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://prm3o27l4a1v"]
 
-[ext_resource type="PackedScene" uid="uid://dmnuaethi6f68" path="res://_Working_Folder/Settings/MeshLibraries/Ground/Meshes/1x1_road_corner_bridge_small.tscn" id="1_nimmv"]
-[ext_resource type="PackedScene" uid="uid://cmacw1pj4v4s3" path="res://_Working_Folder/Settings/MeshLibraries/Ground/Meshes/1x1_road_corner_large_sand_inner.tscn" id="2_okomt"]
-[ext_resource type="PackedScene" uid="uid://7n626pheom8n" path="res://_Working_Folder/Settings/MeshLibraries/Ground/Meshes/1x1_road_corner_small.tscn" id="3_bos2p"]
+[ext_resource type="PackedScene" uid="uid://dmnuaethi6f68" path="res://Settings/MeshLibraries/Ground/Meshes/1x1_road_corner_bridge_small.tscn" id="1_nimmv"]
+[ext_resource type="PackedScene" uid="uid://cmacw1pj4v4s3" path="res://Settings/MeshLibraries/Ground/Meshes/1x1_road_corner_large_sand_inner.tscn" id="2_okomt"]
+[ext_resource type="PackedScene" uid="uid://7n626pheom8n" path="res://Settings/MeshLibraries/Ground/Meshes/1x1_road_corner_small.tscn" id="3_bos2p"]
 [ext_resource type="PackedScene" uid="uid://duin0n6cabiqd" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadCornerSmallSquare.glb" id="4_jjg3e"]
 [ext_resource type="PackedScene" uid="uid://bf0aq2frg3p2d" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStraight.glb" id="5_ro2em"]
 [ext_resource type="PackedScene" uid="uid://ddl27w0vw4agt" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/roadStraightArrow.glb" id="6_xli2l"]

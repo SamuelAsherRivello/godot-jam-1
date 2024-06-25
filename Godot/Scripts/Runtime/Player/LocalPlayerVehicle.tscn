@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b688aut87f7pk"]
 
-[ext_resource type="Script" path="res://_Working_Folder/Nodes/Player/LocalPlayerController.cs" id="1_mqqov"]
-[ext_resource type="PackedScene" uid="uid://cem1ca750kaqv" path="res://_Working_Folder/Nodes/Player/ControllableVehicle.tscn" id="2_c0663"]
+[ext_resource type="Script" path="res://Scripts/Runtime/Player/LocalPlayerController.cs" id="1_mqqov"]
+[ext_resource type="PackedScene" uid="uid://cem1ca750kaqv" path="res://Scripts/Runtime/Player/ControllableVehicle.tscn" id="2_c0663"]
 
 [node name="LocalPlayerController" type="Node3D" node_paths=PackedStringArray("controllableVehicle")]
 script = ExtResource("1_mqqov")
@@ -9,5 +9,4 @@ controllableVehicle = NodePath("ControllableVehicle")
 
 [node name="ControllableVehicle" parent="." instance=ExtResource("2_c0663")]
 mass = 1000.0
-EngineStrength = 10000.0
 SteeringStrength = 0.7
