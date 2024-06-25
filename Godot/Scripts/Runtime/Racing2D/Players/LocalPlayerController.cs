@@ -1,23 +1,26 @@
 using Godot;
-using System;
+using RMC.Racing2D.Vehicles;
 
-public partial class LocalPlayerController : Node3D
+namespace RMC.Racing2D.Players
 {
-	[Export]
-	ControllableVehicle controllableVehicle;
-
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	public partial class LocalPlayerController : Node3D
 	{
-	}
+		[Export] ControllableVehicle controllableVehicle;
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+		// Called when the node enters the scene tree for the first time.
+		public override void _Ready()
+		{
+		}
 
-    public override void _PhysicsProcess(double delta)
-    {
-		controllableVehicle.SetInputs(Input.GetAxis("SteerRight", "SteerLeft"), Input.GetAxis("Brake", "Accelerate"));
-    }
+		// Called every frame. 'delta' is the elapsed time since the previous frame.
+		public override void _Process(double delta)
+		{
+		}
+
+		public override void _PhysicsProcess(double delta)
+		{
+			controllableVehicle.SetInputs(Input.GetAxis("SteerRight", "SteerLeft"),
+				Input.GetAxis("Brake", "Accelerate"));
+		}
+	}
 }

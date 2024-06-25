@@ -1,44 +1,45 @@
 using Godot;
-using System;
 
-public partial class ControllableVehicle : VehicleBody3D
+namespace RMC.Racing2D.Vehicles
 {
-    [Export]
-    private CarCharacteristics CarCharacteristics;
-
-    public void SetInputs(float newSteeringInput, float newAccelerationInput)
+    public partial class ControllableVehicle : VehicleBody3D
     {
-        _currentSteeringInput = newSteeringInput;
-        _currentAccelerationInput = newAccelerationInput;
-    }
+        [Export] private CarCharacteristics CarCharacteristics;
 
-    private float _currentSteeringInput = 0.0f;
-    private float _currentAccelerationInput = 0.0f;
+        public void SetInputs(float newSteeringInput, float newAccelerationInput)
+        {
+            _currentSteeringInput = newSteeringInput;
+            _currentAccelerationInput = newAccelerationInput;
+        }
 
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-    {
-        ApplyCharacteristics();
-    }
+        private float _currentSteeringInput = 0.0f;
+        private float _currentAccelerationInput = 0.0f;
 
-    private void ApplyCharacteristics()
-    {
-        Mass = CarCharacteristics.TotalMass;
-    }
+        // Called when the node enters the scene tree for the first time.
+        public override void _Ready()
+        {
+            ApplyCharacteristics();
+        }
 
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
-	{
-	}
+        private void ApplyCharacteristics()
+        {
+            Mass = CarCharacteristics.TotalMass;
+        }
 
-    public override void _PhysicsProcess(double delta)
-    {
-        ApplyExternalInput();
-    }
+        // Called every frame. 'delta' is the elapsed time since the previous frame.
+        public override void _Process(double delta)
+        {
+        }
 
-    private void ApplyExternalInput()   
-    {
-        Steering = _currentSteeringInput * CarCharacteristics.MaxSteeringValue;
-        EngineForce = _currentAccelerationInput * CarCharacteristics.MaxEngineStrength;
+        public override void _PhysicsProcess(double delta)
+        {
+            ApplyExternalInput();
+        }
+
+        private void ApplyExternalInput()
+        {
+            Steering = _currentSteeringInput * CarCharacteristics.MaxSteeringValue;
+            EngineForce = _currentAccelerationInput * CarCharacteristics.MaxEngineStrength;
+        }
     }
 }
