@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Scripts/Runtime/Racing2D/Scene02_Game.cs" id="1_47koa"]
 [ext_resource type="PackedScene" uid="uid://cbvmouma0cgm" path="res://Scripts/Runtime/Racing2D/Tracks/Track01.tscn" id="2_f6xoa"]
-[ext_resource type="PackedScene" path="res://Scripts/Runtime/Racing2D/Audio/AudioManager.tscn" id="2_u47hh"]
-[ext_resource type="PackedScene" uid="uid://b85d2cqyrnwli" path="res://Scripts/Runtime/Racing2D/Players/AIControllableVehicle.tscn" id="3_psioc"]
-[ext_resource type="PackedScene" uid="uid://du5b0hbv2x1v8" path="res://Scripts/Runtime/Racing2D/Players/LocalPlayerControllableVehicle.tscn" id="4_hjnbc"]
+[ext_resource type="PackedScene" uid="uid://dwa3u1c4aucxb" path="res://Scripts/Runtime/Racing2D/Audio/AudioManager.tscn" id="2_u47hh"]
+[ext_resource type="PackedScene" uid="uid://bjw7l7psnaab6" path="res://Scripts/Runtime/Racing2D/Players/AIControllableVehicle.tscn" id="3_psioc"]
+[ext_resource type="PackedScene" uid="uid://dmv2lcqk1bdde" path="res://Scripts/Runtime/Racing2D/Players/LocalPlayerControllableVehicle.tscn" id="4_hjnbc"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_hrp32"]
 
@@ -28,12 +28,11 @@ sky_material = SubResource("ProceduralSkyMaterial_ex4cq")
 background_mode = 2
 sky = SubResource("Sky_yk50f")
 
-[node name="Scene02_Game" type="Node3D" node_paths=PackedStringArray("_track", "_controllableVehicle", "_vehiclesNode")]
+[node name="Scene02_Game" type="Node3D" node_paths=PackedStringArray("_track", "_controllableVehicle")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.89555e-05, 7.68323e-05, 0)
 script = ExtResource("1_47koa")
 _track = NodePath("Track01")
 _controllableVehicle = NodePath("Vehicles/LocalPlayerControllableVehicle")
-_vehiclesNode = NodePath("Vehicles")
 
 [node name="Common" type="Node3D" parent="."]
 
