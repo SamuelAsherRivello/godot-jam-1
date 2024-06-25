@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://by0iu8ateqs2d"]
 
-[ext_resource type="Script" path="res://Scripts/Runtime/Vehicle/CarCharacteristics.cs" id="1_xeeau"]
+[ext_resource type="Script" path="res://Scripts/Runtime/Racing2D/Vehicles/CarCharacteristics.cs" id="1_xeeau"]
 
 [resource]
 script = ExtResource("1_xeeau")

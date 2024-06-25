@@ -1,14 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://b688aut87f7pk"]
+[gd_scene load_steps=15 format=3 uid="uid://cem1ca750kaqv"]
 
-[ext_resource type="Script" path="res://Scripts/Runtime/Vehicle/ControllableVehicle.cs" id="1_lpet6"]
-[ext_resource type="Script" path="res://Scripts/Runtime/Player/LocalPlayerController.cs" id="1_mqqov"]
-[ext_resource type="Resource" uid="uid://bs8fc3ix1upwg" path="res://Scripts/Runtime/Vehicle/CarCharacteristics/DefaultRaceCar.tres" id="2_flqaa"]
-[ext_resource type="Texture2D" uid="uid://bsojh8irv8uvu" path="res://addons/kenny.nl/kenney_car-kit/Models/GLB format/Textures/colormap.png" id="2_qqr0s"]
+[ext_resource type="Script" path="res://Scripts/Runtime/Racing2D/Vehicles/ControllableVehicle.cs" id="1_me448"]
+[ext_resource type="Texture2D" uid="uid://bsojh8irv8uvu" path="res://addons/kenny.nl/kenney_car-kit/Models/GLB format/Textures/colormap.png" id="2_qqpjd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahokf"]
 resource_name = "colormap"
 cull_mode = 2
-albedo_texture = ExtResource("2_qqr0s")
+albedo_texture = ExtResource("2_qqpjd")
 texture_filter = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_k1d8i"]
@@ -184,9 +182,8 @@ shadow_mesh = SubResource("ArrayMesh_djtrn")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0xktb"]
 points = PackedVector3Array(0.6, 0.0999341, 0.165373, 0.6, 0, 0.165373, 0.6, 0.0999341, -0.43473, 0.549961, 0.388529, 0.165373, 0.449883, 0.149963, 1.27989, 0.6, 0, -0.43473, 0.449883, 0, 1.27989, 0.349922, 0.536016, -1.27989, 0.549961, 0.388529, 0.0653974, 0.0669538, 0.632544, -0.103233, -0.450117, 0.149963, 1.27989, 0.349922, 0, -1.23002, 0.349922, 0.049967, -1.27989, -0.450117, 0, 1.27989, -0.350039, 0.536016, -1.27989, 0.0669538, 0.632544, -0.203208, -0.0670713, 0.632544, -0.103233, -0.550078, 0.388529, 0.165373, -0.6, 0.0999341, 0.165373, -0.350039, 0, -1.23002, -0.350039, 0.049967, -1.27989, -0.6, 0, 0.165373, -0.0670713, 0.632544, -0.203208, -0.6, 0.0999341, -0.43473, -0.550078, 0.388529, 0.0653974, -0.6, 0, -0.43473)
 
-[node name="ControllableVehicle" type="VehicleBody3D"]
-script = ExtResource("1_lpet6")
-CarCharacteristics = ExtResource("2_flqaa")
+[node name="VehicleBody3D" type="VehicleBody3D"]
+script = ExtResource("1_me448")
 
 [node name="back_left" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.3, -0.9)
@@ -240,7 +237,3 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.34997e-13, 0.1, -3.60956e-16)
 shape = SubResource("ConvexPolygonShape3D_0xktb")
-
-[node name="LocalPlayerController" type="Node3D" parent="." node_paths=PackedStringArray("controllableVehicle")]
-script = ExtResource("1_mqqov")
-controllableVehicle = NodePath("..")

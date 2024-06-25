@@ -24,6 +24,10 @@ general/uses_dotnet=true
 
 project/assembly_name="Godot"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/RMC Mingleton/plugin.cfg")
+
 [input]
 
 SteerLeft={
