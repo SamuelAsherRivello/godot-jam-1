@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bk7df4tl4ql7k"]
+[gd_scene load_steps=10 format=3 uid="uid://bk7df4tl4ql7k"]
 
 [ext_resource type="Script" path="res://Scripts/Runtime/Racing2D/Scene02_Game.cs" id="1_47koa"]
 [ext_resource type="PackedScene" uid="uid://cbvmouma0cgm" path="res://Scripts/Runtime/Racing2D/Tracks/Track01.tscn" id="2_f6xoa"]
-[ext_resource type="PackedScene" uid="uid://b688aut87f7pk" path="res://Scripts/Runtime/Racing2D/Players/LocalPlayerVehicle.tscn" id="3_qgkg0"]
+[ext_resource type="PackedScene" uid="uid://b85d2cqyrnwli" path="res://Scripts/Runtime/Racing2D/Players/AIControllableVehicle.tscn" id="3_psioc"]
+[ext_resource type="PackedScene" uid="uid://du5b0hbv2x1v8" path="res://Scripts/Runtime/Racing2D/Players/LocalPlayerControllableVehicle.tscn" id="4_hjnbc"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_hrp32"]
 
@@ -30,7 +31,7 @@ sky = SubResource("Sky_yk50f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.89555e-05, 7.68323e-05, 0)
 script = ExtResource("1_47koa")
 _track = NodePath("Track01")
-_controllableVehicle = NodePath("Vehicles/ControllableVehicle")
+_controllableVehicle = NodePath("")
 
 [node name="Common" type="Node3D" parent="."]
 
@@ -49,5 +50,7 @@ environment = SubResource("Environment_dub50")
 
 [node name="Vehicles" type="Node3D" parent="."]
 
-[node name="ControllableVehicle" parent="Vehicles" instance=ExtResource("3_qgkg0")]
-mass = 1000.0
+[node name="LocalPlayerControllableVehicle" parent="Vehicles" instance=ExtResource("4_hjnbc")]
+
+[node name="AIControllableVehicle" parent="Vehicles" instance=ExtResource("3_psioc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)

@@ -1,4 +1,5 @@
 using Godot;
+using RMC.Racing2D.Players;
 
 namespace RMC.Racing2D.Vehicles
 {
@@ -6,10 +7,10 @@ namespace RMC.Racing2D.Vehicles
     {
         [Export] private CarCharacteristics CarCharacteristics;
 
-        public void SetInputs(float newSteeringInput, float newAccelerationInput)
+        protected void SetInputs(float newSteeringInput, float newAccelerationInput)
         {
-            _currentSteeringInput = newSteeringInput;
-            _currentAccelerationInput = newAccelerationInput;
+            _currentSteeringInput = Mathf.Clamp(newSteeringInput, -1.0f, 1.0f);
+            _currentAccelerationInput = Mathf.Clamp(newAccelerationInput, -1.0f, 1.0f);
         }
 
         private float _currentSteeringInput = 0.0f;

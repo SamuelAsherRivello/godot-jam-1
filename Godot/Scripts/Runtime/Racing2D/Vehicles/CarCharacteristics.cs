@@ -2,6 +2,7 @@ using Godot;
 
 namespace RMC.Racing2D.Vehicles
 {
+    [GlobalClass, Tool]
     public partial class CarCharacteristics : Resource
     {
         [Export(PropertyHint.Range, "0.1f, 100000.0f")]
