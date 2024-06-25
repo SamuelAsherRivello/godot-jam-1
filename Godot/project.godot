@@ -15,6 +15,11 @@ run/main_scene="res://Scenes/Scene02_Game.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[dialogue_manager]
+
+general/custom_test_scene_path="res://addons/dialogue_manager/test_scene.tscn"
+general/uses_dotnet=true
+
 [dotnet]
 
 project/assembly_name="Godot"
