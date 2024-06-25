@@ -37,8 +37,6 @@ namespace RMC.Racing2D.Audio
         {
             AudioStreamPlayer3D audioStreamPlayer3D = GetAvailableAudioStreamPlayer3D();
             audioStreamPlayer3D.Stream = GetOrCreateCachedAudioStream(fileName);
-        
-            GD.Print("AudioManager.PlayAudio() = " + fileName);
             audioStreamPlayer3D.Play();
         }
         

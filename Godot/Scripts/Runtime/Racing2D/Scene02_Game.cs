@@ -1,7 +1,5 @@
 using Godot;
 using System;
-using RMC.Mingletons;
-using RMC.Racing2D.Audio;
 using RMC.Racing2D.Players;
 using RMC.Racing2D.Vehicles;
 
@@ -9,7 +7,7 @@ namespace RMC.Racing2D
 {
     public partial class Scene02_Game : Node3D
     {
-
+    
         [Export] private Track _track;
 
         [Export] private ControllableVehicle _controllableVehicle;
@@ -38,7 +36,6 @@ namespace RMC.Racing2D
             if (Math.Abs(_lastRotationInDegrees - rotationInDegrees) > 0.1f)
             {
                 GD.Print("rotationInDegrees: " + rotationInDegrees);
-                Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("Coin01.mp3");
                 _lastRotationInDegrees = rotationInDegrees;
             }
         }
