@@ -6,3 +6,4 @@
 script = ExtResource("1_xeeau")
 _MaxEngineStrength = 20000.0
 _MaxSteeringValue = 0.5
+_TotalMass = 0.8

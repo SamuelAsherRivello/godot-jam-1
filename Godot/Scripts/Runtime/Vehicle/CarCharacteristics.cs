@@ -9,6 +9,10 @@ public partial class CarCharacteristics : Resource
     [Export(PropertyHint.Range, "0.1f, 2.0f")]
     private float _MaxSteeringValue = 1.0f;
 
-    public float MaxEngineStrength { get => _MaxEngineStrength; set => _MaxEngineStrength = value; }
-    public float MaxSteeringValue { get => _MaxSteeringValue; set => _MaxSteeringValue = value; }
+    [Export(PropertyHint.Range, "0.1f, 10000.0f")]
+    private float _TotalMass = 1.0f;
+
+    public float MaxEngineStrength { get => _MaxEngineStrength; }
+    public float MaxSteeringValue { get => _MaxSteeringValue; }
+    public float TotalMass { get => _TotalMass; }
 }
