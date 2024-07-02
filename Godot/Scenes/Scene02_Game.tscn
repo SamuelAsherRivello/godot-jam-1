@@ -29,12 +29,12 @@ sky_material = SubResource("ProceduralSkyMaterial_ex4cq")
 background_mode = 2
 sky = SubResource("Sky_yk50f")
 
-[node name="Scene02_Game" type="Node3D" node_paths=PackedStringArray("_gameView", "_track", "_controllableVehicle", "_vehiclesNode")]
+[node name="Scene02_Game" type="Node3D" node_paths=PackedStringArray("_gameView", "_track", "_controllablePlayerVehicle", "_vehiclesNode")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.89555e-05, 7.68323e-05, 0)
 script = ExtResource("1_47koa")
 _gameView = NodePath("GameView")
 _track = NodePath("Track01")
-_controllableVehicle = NodePath("Vehicles/LocalPlayerControllableVehicle")
+_controllablePlayerVehicle = NodePath("Vehicles/LocalPlayerControllableVehicle")
 _vehiclesNode = NodePath("Vehicles")
 
 [node name="GameView" parent="." instance=ExtResource("2_ns2w0")]
@@ -55,10 +55,19 @@ environment = SubResource("Environment_dub50")
 [node name="AudioManager" parent="Common" instance=ExtResource("2_u47hh")]
 
 [node name="Track01" parent="." instance=ExtResource("2_f6xoa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.855691, 0.294429, -0.27113)
 
 [node name="Vehicles" type="Node3D" parent="."]
 
 [node name="LocalPlayerControllableVehicle" parent="Vehicles" instance=ExtResource("4_hjnbc")]
 
 [node name="AIControllableVehicle" parent="Vehicles" instance=ExtResource("3_psioc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6671, 0, 0)
+
+[node name="AIControllableVehicle2" parent="Vehicles" node_paths=PackedStringArray("_collisionArea3D") instance=ExtResource("3_psioc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.16496, 0, -7.12246)
+_collisionArea3D = NodePath("../AIControllableVehicle/CollisionArea3D")
+
+[node name="AIControllableVehicle3" parent="Vehicles" node_paths=PackedStringArray("_collisionArea3D") instance=ExtResource("3_psioc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.62822, 0, -3.97927)
+_collisionArea3D = NodePath("../AIControllableVehicle/CollisionArea3D")

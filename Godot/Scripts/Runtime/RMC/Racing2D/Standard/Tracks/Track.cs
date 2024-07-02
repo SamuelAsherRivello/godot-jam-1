@@ -37,6 +37,14 @@ namespace RMC.Racing2D.Players
             }
         }
 
+        public bool HasGridDirectionalInformation(GridMap gridMap, Vector3 position)
+        {
+            Vector3I cell = GetGridCellAtPosition(gridMap, position);
+            int itemIndex = gridMap.GetCellItem(cell);
+
+            return itemIndex != GridMap.InvalidCellItem;
+        }
+
         // Get the rotation in degrees for the cell at the given position in the given GridMap
         public float GetMeshRotationInDegreesAtPosition(GridMap gridMap, Vector3 position)
         {

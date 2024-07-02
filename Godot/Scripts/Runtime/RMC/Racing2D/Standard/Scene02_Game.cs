@@ -21,7 +21,7 @@ namespace RMC.Racing2D.Standard
         private Track _track;
 
         [Export] 
-        private ControllableVehicle _controllableVehicle;
+        private ControllableVehicle _controllablePlayerVehicle;
 
         [Export] 
         private Node3D _vehiclesNode;
@@ -39,7 +39,7 @@ namespace RMC.Racing2D.Standard
         {
             GD.Print($"Scene02_Game._Ready()");
             AddFeature();
-            SetupControllableVehicle();
+            SetupControllableVehicles();
         }
 
 
@@ -50,9 +50,9 @@ namespace RMC.Racing2D.Standard
         {
             base._Process(delta);
 
-            var meshName = _track.GetMeshNameAtPosition(_track.FlowGridMap, _controllableVehicle.Position);
+            var meshName = _track.GetMeshNameAtPosition(_track.FlowGridMap, _controllablePlayerVehicle.Position);
             var rotationInDegrees =
-                _track.GetMeshRotationInDegreesAtPosition(_track.FlowGridMap, _controllableVehicle.Position);
+                _track.GetMeshRotationInDegreesAtPosition(_track.FlowGridMap, _controllablePlayerVehicle.Position);
 
             if (_lastMeshName != meshName)
             {
@@ -80,7 +80,7 @@ namespace RMC.Racing2D.Standard
 
         
         //  Methods ---------------------------------------
-        public void SetupControllableVehicle()
+        public void SetupControllableVehicles()
         {
             foreach (var node in _vehiclesNode.GetChildren())
             {
@@ -88,6 +88,11 @@ namespace RMC.Racing2D.Standard
                 {
                     _controllableVehicles.Add((ControllableVehicle)node);
                 }
+            }
+
+            foreach (var vehicle in _controllableVehicles)
+            {
+                vehicle.SetupForRace(_track);
             }
         }
 

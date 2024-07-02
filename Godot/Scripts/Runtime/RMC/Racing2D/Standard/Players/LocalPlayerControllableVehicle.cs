@@ -19,11 +19,12 @@ namespace RMC.Racing2D.Players
 
 		public override void _PhysicsProcess(double delta)
 		{
-            SetInputs(Input.GetAxis("SteerRight", "SteerLeft"),
+			SetInputs(Input.GetAxis("SteerRight", "SteerLeft"),
                 Input.GetAxis("Brake", "Accelerate"));
 
             base._PhysicsProcess(delta);
 		}
+
 
         public override ControllableVehicleType GetControllableVehicleType()
         {

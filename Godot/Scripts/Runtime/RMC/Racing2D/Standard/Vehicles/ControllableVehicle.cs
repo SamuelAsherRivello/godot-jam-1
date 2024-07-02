@@ -1,6 +1,7 @@
 using Godot;
 using RMC.Mingletons;
 using RMC.Racing2D.Audio;
+using RMC.Racing2D.Players;
 
 namespace RMC.Racing2D.Vehicles
 {
@@ -16,7 +17,7 @@ namespace RMC.Racing2D.Vehicles
         }
 
         public abstract ControllableVehicleType GetControllableVehicleType();
-        
+
         protected void SetInputs(float newSteeringInput, float newAccelerationInput)
         {
             _currentSteeringInput = Mathf.Clamp(newSteeringInput, -1.0f, 1.0f);
@@ -25,6 +26,14 @@ namespace RMC.Racing2D.Vehicles
 
         private float _currentSteeringInput = 0.0f;
         private float _currentAccelerationInput = 0.0f;
+        private Track _track;
+
+        protected Track GetTrack() { return _track; }
+
+        public void SetupForRace(Track newTrack)
+        {
+            _track = newTrack;
+        }
 
         // Called when the node enters the scene tree for the first time.
         public override void _Ready()
