@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cbvmouma0cgm"]
 
-[ext_resource type="Script" path="res://Scripts/Runtime/Racing2D/Tracks/Track.cs" id="1_hq0qh"]
+[ext_resource type="Script" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Tracks/Track.cs" id="1_hq0qh"]
 [ext_resource type="MeshLibrary" uid="uid://glbffrw2cube" path="res://Settings/MeshLibraries/Flow/FlowMeshLibrary_1x1.tres" id="2_twe6m"]
 [ext_resource type="MeshLibrary" uid="uid://gcwh8vkevmg0" path="res://Settings/MeshLibraries/Ground/GroundMeshLibrary_1x1.tres" id="2_yonee"]
 
