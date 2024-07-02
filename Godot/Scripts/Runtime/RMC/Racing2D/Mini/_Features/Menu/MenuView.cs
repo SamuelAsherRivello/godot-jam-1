@@ -17,18 +17,31 @@ namespace RMC.Racing2D.Mini.Features.Menu
     {
         //  Events ----------------------------------------
         public readonly RmcEvent OnPlayGame = new RmcEvent();
+        public readonly RmcEvent OnChangePlayer = new RmcEvent();
+        public readonly RmcEvent OnChangeEnemy = new RmcEvent();
         
         //  Properties ------------------------------------
         public bool IsInitialized { get { return _isInitialized;} }
         public IContext Context { get { return _context;} }
-        public Button PlayGameButton { get { return _playGameButton; }}
         
         //  Fields ----------------------------------------
         private bool _isInitialized = false;
         private IContext _context;
-
+        
+        [Export] 
+        private Label _titleLabel;
+        
+        [Export] 
+        private Label _statusLabel;
+        
         [Export] 
         private Button _playGameButton;
+        
+        [Export] 
+        private Button _changePlayerButton;
+        
+        [Export] 
+        private Button _changeEnemyButton;
 
         //  Initialization  -------------------------------
         public void Initialize(IContext context)
@@ -38,7 +51,9 @@ namespace RMC.Racing2D.Mini.Features.Menu
                 _isInitialized = true;
                 _context = context;
                 
-                PlayGameButton.Pressed += PlayGameButton_OnPressed;
+                _playGameButton.Pressed += PlayGameButton_OnPressed;
+                _changePlayerButton.Pressed += ChangePlayerButton_OnPressed;
+                _changeEnemyButton.Pressed += ChangeEnemyButton_OnPressed;
                 
                 RefreshUI();
             }
@@ -97,6 +112,16 @@ namespace RMC.Racing2D.Mini.Features.Menu
         private void PlayGameButton_OnPressed()
         {
             OnPlayGame.Invoke();
+        }
+        
+        private void ChangePlayerButton_OnPressed()
+        {
+            OnChangePlayer.Invoke();
+        }
+        
+        private void ChangeEnemyButton_OnPressed()
+        {
+            OnChangeEnemy.Invoke();
         }
     }
 }

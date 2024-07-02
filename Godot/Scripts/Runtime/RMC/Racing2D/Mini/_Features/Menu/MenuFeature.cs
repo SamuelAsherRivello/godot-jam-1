@@ -1,5 +1,4 @@
 ﻿using RMC.Mini;
-using RMC.Mini.Examples.MultiScene.Mini.Feature.Hud;
 using RMC.Mini.Features;
 using RMC.Mini.Service;
 using RMC.Racing2D.Mini.Model;
