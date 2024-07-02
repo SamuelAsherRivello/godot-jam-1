@@ -1,4 +1,3 @@
-
 using Godot;
 
 namespace RMC.Mingletons.Samples.Example01_Mingleton

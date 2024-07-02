@@ -4,15 +4,25 @@ using RMC.Core.Debug;
 
 namespace RMC.Mingletons
 {
+    public interface ISingletonLookup : IDisposable
+    {
+        //  Properties ----------------------------------------
+        
+        //  Methods -------------------------------------------
+        void AddSingleton<T>(T instance, string key = "") where T : class;
+        bool HasSingleton<T>(string key = "") where T : class;
+        T GetSingleton<T>(string key = "") where T : class;
+        void RemoveSingleton<T>(string key = "") where T : class;
+    }
+    
     public class SingletonLookup : ISingletonLookup
     {
         private Dictionary<Type, Dictionary<string, object>> _singletons = new Dictionary<Type, Dictionary<string, object>>();
-        private Logger _logger;
+        private ILogger _logger;
 
         public SingletonLookup(bool isLoggerEnabled)
         {
-            _logger = new Logger(isLoggerEnabled);
-            _logger.Prefix = "[SingletonLookup]";
+            _logger = new Logger(isLoggerEnabled) { Prefix = "[SingletonLookup]" };
         }
 
         public void AddSingleton<T>(T instance, string key = "") where T : class
@@ -25,12 +35,12 @@ namespace RMC.Mingletons
 
             if (_singletons[type].ContainsKey(key))
             {
-                _logger.GDPrintErr($"AddSingleton() Type = '{type.Name}', Key = '{key}'.");
+                _logger.PrintErr($"AddSingleton() Type = '{type.Name}', Key = '{key}'.");
             }
             else
             {
                 _singletons[type][key] = instance;
-                _logger.GDPrint($"AddSingleton() Type = '{type.Name}', Key = '{key}'.");
+                _logger.Print($"AddSingleton() Type = '{type.Name}', Key = '{key}'.");
             }
         }
 
@@ -57,17 +67,17 @@ namespace RMC.Mingletons
             if (_singletons.ContainsKey(type) && _singletons[type].ContainsKey(key))
             {
                 _singletons[type].Remove(key);
-                _logger.GDPrint($"RemoveSingleton() Type = '{type.Name}', Key = '{key}'.");
+                _logger.Print($"RemoveSingleton() Type = '{type.Name}', Key = '{key}'.");
             }
             else
             {
-                _logger.GDPrintErr($"RemoveSingleton() Type = '{type.Name}', Key = '{key}'.");
+                _logger.PrintErr($"RemoveSingleton() Type = '{type.Name}', Key = '{key}'.");
             }
         }
 
         public void Dispose()
         {
-            _singletons = null;
+            _singletons.Clear();
             _logger = null;
         }
     }

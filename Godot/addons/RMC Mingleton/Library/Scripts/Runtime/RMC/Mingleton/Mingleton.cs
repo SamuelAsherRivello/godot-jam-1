@@ -60,7 +60,7 @@ namespace RMC.Mingletons
         private static TaskCompletionSource<bool> _onReadyFinishedTask;
         private ISingletonLookup _singletonLookup;
         private bool _isCallingOnReadyInternally { get; set; } = false;
-        private Logger _logger;
+        private ILogger _logger;
 
         public Mingleton()
         {
@@ -77,6 +77,7 @@ namespace RMC.Mingletons
         {
             if (__instance != null)
             {
+                __instance.QueueFree();
                 __instance.Dispose();
                 __instance = null;
             }
@@ -97,13 +98,13 @@ namespace RMC.Mingletons
             {
                 if (Instance != this)
                 {
-                    _logger.GDPrint($"QueueFree() for {Instance}");
+                    _logger.Print($"QueueFree() for {Instance}");
                     Instance.QueueFree();
                     Instance = this;
                 }
             }
 
-            _logger.GDPrint($"_Ready() GetTree()= {Instance.GetTree()}");
+            _logger.Print($"_Ready() GetTree()= {Instance.GetTree()}");
             _onReadyFinishedTask?.SetResult(true);
         }
 
@@ -170,7 +171,7 @@ namespace RMC.Mingletons
             else
             {
                 await _onReadyFinishedTask.Task;
-                __instance._logger.GDPrint("Instantiate()");
+                __instance._logger.Print("Instantiate()");
             }
         }
 
@@ -216,7 +217,7 @@ namespace RMC.Mingletons
             else
             {
                 T newInstance = new T();
-                _logger.GDPrint($"GetOrCreateAsClass() Type = '{type.Name}', Key = '{key}'.");
+                _logger.Print($"GetOrCreateAsClass() Type = '{type.Name}', Key = '{key}'.");
                 _singletonLookup.AddSingleton(newInstance, key);
                 return newInstance;
             }
@@ -295,19 +296,19 @@ namespace RMC.Mingletons
                     _singletonLookup.AddSingleton(newInstance, foundFilePath);
                 }
 
-                _logger.GDPrint($"GetOrCreateAsResource() Type = '{type.Name}', Key = '{filePathAndKey}'.");
+                _logger.Print($"GetOrCreateAsResource() Type = '{type.Name}', Key = '{filePathAndKey}'.");
                 return newInstance;
             }
         }
 
         private void GDPrint(string message)
         {
-            _logger.GDPrint(message);
+            _logger.Print(message);
         }
 
         private void GDPrintErr(string message)
         {
-            _logger.GDPrintErr(message);
+            _logger.PrintErr(message);
         }
     }
 }

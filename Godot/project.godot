@@ -26,7 +26,7 @@ project/assembly_name="Godot"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/RMC Mingleton/plugin.cfg")
+enabled=PackedStringArray("res://addons/RMC Core/plugin.cfg", "res://addons/RMC Mingleton/plugin.cfg", "res://addons/RMC Mini Mvcs/plugin.cfg")
 
 [input]
 

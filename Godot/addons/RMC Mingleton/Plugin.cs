@@ -1,33 +1,32 @@
 #if TOOLS
 using Godot;
+using RMC.Core.Debug;
 
 namespace RMC.Mingletons
 {
     [Tool]
     public partial class Plugin : EditorPlugin
     {
+        private const string PluginName = "RMC Mingleton";
+        private const bool IsLoggerEnabled = true;
+        private static readonly ILogger _logger = _logger = new Logger(IsLoggerEnabled) { Prefix = $"[{PluginName}]" };
         
-        private const string pathRMC = "RMC";
-        private const string pathRMCMingleton = "RMC/RMC Mingleton";
-        private const string pathRMCMingleton2 = "RMC/RMC Mingleton/Test";
         public override void _EnterTree()
         {
-            AddToolMenuItem(pathRMC, new Callable(this, "OnTest"));
-            AddToolSubmenuItem(pathRMCMingleton, new PopupMenu());
-            AddToolSubmenuItem(pathRMCMingleton2, new PopupMenu());
+            _logger.PrintEmptyLine();
+            _logger.PrintHeader(PluginName);
+            _logger.Print($"Plugin enabled.");
+            _logger.PrintDivider();
         }
 
         public override void _ExitTree()
         {
-            RemoveToolMenuItem(pathRMC);
-            RemoveToolMenuItem(pathRMCMingleton);
-            RemoveToolMenuItem(pathRMCMingleton2);
-        }
-
-        private void OnTest()
-        {
-            GD.Print("OnTest");
+            _logger.PrintEmptyLine();
+            _logger.PrintHeader(PluginName);
+            _logger.Print($"Plugin disabled.");
+            _logger.PrintDivider();
         }
     }
 }
+
 #endif
