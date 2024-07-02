@@ -84,7 +84,7 @@ namespace RMC.Mini.Examples.MultiScene.Mini.Feature.Hud
             
             // Demonstrates proper Controller-to-Controller communication with a Command
             Context.CommandManager.InvokeCommand(
-                new LoadSceneRequestCommand(MultiSceneMiniConstants.Scene01_Menu, LoadSceneMode.Single));
+                new LoadSceneRequestCommand(MultiSceneMiniConstants.Scene01_Menu2, LoadSceneMode.Single));
         }
 
         

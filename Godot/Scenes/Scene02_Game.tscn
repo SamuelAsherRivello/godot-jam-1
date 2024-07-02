@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bk7df4tl4ql7k"]
+[gd_scene load_steps=12 format=3 uid="uid://bk7df4tl4ql7k"]
 
 [ext_resource type="Script" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Scene02_Game.cs" id="1_47koa"]
 [ext_resource type="PackedScene" uid="uid://cbvmouma0cgm" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Tracks/Track01.tscn" id="2_f6xoa"]
+[ext_resource type="PackedScene" uid="uid://bbq07kbbnlimk" path="res://Scripts/Runtime/RMC/Racing2D/Mini/_Features/Game/GameView.tscn" id="2_ns2w0"]
 [ext_resource type="PackedScene" uid="uid://dwa3u1c4aucxb" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Audio/AudioManager.tscn" id="2_u47hh"]
 [ext_resource type="PackedScene" uid="uid://b85d2cqyrnwli" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Players/AIControllableVehicle.tscn" id="3_psioc"]
 [ext_resource type="PackedScene" uid="uid://dmv2lcqk1bdde" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Players/LocalPlayerControllableVehicle.tscn" id="4_hjnbc"]
@@ -28,12 +29,15 @@ sky_material = SubResource("ProceduralSkyMaterial_ex4cq")
 background_mode = 2
 sky = SubResource("Sky_yk50f")
 
-[node name="Scene02_Game" type="Node3D" node_paths=PackedStringArray("_track", "_controllableVehicle", "_vehiclesNode")]
+[node name="Scene02_Game" type="Node3D" node_paths=PackedStringArray("_gameView", "_track", "_controllableVehicle", "_vehiclesNode")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.89555e-05, 7.68323e-05, 0)
 script = ExtResource("1_47koa")
+_gameView = NodePath("GameView")
 _track = NodePath("Track01")
 _controllableVehicle = NodePath("Vehicles/LocalPlayerControllableVehicle")
 _vehiclesNode = NodePath("Vehicles")
+
+[node name="GameView" parent="." instance=ExtResource("2_ns2w0")]
 
 [node name="Common" type="Node3D" parent="."]
 
@@ -57,4 +61,4 @@ environment = SubResource("Environment_dub50")
 [node name="LocalPlayerControllableVehicle" parent="Vehicles" instance=ExtResource("4_hjnbc")]
 
 [node name="AIControllableVehicle" parent="Vehicles" instance=ExtResource("3_psioc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)

@@ -1,36 +1,51 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using RMC.Mingletons;
+using RMC.Mini.Features.SceneSystem;
 using RMC.Racing2D.Players;
 using RMC.Racing2D.Vehicles;
-using System.Collections.Generic;
+using RMC.Racing2D.Mini;
+using RMC.Racing2D.Mini.Features.Game;
 
-namespace RMC.Racing2D
+
+namespace RMC.Racing2D.Standard
 {
     public partial class Scene02_Game : Node3D
     {
+        //  Fields ----------------------------------------
+        [Export] 
+        private GameView _gameView;
 
-        [Export] private Track _track;
+        [Export] 
+        private Track _track;
 
-        [Export] private ControllableVehicle _controllableVehicle;
+        [Export] 
+        private ControllableVehicle _controllableVehicle;
 
-        [Export] private Node3D _vehiclesNode;
-
-        private List<ControllableVehicle> _controllableVehicles = new List<ControllableVehicle>();
-
-        public override void _Ready()
-        {
-            foreach (var node in _vehiclesNode.GetChildren())
-            {
-                if (node is ControllableVehicle)
-                {
-                    _controllableVehicles.Add((ControllableVehicle)node);
-                }
-            }
-        }
+        [Export] 
+        private Node3D _vehiclesNode;
 
         private string _lastMeshName = "";
         private float _lastRotationInDegrees = -1;
+        private List<ControllableVehicle> _controllableVehicles = new List<ControllableVehicle>();
 
+        //  Godot Methods ---------------------------------
+
+        /// <summary>
+        /// Called when the node enters the scene tree for the first time.
+        /// </summary>
+        public override void _Ready()
+        {
+            GD.Print($"Scene02_Game._Ready()");
+            AddFeature();
+            SetupControllableVehicle();
+        }
+
+
+        /// <summary>
+        /// Called every frame. 'delta' is the elapsed time since the previous frame.
+        /// </summary>
         public override void _Process(double delta)
         {
             base._Process(delta);
@@ -51,5 +66,57 @@ namespace RMC.Racing2D
                 _lastRotationInDegrees = rotationInDegrees;
             }
         }
+
+
+        /// <summary>
+        /// Called when the node is about to leave the SceneTree
+        /// </summary>
+        public override void _ExitTree()
+        {
+            RemoveFeature();
+
+            // Optional: Handle any cleanup here...
+        }
+
+        
+        //  Methods ---------------------------------------
+        public void SetupControllableVehicle()
+        {
+            foreach (var node in _vehiclesNode.GetChildren())
+            {
+                if (node is ControllableVehicle)
+                {
+                    _controllableVehicles.Add((ControllableVehicle)node);
+                }
+            }
+        }
+
+        private void AddFeature()
+        {
+            Racing2DMini mini = Mingleton.Instance.GetOrCreateAsClass<Racing2DMini>();
+
+            //  Scene-Specific ----------------------------
+            GameFeature gameFeature = new GameFeature();
+            gameFeature.AddView(_gameView);
+            mini.AddFeature<GameFeature>(gameFeature);
+
+            //  Scene-Agnostic (Permanent) -----------------
+            if (!mini.HasFeature<SceneSystemFeature>())
+            {
+                SceneSystemFeature sceneSystemFeature = new SceneSystemFeature();
+                mini.AddFeature<SceneSystemFeature>(sceneSystemFeature);
+            }
+        }
+
+        private void RemoveFeature()
+        {
+            Racing2DMini mini = Mingleton.Instance.GetOrCreateAsClass<Racing2DMini>();
+
+            //  Scene-Specific ----------------------------
+            mini.RemoveFeature<GameFeature>();
+
+        }
     }
 }
+        
+        

@@ -8,7 +8,7 @@ namespace RMC.Mini.Examples.MultiScene.Standard
     {
         //  Fields ----------------------------------------
         private const string SceneExtension = ".tscn";
-        public const string Scene01_Menu = nameof(Scene01_Menu) + SceneExtension;
+        public const string Scene01_Menu2 = nameof(Scene01_Menu2) + SceneExtension;
         public const string Scene02_Game2 = nameof(Scene02_Game2) + SceneExtension;
     }
 }

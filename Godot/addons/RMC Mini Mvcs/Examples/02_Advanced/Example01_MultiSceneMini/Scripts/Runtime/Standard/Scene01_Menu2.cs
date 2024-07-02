@@ -10,7 +10,7 @@ namespace RMC.Mini.Examples.MultiScene.Standard
     /// <summary>
     /// This is the main entry point to one of the scenes
     /// </summary>
-    public partial class Scene01_Menu : Node
+    public partial class Scene01_Menu2 : Node
     {
         //  Fields ----------------------------------------
         [Export]
