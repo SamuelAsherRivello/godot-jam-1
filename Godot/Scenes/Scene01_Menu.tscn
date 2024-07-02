@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://es0s5s6qyhe2"]
+
+[ext_resource type="PackedScene" uid="uid://cl0ulf6sssn3i" path="res://Scripts/Runtime/RMC/Racing2D/Mini/_Features/Menu/MenuView.tscn" id="1_7avfr"]
+[ext_resource type="Script" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Scene01_Menu.cs" id="1_aesus"]
+
+[node name="Scene01_Menu" type="Node3D" node_paths=PackedStringArray("_menuView")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.89555e-05, 7.68323e-05, 0)
+script = ExtResource("1_aesus")
+_menuView = NodePath("MenuView")
+
+[node name="MenuView" parent="." instance=ExtResource("1_7avfr")]

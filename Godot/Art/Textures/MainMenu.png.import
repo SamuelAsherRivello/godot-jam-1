@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c45pcxpoeu82r"
-path="res://.godot/imported/Diagram.png-fd30cca3c6ff7b96e3d3a43de94a8810.ctex"
+uid="uid://hg3tf4x2rqgg"
+path="res://.godot/imported/MainMenu.png-e928effcc32980a23a13ad0ad974e4a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/RMC Mini Mvcs/Examples/02_Advanced/Example01_MultiSceneMini/Documentation/Diagram.png"
-dest_files=["res://.godot/imported/Diagram.png-fd30cca3c6ff7b96e3d3a43de94a8810.ctex"]
+source_file="res://Art/Textures/MainMenu.png"
+dest_files=["res://.godot/imported/MainMenu.png-e928effcc32980a23a13ad0ad974e4a2.ctex"]
 
 [params]
 

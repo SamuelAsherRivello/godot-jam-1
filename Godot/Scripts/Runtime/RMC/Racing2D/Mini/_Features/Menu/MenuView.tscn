@@ -1,98 +1,149 @@
-[gd_scene load_steps=2 format=3 uid="uid://7wflm2o24l5"]
+[gd_scene load_steps=7 format=3 uid="uid://cl0ulf6sssn3i"]
 
-[ext_resource type="Script" path="res://addons/RMC Mini Mvcs/Examples/02_Advanced/Example01_MultiSceneMini/Scripts/Runtime/Mini/_Features/Menu/MenuView.cs" id="1_ntryv"]
+[ext_resource type="Theme" uid="uid://bqunto45lax54" path="res://Settings/Themes/Racing2DTheme.tres" id="1_ja36y"]
+[ext_resource type="Script" path="res://Scripts/Runtime/RMC/Racing2D/Mini/_Features/Menu/MenuView.cs" id="2_65118"]
+[ext_resource type="Texture2D" uid="uid://hg3tf4x2rqgg" path="res://Art/Textures/MainMenu.png" id="3_2k3lv"]
+[ext_resource type="StyleBox" uid="uid://b5ofew2o6virg" path="res://Settings/Themes/ButtonTheme.tres" id="4_1p375"]
 
-[node name="MenuView" type="Control" node_paths=PackedStringArray("_playGameButton")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22lkt"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pw6bv"]
+bg_color = Color(0.0392157, 0.0196078, 0.176471, 1)
+
+[node name="MenuView" type="Control" node_paths=PackedStringArray("_titleLabel", "_statusLabel", "_playGameButton", "_changePlayerButton", "_changeEnemyButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 200.0
-offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ntryv")
-_playGameButton = NodePath("MarginContainer/BackgroundColorRect/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Buttons/PlayGameButton")
-
-[node name="BackgroundColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(1097, 956)
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
-
-[node name="BackgroundColorRect" type="ColorRect" parent="MarginContainer"]
-layout_mode = 2
-color = Color(0.0982532, 0.170372, 0.308844, 1)
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/BackgroundColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(1324, 208)
+size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
+theme = ExtResource("1_ja36y")
+script = ExtResource("2_65118")
+_titleLabel = NodePath("Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/TextVBoxContainer/TitleLabel")
+_statusLabel = NodePath("Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/TextVBoxContainer/StatusLabel")
+_playGameButton = NodePath("Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/Buttons/PlayGameButton")
+_changePlayerButton = NodePath("Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/Buttons/ChangePlayerButton")
+_changeEnemyButton = NodePath("Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/Buttons/ChangeEnemyButton")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/BackgroundColorRect/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 5
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -98.0
+offset_top = 6.0
+offset_right = 301.0
+offset_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_2k3lv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_22lkt")
 metadata/_edit_use_anchors_ = true
 
-[node name="TitleLabel" type="Label" parent="MarginContainer/BackgroundColorRect/MarginContainer/VBoxContainer"]
+[node name="ScreenMarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+metadata/_edit_use_anchors_ = true
+
+[node name="HUDPanel" type="Panel" parent="Panel/ScreenMarginContainer"]
+custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
-size_flags_vertical = 8
-theme_override_font_sizes/font_size = 50
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pw6bv")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/ScreenMarginContainer/HUDPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 226.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="HUDVBoxContainer" type="HBoxContainer" parent="Panel/ScreenMarginContainer/HUDPanel/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 5
+
+[node name="TextVBoxContainer" type="VBoxContainer" parent="Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/TextVBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 130
+text = "Racing 2D"
+vertical_alignment = 1
+
+[node name="StatusLabel" type="Label" parent="Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/TextVBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "The Best Game Ever"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="StatusLabel" type="Label" parent="MarginContainer/BackgroundColorRect/MarginContainer/VBoxContainer"]
+[node name="Buttons" type="VBoxContainer" parent="Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-size_flags_vertical = 8
-theme_override_font_sizes/font_size = 30
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/BackgroundColorRect/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/BackgroundColorRect/MarginContainer/VBoxContainer/MarginContainer"]
-layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/separation = 20
 
-[node name="Buttons" type="HBoxContainer" parent="MarginContainer/BackgroundColorRect/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="PlayGameButton" type="Button" parent="MarginContainer/BackgroundColorRect/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Buttons"]
+[node name="PlayGameButton" type="Button" parent="Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/Buttons"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("4_1p375")
 text = "Play Game"
+
+[node name="ChangePlayerButton" type="Button" parent="Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/Buttons"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("4_1p375")
+text = "Change Player"
+
+[node name="ChangeEnemyButton" type="Button" parent="Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/Buttons"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("4_1p375")
+text = "Change Enemy"

@@ -99,6 +99,7 @@ size_flags_vertical = 4
 theme_override_constants/separation = 20
 
 [node name="BackButton" type="Button" parent="Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/Buttons"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

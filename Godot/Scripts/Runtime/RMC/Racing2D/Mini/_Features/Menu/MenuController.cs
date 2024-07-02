@@ -30,12 +30,11 @@ namespace RMC.Racing2D.Mini.Features.Menu
                 
                 // View
                 _view.OnPlayGame.AddListener(View_OnPlayGame);
+                _view.OnChangePlayer.AddListener(View_OnChangePlayer);
+                _view.OnChangeEnemy.AddListener(View_OnChangeEnemy);
         
             }
         }
-
-
-
 
         //  Methods ---------------------------------------
         public override void Dispose()
@@ -57,6 +56,15 @@ namespace RMC.Racing2D.Mini.Features.Menu
             // Demonstrates proper Controller-to-Controller communication with a Command
             Context.CommandManager.InvokeCommand(
                 new LoadSceneRequestCommand(Racer2DConstants.Scene02_Game, LoadSceneMode.Single));
+        }
+        
+        private void View_OnChangePlayer()
+        {
+            RequireIsInitialized();
+        }
+        private void View_OnChangeEnemy()
+        {
+            RequireIsInitialized();
         }
     }
 }

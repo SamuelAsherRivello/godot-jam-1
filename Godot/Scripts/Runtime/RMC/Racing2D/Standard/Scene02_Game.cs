@@ -96,9 +96,9 @@ namespace RMC.Racing2D.Standard
             Racing2DMini mini = Mingleton.Instance.GetOrCreateAsClass<Racing2DMini>();
 
             //  Scene-Specific ----------------------------
-            GameFeature gameFeature = new GameFeature();
-            gameFeature.AddView(_gameView);
-            mini.AddFeature<GameFeature>(gameFeature);
+            GameFeature feature = new GameFeature();
+            feature.AddView(_gameView);
+            mini.AddFeature<GameFeature>(feature);
 
             //  Scene-Agnostic (Permanent) -----------------
             if (!mini.HasFeature<SceneSystemFeature>())
