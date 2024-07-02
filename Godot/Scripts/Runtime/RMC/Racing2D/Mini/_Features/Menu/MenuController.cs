@@ -28,9 +28,6 @@ namespace RMC.Racing2D.Mini.Features.Menu
             {
                 base.Initialize(context);
                 
-                // Model
-                _model.HasLoadedService.OnValueChanged.AddListener(HasLoadedService_OnValueChanged);
-                    
                 // View
                 _view.OnPlayGame.AddListener(View_OnPlayGame);
         
@@ -45,9 +42,6 @@ namespace RMC.Racing2D.Mini.Features.Menu
         {
             base.Dispose();
             
-            // Model
-            _model.HasLoadedService.OnValueChanged.RemoveListener(HasLoadedService_OnValueChanged);
-                    
             // View
             _view.OnPlayGame.RemoveListener(View_OnPlayGame);
 
@@ -55,10 +49,6 @@ namespace RMC.Racing2D.Mini.Features.Menu
 
 
         //  Event Handlers --------------------------------
-        private void HasLoadedService_OnValueChanged(bool oldvalue, bool newvalue)
-        {
-            _view.RefreshUI();
-        }
         
         private void View_OnPlayGame()
         {

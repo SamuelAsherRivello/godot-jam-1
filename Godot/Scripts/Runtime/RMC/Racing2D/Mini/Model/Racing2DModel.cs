@@ -11,13 +11,14 @@ namespace RMC.Racing2D.Mini.Model
     {
         //  Properties ------------------------------------
         public Observable<bool> HasNavigationBack { get { return _hasNavigationBack;} }
-        public Observable<bool> HasLoadedService { get { return _hasLoadedService;} }
-        public Observable<string> FunMessage { get { return _funMessage;} }
-
+        public Observable<int> LapCurrent { get { return _lapCurrent;} }
+        public Observable<int> LapMax{ get { return _lapMax;} }
+        
         //  Fields ----------------------------------------
         private readonly Observable<bool> _hasNavigationBack = new Observable<bool>();
         private readonly Observable<bool> _hasLoadedService = new Observable<bool>();
-        private readonly Observable<string> _funMessage = new Observable<string>();
+        private readonly Observable<int> _lapCurrent = new Observable<int>();
+        private readonly Observable<int> _lapMax = new Observable<int>();
         
         //  Initialization  -------------------------------
         public override void Initialize(IContext context) 
@@ -29,7 +30,8 @@ namespace RMC.Racing2D.Mini.Model
                 // Set Defaults
                 _hasNavigationBack.Value = false;
                 _hasLoadedService.Value = false;
-                _funMessage.Value = "";
+                _lapCurrent.Value = 1;
+                _lapMax.Value = 3;
             }
         }
 

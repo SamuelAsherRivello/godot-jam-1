@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bqunto45lax54"]
+
+[sub_resource type="SystemFont" id="SystemFont_36j7d"]
+font_names = PackedStringArray("Bauhaus 93")
+
+[resource]
+default_font = SubResource("SystemFont_36j7d")

@@ -90,7 +90,6 @@ namespace RMC.Racing2D.Mini.Features.Menu
             RequireIsInitialized();
             
             Racing2DModel model = Context.ModelLocator.GetItem<Racing2DModel>();
-            _playGameButton.Disabled = !model.HasLoadedService.Value;
         }
         
         

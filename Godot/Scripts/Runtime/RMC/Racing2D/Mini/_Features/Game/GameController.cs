@@ -1,8 +1,10 @@
 using RMC.Core.Events;
 using RMC.Mini;
 using RMC.Mini.Controller;
+using RMC.Mini.Features.SceneSystem;
 using RMC.Mini.Service;
 using RMC.Racing2D.Mini.Model;
+using RMC.Racing2D.Standard;
 
 namespace RMC.Racing2D.Mini.Features.Game
 {
@@ -29,11 +31,8 @@ namespace RMC.Racing2D.Mini.Features.Game
             {
                 base.Initialize(context);
                 
-                // Model
-                _model.HasLoadedService.OnValueChanged.AddListener(HasLoadedService_OnValueChanged);
-                    
                 // View
-                _view.OnFun.AddListener(View_OnFun);
+                _view.OnBack.AddListener(View_OnBack);
                 
             }
         }
@@ -42,15 +41,13 @@ namespace RMC.Racing2D.Mini.Features.Game
 
         
         //  Event Handlers --------------------------------
-        private void HasLoadedService_OnValueChanged(bool oldvalue, bool newvalue)
-        {
-            _view.RefreshUI();
-        }
         
-        private void View_OnFun()
+        private void View_OnBack()
         {
-            Racing2DModel model = Context.ModelLocator.GetItem<Racing2DModel>();
-            _view.ShowMessage(model.FunMessage.Value);
+            _view.BackButton.Disabled = true;
+            // Demonstrates proper Controller-to-Controller communication with a Command
+            Context.CommandManager.InvokeCommand(
+                new LoadSceneRequestCommand(Racer2DConstants.Scene01_Menu, LoadSceneMode.Single));
         }
     }
 }

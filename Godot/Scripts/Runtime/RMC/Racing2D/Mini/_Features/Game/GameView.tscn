@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbq07kbbnlimk"]
+[gd_scene load_steps=4 format=3 uid="uid://bbq07kbbnlimk"]
 
 [ext_resource type="Script" path="res://Scripts/Runtime/RMC/Racing2D/Mini/_Features/Game/GameView.cs" id="1_fmvwt"]
+[ext_resource type="Theme" uid="uid://bqunto45lax54" path="res://Settings/Themes/Racing2DTheme.tres" id="1_msqet"]
 
-[node name="GameView" type="Control" node_paths=PackedStringArray("_funButton")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22lkt"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+
+[node name="GameView" type="Control" node_paths=PackedStringArray("_titleLabel", "_statusLabel", "_backButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,69 +20,87 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("1_msqet")
 script = ExtResource("1_fmvwt")
-_funButton = NodePath("ScreenMarginContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Buttons/FunButton")
+_titleLabel = NodePath("Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/TextHBoxContainer/TitleLabel")
+_statusLabel = NodePath("Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/TextHBoxContainer/StatusLabel")
+_backButton = NodePath("Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/Buttons/BackButton")
 
-[node name="ScreenMarginContainer" type="MarginContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(1097, 956)
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
-
-[node name="MarginContainer" type="MarginContainer" parent="ScreenMarginContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
-
-[node name="VBoxContainer" type="HBoxContainer" parent="ScreenMarginContainer/MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/separation = 5
+theme_override_styles/panel = SubResource("StyleBoxFlat_22lkt")
 metadata/_edit_use_anchors_ = true
 
-[node name="TitleLabel" type="Label" parent="ScreenMarginContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_font_sizes/font_size = 50
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="ScreenMarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+metadata/_edit_use_anchors_ = true
 
-[node name="StatusLabel" type="Label" parent="ScreenMarginContainer/MarginContainer/VBoxContainer"]
+[node name="HUDPanel" type="Panel" parent="Panel/ScreenMarginContainer"]
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-size_flags_vertical = 8
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/ScreenMarginContainer/HUDPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="HUDVBoxContainer" type="HBoxContainer" parent="Panel/ScreenMarginContainer/HUDPanel/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 5
+
+[node name="TextHBoxContainer" type="HBoxContainer" parent="Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="TitleLabel" type="Label" parent="Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/TextHBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30
+text = "Game"
+vertical_alignment = 1
+
+[node name="StatusLabel" type="Label" parent="Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/TextHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Lap 1 of 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="ScreenMarginContainer/MarginContainer/VBoxContainer"]
+[node name="Buttons" type="VBoxContainer" parent="Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ScreenMarginContainer/MarginContainer/VBoxContainer/MarginContainer"]
-layout_mode = 2
+size_flags_vertical = 4
 theme_override_constants/separation = 20
 
-[node name="Buttons" type="HBoxContainer" parent="ScreenMarginContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="FunButton" type="Button" parent="ScreenMarginContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Buttons"]
+[node name="BackButton" type="Button" parent="Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 30
-text = "Fun !"
+text = "Back"

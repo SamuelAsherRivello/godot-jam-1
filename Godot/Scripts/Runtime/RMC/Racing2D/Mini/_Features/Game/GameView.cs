@@ -16,19 +16,25 @@ namespace RMC.Racing2D.Mini.Features.Game
     public partial class GameView: Control, IView
     {
         //  Events ----------------------------------------
-        public readonly RmcEvent OnFun = new RmcEvent();
+        public readonly RmcEvent OnBack = new RmcEvent();
         
         //  Properties ------------------------------------
         public bool IsInitialized { get { return _isInitialized;} }
         public IContext Context { get { return _context;} }
-        public Button FunButton { get { return _funButton; }}
+        public Button BackButton { get { return _backButton; }}
         
         //  Fields ----------------------------------------
         private bool _isInitialized = false;
         private IContext _context;
 
         [Export] 
-        private Button _funButton;
+        private Label _titleLabel;
+        
+        [Export] 
+        private Label _statusLabel;
+        
+        [Export] 
+        private Button _backButton;
 
         //  Initialization  -------------------------------
         public void Initialize(IContext context)
@@ -38,7 +44,7 @@ namespace RMC.Racing2D.Mini.Features.Game
                 _isInitialized = true;
                 _context = context;
                 
-                FunButton.Pressed += FunButton_OnPressed;
+                BackButton.Pressed += BackButtonOnPressed;
                 
                 RefreshUI();
             }
@@ -90,8 +96,8 @@ namespace RMC.Racing2D.Mini.Features.Game
             RequireIsInitialized();
             
             Racing2DModel model = Context.ModelLocator.GetItem<Racing2DModel>();
-            GD.Print("model: " + model);
-            _funButton.Disabled = !model.HasLoadedService.Value;
+            _titleLabel.Text = "Game";
+            _statusLabel.Text = $"Lap {model.LapCurrent.Value} / {model.LapMax.Value}";
         }
         
         public void ShowMessage(string message)
@@ -101,9 +107,9 @@ namespace RMC.Racing2D.Mini.Features.Game
         }
         
         //  Event Handlers --------------------------------
-        private void FunButton_OnPressed()
+        private void BackButtonOnPressed()
         {
-            OnFun.Invoke();
+            OnBack.Invoke();
         }
     }
 }
