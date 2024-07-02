@@ -32,7 +32,7 @@ namespace RMC.Racing2D.Mini.Features.Menu
         private Label _titleLabel;
         
         [Export] 
-        private Label _statusLabel;
+        private RichTextLabel _statusRichLabel;
         
         [Export] 
         private Button _playGameButton;
@@ -105,6 +105,12 @@ namespace RMC.Racing2D.Mini.Features.Menu
             RequireIsInitialized();
             
             Racing2DModel model = Context.ModelLocator.GetItem<Racing2DModel>();
+            
+            string playerTitle = model.PlayerMenuConfigurations.Value[model.PlayerMenuConfigurationIndex.Value].Title;
+            string enemyInfo = model.EnemyMenuConfigurations.Value[model.EnemyMenuConfigurationIndex.Value].Title;
+            
+            _statusRichLabel.ParseBbcode( $"[center]Your Car Is [color=#4ab3ff]{playerTitle}[/color] " +
+                                          $"& Your Enemy Is [color=#4ab3ff]{enemyInfo}[/color][/center].");
         }
         
         

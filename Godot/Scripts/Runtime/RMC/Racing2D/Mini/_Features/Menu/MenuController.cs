@@ -61,10 +61,32 @@ namespace RMC.Racing2D.Mini.Features.Menu
         private void View_OnChangePlayer()
         {
             RequireIsInitialized();
+
+            if (_model.PlayerMenuConfigurationIndex.Value < _model.PlayerMenuConfigurations.Value.Count -1)
+            {
+                _model.PlayerMenuConfigurationIndex.Value++;
+            }
+            else
+            {
+                _model.PlayerMenuConfigurationIndex.Value = 0;
+            }
+            
+            _view.RefreshUI();
         }
         private void View_OnChangeEnemy()
         {
             RequireIsInitialized();
+            
+            if (_model.EnemyMenuConfigurationIndex.Value < _model.EnemyMenuConfigurations.Value.Count -1)
+            {
+                _model.EnemyMenuConfigurationIndex.Value++;
+            }
+            else
+            {
+                _model.EnemyMenuConfigurationIndex.Value = 0;
+            }
+            
+            _view.RefreshUI();
         }
     }
 }

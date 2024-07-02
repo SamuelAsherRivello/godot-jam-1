@@ -16,7 +16,7 @@ border_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pw6bv"]
 bg_color = Color(0.0392157, 0.0196078, 0.176471, 1)
 
-[node name="MenuView" type="Control" node_paths=PackedStringArray("_titleLabel", "_statusLabel", "_playGameButton", "_changePlayerButton", "_changeEnemyButton")]
+[node name="MenuView" type="Control" node_paths=PackedStringArray("_titleLabel", "_statusRichLabel", "_playGameButton", "_changePlayerButton", "_changeEnemyButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +28,7 @@ size_flags_vertical = 3
 theme = ExtResource("1_ja36y")
 script = ExtResource("2_65118")
 _titleLabel = NodePath("Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/TextVBoxContainer/TitleLabel")
-_statusLabel = NodePath("Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/TextVBoxContainer/StatusLabel")
+_statusRichLabel = NodePath("Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/TextVBoxContainer/StatusRichTextLabel")
 _playGameButton = NodePath("Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/Buttons/PlayGameButton")
 _changePlayerButton = NodePath("Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/Buttons/ChangePlayerButton")
 _changeEnemyButton = NodePath("Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/Buttons/ChangeEnemyButton")
@@ -107,13 +107,14 @@ theme_override_font_sizes/font_size = 130
 text = "Racing 2D"
 vertical_alignment = 1
 
-[node name="StatusLabel" type="Label" parent="Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/TextVBoxContainer"]
+[node name="StatusRichTextLabel" type="RichTextLabel" parent="Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer/TextVBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 40
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
 text = "The Best Game Ever"
-horizontal_alignment = 1
-vertical_alignment = 1
+fit_content = true
 
 [node name="Buttons" type="VBoxContainer" parent="Panel/ScreenMarginContainer/HUDPanel/MarginContainer/HUDVBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
