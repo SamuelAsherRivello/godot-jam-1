@@ -28,36 +28,91 @@ namespace RMC.Racing2D.Players
 
         private void Race()
         {
+            const float maxSpeed = 80.0f;
+            const float minCurveSpeed = 15.0f;
+            const float maxSteeringThresholdDEG = 45.0f;
+
+            float currentTargetSpeed = maxSpeed;
+
             float newSteeringInput = 0.0f;
             float newAcceleration = 0.0f;
 
-            const float maxSpeed = 15.0f;
-            if (LinearVelocity.Length() < maxSpeed)
-                newAcceleration = 1.0f;
+            Vector3 currentDirection = GlobalBasis.GetRotationQuaternion() * Vector3.Back;
 
-            var flowMap = GetTrack().FlowGridMap;
-            if (GetTrack().HasGridDirectionalInformation(flowMap, Position))
+            if (HasDirectionalInformationAtWorldPosition(Position))
             {
-                Vector3 currentDirection = Vector3.Forward * GlobalBasis.GetRotationQuaternion();
-                float meshRotationAtCurrentPositionDEG = GetTrack().GetMeshRotationInDegreesAtPosition(GetTrack().FlowGridMap, Position);
-                Quaternion trackRotation = Quaternion.FromEuler(new Vector3(0.0f, Mathf.DegToRad(meshRotationAtCurrentPositionDEG), 0.0f));
-                Vector3 northWorldVector = new Vector3(0.0f, 0.0f, 1.0f);
-                Vector3 targetDirection = trackRotation * northWorldVector;
-                float differenceAngle = Mathf.RadToDeg(currentDirection.SignedAngleTo(targetDirection, Vector3.Up));
+                Vector3 targetDirection = GetTargetDirectionAtWorldPosition(Position);
+
+                float differenceAngle, differenceAbs;
+                ComputeDirectionAngleDifference(currentDirection, targetDirection, out differenceAngle, out differenceAbs);
 
                 float steeringStrength = 0.0f;
-                float differenceAbs = Mathf.Abs(differenceAngle);
-
-                const float maxSteeringThresholdDEG = 20.0f;
                 if (differenceAbs > maxSteeringThresholdDEG)
+                {
                     steeringStrength = 1.0f;
+                    currentTargetSpeed = minCurveSpeed;
+                }
                 else
+                {
                     steeringStrength = Mathf.Lerp(0.0f, 1.0f, differenceAbs / maxSteeringThresholdDEG);
+                }
 
-                newSteeringInput = -1.0f * steeringStrength * Mathf.Sign(differenceAngle);
+                newSteeringInput = steeringStrength * Mathf.Sign(differenceAngle);
             }
-            
+
+            const float predictionSeconds = 0.5f;
+            Vector3 predictedPosition = GlobalPosition + (LinearVelocity * predictionSeconds);
+
+            if (HasDirectionalInformationAtWorldPosition(predictedPosition))
+            {
+                Vector3 targetDirection = GetTargetDirectionAtWorldPosition(predictedPosition);
+
+                float differenceAngle, differenceAbs;
+                ComputeDirectionAngleDifference(currentDirection, targetDirection, out differenceAngle, out differenceAbs);
+
+                if (differenceAbs > maxSteeringThresholdDEG)
+                {
+                    currentTargetSpeed = minCurveSpeed;
+                }
+            }
+
+            const float softAccelerationThreshold = 3.0f;
+
+            float currentSpeed = LinearVelocity.Length();
+            float speedDifference = currentTargetSpeed - currentSpeed;
+            float relativeSpeedDifference = speedDifference / softAccelerationThreshold;
+            float normalizedRelativeSpeedDifference = (relativeSpeedDifference + 1.0f) * 0.5f;
+
+            if (Mathf.Abs(speedDifference) < softAccelerationThreshold)
+            {
+                newAcceleration = Mathf.Lerp(-1.0f, 1.0f, normalizedRelativeSpeedDifference);
+            }
+            else
+            {
+                newAcceleration = Mathf.Sign(speedDifference);
+            }
+
             SetInputs(newSteeringInput, newAcceleration);
+        }
+
+        private static void ComputeDirectionAngleDifference(Vector3 currentDirection, Vector3 targetDirection, out float differenceAngle, out float differenceAbs)
+        {
+            differenceAngle = Mathf.RadToDeg(currentDirection.SignedAngleTo(targetDirection, Vector3.Up));
+            differenceAbs = Mathf.Abs(differenceAngle);
+        }
+
+        private bool HasDirectionalInformationAtWorldPosition(Vector3 worldPosition)
+        {
+            return GetTrack().HasGridDirectionalInformation(GetTrack().FlowGridMap, worldPosition);
+        }
+
+        private Vector3 GetTargetDirectionAtWorldPosition(Vector3 worldPosition)
+        {
+            float meshRotationAtCurrentPositionDEG = GetTrack().GetMeshRotationInDegreesAtPosition(GetTrack().FlowGridMap, worldPosition);
+            Quaternion trackRotation = Quaternion.FromEuler(new Vector3(0.0f, Mathf.DegToRad(360.0f - meshRotationAtCurrentPositionDEG), 0.0f));
+            Vector3 northWorldVector = Vector3.Forward;
+            Vector3 targetDirection = trackRotation * northWorldVector;
+            return targetDirection;
         }
 
         public override ControllableVehicleType GetControllableVehicleType()

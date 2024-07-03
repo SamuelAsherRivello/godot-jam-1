@@ -6,4 +6,4 @@
 script = ExtResource("1_n3usa")
 _MaxEngineStrength = 10000.0
 _MaxSteeringValue = 0.7
-_TotalMass = 1000.0
+_TotalMass = 800.0
