@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bk7df4tl4ql7k"]
 
-[ext_resource type="Script" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Scene02_Game.cs" id="1_47koa"]
+[ext_resource type="Script" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Scene02_Racer2DGame.cs" id="1_3r6eq"]
 [ext_resource type="PackedScene" uid="uid://cbvmouma0cgm" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Tracks/Track01.tscn" id="2_f6xoa"]
 [ext_resource type="PackedScene" uid="uid://bbq07kbbnlimk" path="res://Scripts/Runtime/RMC/Racing2D/Mini/_Features/Game/GameView.tscn" id="2_ns2w0"]
 [ext_resource type="PackedScene" uid="uid://dwa3u1c4aucxb" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Audio/AudioManager.tscn" id="2_u47hh"]
@@ -29,9 +29,9 @@ sky_material = SubResource("ProceduralSkyMaterial_ex4cq")
 background_mode = 2
 sky = SubResource("Sky_yk50f")
 
-[node name="Scene02_Game" type="Node3D" node_paths=PackedStringArray("_gameView", "_track", "_controllablePlayerVehicle", "_vehiclesNode")]
+[node name="Scene02_Racer2DGame" type="Node3D" node_paths=PackedStringArray("_gameView", "_track", "_controllablePlayerVehicle", "_vehiclesNode")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.89555e-05, 7.68323e-05, 0)
-script = ExtResource("1_47koa")
+script = ExtResource("1_3r6eq")
 _gameView = NodePath("GameView")
 _track = NodePath("Track01")
 _controllablePlayerVehicle = NodePath("Vehicles/LocalPlayerControllableVehicle")

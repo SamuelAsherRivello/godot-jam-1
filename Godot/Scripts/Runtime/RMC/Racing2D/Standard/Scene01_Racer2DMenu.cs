@@ -7,7 +7,7 @@ using RMC.Racing2D.Mini.Features.Menu;
 
 namespace RMC.Racing2D.Standard
 {
-    public partial class Scene01_Menu : Node3D
+    public partial class Scene01_Racer2DMenu : Node3D
     {
         //  Fields ----------------------------------------
         [Export] 

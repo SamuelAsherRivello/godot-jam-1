@@ -55,7 +55,7 @@ namespace RMC.Racing2D.Mini.Features.Menu
             
             // Demonstrates proper Controller-to-Controller communication with a Command
             Context.CommandManager.InvokeCommand(
-                new LoadSceneRequestCommand(Racer2DConstants.Scene02_Game, LoadSceneMode.Single));
+                new LoadSceneRequestCommand(Racer2DConstants.Scene02_Racer2DGame, LoadSceneMode.Single));
         }
         
         private void View_OnChangePlayer()

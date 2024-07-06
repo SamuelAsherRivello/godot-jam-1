@@ -11,7 +11,7 @@ using RMC.Racing2D.Mini.Features.Game;
 
 namespace RMC.Racing2D.Standard
 {
-    public partial class Scene02_Game : Node3D
+    public partial class Scene02_Racer2DGame : Node3D
     {
         //  Fields ----------------------------------------
         [Export] 

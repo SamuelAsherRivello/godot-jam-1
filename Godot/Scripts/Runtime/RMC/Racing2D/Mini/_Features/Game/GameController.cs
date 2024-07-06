@@ -47,7 +47,7 @@ namespace RMC.Racing2D.Mini.Features.Game
             _view.BackButton.Disabled = true;
             // Demonstrates proper Controller-to-Controller communication with a Command
             Context.CommandManager.InvokeCommand(
-                new LoadSceneRequestCommand(Racer2DConstants.Scene01_Menu, LoadSceneMode.Single));
+                new LoadSceneRequestCommand(Racer2DConstants.Scene01_Racer2DMenu, LoadSceneMode.Single));
         }
     }
 }

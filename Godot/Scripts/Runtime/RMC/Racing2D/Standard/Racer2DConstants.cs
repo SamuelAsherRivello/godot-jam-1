@@ -8,7 +8,7 @@ namespace RMC.Racing2D.Standard
     {
         //  Fields ----------------------------------------
         private const string SceneExtension = ".tscn";
-        public const string Scene01_Menu = nameof(Scene01_Menu) + SceneExtension;
-        public const string Scene02_Game = nameof(Scene02_Game) + SceneExtension;
+        public const string Scene01_Racer2DMenu = nameof(Scene01_Racer2DMenu) + SceneExtension;
+        public const string Scene02_Racer2DGame = nameof(Scene02_Racer2DGame) + SceneExtension;
     }
 }
