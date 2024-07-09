@@ -2,6 +2,7 @@ using Godot;
 using RMC.Mingletons;
 using RMC.Racing2D.Audio;
 using RMC.Racing2D.Players;
+using RMC.Racing2D.Tracks;
 
 namespace RMC.Racing2D.Vehicles
 {
@@ -70,6 +71,10 @@ namespace RMC.Racing2D.Vehicles
         private void OnBodyEntered(Node body)
         {
             //GD.Print($"Collided with: {body.Name}");
+            if (!Mingleton.Instance.HasSingleton<AudioManager>())
+            {
+                return;
+            }
             Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("Hit01.mp3");
         }
     }

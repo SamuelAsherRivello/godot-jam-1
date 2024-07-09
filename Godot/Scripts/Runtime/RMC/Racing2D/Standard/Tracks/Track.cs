@@ -1,10 +1,15 @@
 using Godot;
 
-namespace RMC.Racing2D.Players
+namespace RMC.Racing2D.Tracks
 {
     public partial class Track : Node3D
     {
 
+        public TrackStartingArea TrackStartingArea
+        {
+            get { return _trackStartingArea; }
+        }
+        
         public GridMap GroundGridMap
         {
             get { return _groundGridMap; }
@@ -18,10 +23,13 @@ namespace RMC.Racing2D.Players
         [Export] private GridMap _groundGridMap;
 
         [Export] private GridMap _flowGridMap;
+        
+        [Export] private TrackStartingArea _trackStartingArea;
 
         private const bool IsLogging = false;
 
         // Use for logging
+  
         private Vector3 _lastPosition;
         private Vector3I _lastCell;
         private int _lastItemIndex;
