@@ -23,24 +23,30 @@ namespace RMC.Racing2D.Standard.States
         // Methods ---------------------------------------
         public override async void Enter()
         {
-            await Task.Delay(500);
-            GD.Print("3");
+            GameScene.GameView.StatusLabelShowMessage("3...");
             Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("Pickup01.mp3");
-            
             await Task.Delay(500);
-            GD.Print("2");
+            
+            //
+            GameScene.GameView.StatusLabelShowMessage("2...");
             Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("Pickup01.mp3");
-            
             await Task.Delay(500);
-            GD.Print("1");
+
+            //
+            GameScene.GameView.StatusLabelShowMessage("1...");
             Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("Pickup01.mp3");
-            
             await Task.Delay(500);
-            GD.Print("Go!");
+            
+            //
+            GameScene.GameView.StatusLabelShowMessage("Go!");
             Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("Pickup01.mp3");
             
             // Done!
             _stateMachine.StateChange(GameScene.State03Racing);
+            
+            // After race starts, show laps
+            await Task.Delay(500);
+            GameScene.GameView.StatusLabelShowLaps();
         }
 
         public override void Execute(double delta)

@@ -96,8 +96,26 @@ namespace RMC.Racing2D.Mini.Features.Game
             RequireIsInitialized();
             
             Racing2DModel model = Context.ModelLocator.GetItem<Racing2DModel>();
-            _titleLabel.Text = "Game";
-            _statusLabel.Text = $"Lap {model.LapCurrent.Value} / {model.LapMax.Value}";
+            _titleLabel.Text = "Use Arrow Keys To Move";
+            StatusLabelShowLaps();
+        }
+        
+        public void StatusLabelShowLaps()
+        {
+            RequireIsInitialized();
+            
+            Racing2DModel model = Context.ModelLocator.GetItem<Racing2DModel>();
+            StatusLabelShowMessage($"Lap {model.LapCurrent.Value} / {model.LapMax.Value}");
+        }
+        
+        public void StatusLabelShowMessage(string message)
+        {
+            RequireIsInitialized();
+            if (_statusLabel == null)
+            {
+                return;
+            }
+            _statusLabel.Text = message;
         }
         
         public void ShowMessage(string message)

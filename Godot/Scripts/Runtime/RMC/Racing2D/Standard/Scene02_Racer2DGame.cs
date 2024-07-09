@@ -24,10 +24,10 @@ namespace RMC.Racing2D.Standard
         }
         
         //  Fields ----------------------------------------
-        [Export] 
-        private GameView _gameView;
 
-        //  Fields For States -----------------------------
+        [Export] 
+        public GameView GameView;
+        
         [Export] 
         public Track Track;
 
@@ -46,16 +46,19 @@ namespace RMC.Racing2D.Standard
         /// <summary>
         /// Called when the node enters the scene tree for the first time.
         /// </summary>
-        public override void _Ready()
+        public override async void _Ready()
         {
-            GD.Print($"Scene02_Game._Ready()");
+            // Mingleton Setup  --------------------------------
+            GD.Print($"1 Scene02_Game._Ready()");
+            await Mingleton.InstantiateAsync();
+            GD.Print($"2 Scene02_Game._Ready()");
                         
 
-            //Mini Mvcs Setup ---------------------------------
+            // Mini Mvcs Setup ---------------------------------
             AddFeature();
 
             
-            //Standard Setup  ---------------------------------
+            // Standard Setup  ---------------------------------
             _stateMachine = new StateMachine();
             //
             _stateMachine.OnStateEnter.AddListener(StateMachine_OnStateEnter);
@@ -101,7 +104,7 @@ namespace RMC.Racing2D.Standard
 
             //  Scene-Specific ----------------------------
             GameFeature feature = new GameFeature();
-            feature.AddView(_gameView);
+            feature.AddView(GameView);
             mini.AddFeature<GameFeature>(feature);
 
             //  Scene-Agnostic (Permanent) -----------------

@@ -18,12 +18,15 @@ namespace RMC.Racing2D.Standard
         /// <summary>
         /// Called when the node enters the scene tree for the first time.
         /// </summary>
-        public override void _Ready()
+        public override async void _Ready()
         {
+            // Mingleton Setup  --------------------------------
+            await Mingleton.InstantiateAsync();
             GD.Print($"Scene01_Game._Ready()");
+            
+            // Mini Mvcs Setup ---------------------------------
             AddFeature();
         }
-
 
         /// <summary>
         /// Called every frame. 'delta' is the elapsed time since the previous frame.
