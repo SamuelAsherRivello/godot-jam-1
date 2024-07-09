@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvgyqccrk33mf"]
 
-[ext_resource type="PackedScene" uid="uid://cf0pkwrux0ni6" path="res://aaDevelopers/SamR/InheritedSceneDemo/Animal.tscn" id="1_sblun"]
-[ext_resource type="Script" path="res://aaDevelopers/SamR/InheritedSceneDemo/Dog.cs" id="2_waho2"]
+[ext_resource type="PackedScene" uid="uid://cf0pkwrux0ni6" path="res://Developers/SamR/InheritedSceneDemo/Animal.tscn" id="1_sblun"]
+[ext_resource type="Script" path="res://Developers/SamR/InheritedSceneDemo/Dog.cs" id="2_waho2"]
 
 [node name="Dog" instance=ExtResource("1_sblun")]
 script = ExtResource("2_waho2")

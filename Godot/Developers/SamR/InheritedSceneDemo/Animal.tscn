@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cf0pkwrux0ni6"]
 
-[ext_resource type="Script" path="res://aaDevelopers/SamR/InheritedSceneDemo/Animal.cs" id="1_ilyyu"]
+[ext_resource type="Script" path="res://Developers/SamR/InheritedSceneDemo/Animal.cs" id="1_ilyyu"]
 
 [node name="Animal" type="Node3D"]
 script = ExtResource("1_ilyyu")
