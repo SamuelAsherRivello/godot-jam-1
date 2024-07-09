@@ -56,11 +56,13 @@ namespace RMC.Racing2D.Mini.Model
                 // Set Defaults
                 _enemyMenuConfigurations.Value = new List<EnemyMenuConfiguration>();
                 _playerMenuConfigurations.Value = new List<PlayerMenuConfiguration>();
-                _playerMenuConfigurationIndex.Value = 0;
-                _enemyMenuConfigurationIndex.Value = 0;
                 _hasNavigationBack.Value = false;
-                _lapCurrent.Value = 1;
-                _lapMax.Value = 1;
+                _lapCurrent.Value = 0;
+                _lapMax.Value = 3;
+                
+                // Make blue and medium the defaults
+                _playerMenuConfigurationIndex.Value = 1;
+                _enemyMenuConfigurationIndex.Value = 1;
               
                 //////////////////////////////////////////////
                 // Player Cars 

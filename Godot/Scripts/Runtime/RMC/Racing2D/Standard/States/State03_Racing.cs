@@ -1,8 +1,11 @@
-﻿using System.Diagnostics;
+﻿using System;
 using Godot;
 using RMC.Core.Patterns.StateMachines;
+using RMC.Mingletons;
+using RMC.Racing2D.Audio;
 using RMC.Racing2D.Vehicles;
 
+// ReSharper disable once PossibleLossOfFraction
 namespace RMC.Racing2D.Standard.States
 {
     /// <summary>
@@ -61,8 +64,21 @@ namespace RMC.Racing2D.Standard.States
                 return;
             }
             controllableVehicle.LapCurrent++;
+
+            //Whoever is winning updates the model
+            GameScene.Racing2DModel.LapCurrent.Value =
+                Math.Max(GameScene.Racing2DModel.LapCurrent.Value, controllableVehicle.LapCurrent);
+            GameScene.GameView.StatusLabelShowLaps();
+
+            // Make sound
+
+            float percentComplete = GameScene.Racing2DModel.LapCurrent.Value / GameScene.Racing2DModel.LapMax.Value;
+            percentComplete = Math.Max(0.5f, percentComplete);
+            Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio(
+                "LapCompleteChime.mp3", 
+                0.5f + percentComplete);
             
-            GD.Print($"{controllableVehicle.Name}.LapCurrent = " + controllableVehicle.LapCurrent);
+            //Check gameover
             if (controllableVehicle.LapCurrent >= GameScene.Racing2DModel.LapMax.Value)
             {
                 _stateMachine.StateChange(GameScene.State04Ending);

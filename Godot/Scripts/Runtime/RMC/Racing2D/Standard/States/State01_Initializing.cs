@@ -24,9 +24,7 @@ namespace RMC.Racing2D.Standard.States
         // Methods ---------------------------------------
         public override void Enter()
         {
-            GD.Print("Enemy: " + GameScene.Racing2DModel.GetCurrentEnemyMenuConfiguration().Title);
-            GD.Print("Player: " + GameScene.Racing2DModel.GetCurrentPlayerMenuConfiguration().Title);
-            
+            // Clear old vehicles            
             GameScene.Track.ControllableVehicles.Clear();
             
             // Create player

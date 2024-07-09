@@ -14,7 +14,7 @@ namespace RMC.Racing2D.Audio
     public partial class AudioManager : Node
     {
         private readonly List<AudioStreamPlayer3D> _audioStreamPlayer3Ds = new List<AudioStreamPlayer3D>();
-        private readonly Dictionary<string, AudioStreamMP3> _audioStreamMp3s = new Dictionary<string, AudioStreamMP3>();
+        private readonly Dictionary<string, AudioStream> _audioStreams = new Dictionary<string, AudioStream>();
 
         public override async void _Ready()
         {
@@ -40,8 +40,8 @@ namespace RMC.Racing2D.Audio
             Mingleton.Instance.RemoveSingleton<AudioManager>();
         }
 
-        public void PlayAudio(string fileName)
-        {
+        public void PlayAudio(string fileName, float pitchScale = 1.0f)
+        {   
             AudioStreamPlayer3D audioStreamPlayer3D = GetAvailableAudioStreamPlayer3D();
 
             if (audioStreamPlayer3D == null)
@@ -49,6 +49,7 @@ namespace RMC.Racing2D.Audio
                 return;
             }
             audioStreamPlayer3D.Stream = GetOrCreateCachedAudioStream(fileName);
+            audioStreamPlayer3D.PitchScale = pitchScale;
             audioStreamPlayer3D.Play();
         }
         
@@ -66,13 +67,13 @@ namespace RMC.Racing2D.Audio
         }
         
 
-        private AudioStreamMP3 GetOrCreateCachedAudioStream(string fileName)
+        private AudioStream GetOrCreateCachedAudioStream(string fileName)
         {
             // Find/creat a cached Stream. It's WHAT to play
-            if (!_audioStreamMp3s.TryGetValue(fileName, out AudioStreamMP3 audioStream))
+            if (!_audioStreams.TryGetValue(fileName, out AudioStream audioStream))
             {
-                audioStream = LoadMp3ByFilename(fileName);
-                _audioStreamMp3s.Add(fileName, audioStream);
+                audioStream = LoadAudioStreamByFilename(fileName);
+                _audioStreams.Add(fileName, audioStream);
             }
 
             return audioStream;
@@ -84,10 +85,10 @@ namespace RMC.Racing2D.Audio
         /// </summary>
         /// <param name="fileName">Such as "Coin01.mp3"</param>
         /// <returns></returns>
-        private AudioStreamMP3 LoadMp3ByFilename(string fileName)
+        private AudioStream LoadAudioStreamByFilename(string fileName)
         {
             string filePath = FileAccessUtility.FindFileOnceInResources(fileName);
-            AudioStreamMP3 audioStreamMp3 = GD.Load<AudioStreamMP3>(filePath);
+            AudioStream audioStreamMp3 = GD.Load<AudioStream>(filePath);
             return audioStreamMp3;
         }
     }

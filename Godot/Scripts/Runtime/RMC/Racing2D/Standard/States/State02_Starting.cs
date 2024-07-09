@@ -24,28 +24,27 @@ namespace RMC.Racing2D.Standard.States
         public override async void Enter()
         {
             GameScene.GameView.StatusLabelShowMessage("3...");
-            Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("Pickup01.mp3");
-            await Task.Delay(500);
+            Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("RacingClockChime.mp3", 0.5f);
+            await Task.Delay(700);
             
             //
             GameScene.GameView.StatusLabelShowMessage("2...");
-            Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("Pickup01.mp3");
-            await Task.Delay(500);
+            Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("RacingClockChime.mp3", 0.5f);
+            await Task.Delay(700);
 
             //
             GameScene.GameView.StatusLabelShowMessage("1...");
-            Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("Pickup01.mp3");
-            await Task.Delay(500);
+            Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("RacingClockChime.mp3", 0.5f);
             
-            //
+            await Task.Delay(700);
             GameScene.GameView.StatusLabelShowMessage("Go!");
-            Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("Pickup01.mp3");
+            Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("RacingClockChime.mp3", 0.9f);
             
             // Done!
             _stateMachine.StateChange(GameScene.State03Racing);
             
             // After race starts, show laps
-            await Task.Delay(500);
+            await Task.Delay(700);
             GameScene.GameView.StatusLabelShowLaps();
         }
 

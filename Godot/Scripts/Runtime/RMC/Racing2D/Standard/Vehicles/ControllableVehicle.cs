@@ -79,6 +79,8 @@ namespace RMC.Racing2D.Vehicles
         {
             if (!IsEnabled)
             {
+                Steering = 0;
+                EngineForce = 0;
                 return;
             }
             Steering = _currentSteeringInput * CarCharacteristics.MaxSteeringValue;
@@ -92,7 +94,23 @@ namespace RMC.Racing2D.Vehicles
             {
                 return;
             }
-            Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("Hit01.mp3");
+            
+            ControllableVehicle controllableVehicle = body as ControllableVehicle;
+            if (controllableVehicle != null)
+            {
+                //Hit other car
+                Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("Hit02.wav");
+                return;
+            }
+            
+            GridMap gridMap = body as GridMap;
+            if (gridMap != null)
+            {
+                //Hit wall or something else
+                Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("Hit01.mp3");
+                return;
+            }
+           
         }
     }
 }

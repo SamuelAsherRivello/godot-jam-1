@@ -37,13 +37,14 @@ VehicleParent = NodePath("VehicleParent")
 [node name="Common" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Common"]
-transform = Transform3D(1, 0, 0, 0, 0.515038, 0.857167, 0, -0.857167, 0.515038, 0, 42.287, 22.208)
+transform = Transform3D(1, 0, 0, 0, 0.515038, 0.857167, 0, -0.857167, 0.515038, -1.13, 46.462, 22.208)
 fov = 56.6
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Common"]
 transform = Transform3D(1, 0, 0, 0, 0.870356, 0.492423, 0, -0.492423, 0.870356, 0, 5, 0)
 shadow_enabled = true
-shadow_opacity = 0.22
+shadow_opacity = 0.5
+shadow_blur = 2.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Common"]
 environment = SubResource("Environment_dub50")

@@ -44,7 +44,7 @@ namespace RMC.Racing2D.Players
             const float maxAccelerationDeviation = 0.1f;
             _maxAccelerationUnsigned = 1.0f + (float)GD.RandRange(-maxAccelerationDeviation, 0.0f);
 
-            GD.Print($"Setting up AI car MaxSpeed={_maxSpeed} MinCurveSpeed={_minCurveSpeed} MaxAcceleration={_maxAccelerationUnsigned}");
+            //GD.Print($"Setting up AI car MaxSpeed={_maxSpeed} MinCurveSpeed={_minCurveSpeed} MaxAcceleration={_maxAccelerationUnsigned}");
         }
 
         private void Race()

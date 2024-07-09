@@ -95,6 +95,11 @@ namespace RMC.Racing2D.Mini.Features.Game
         {
             RequireIsInitialized();
             
+            if (_titleLabel == null)
+            {
+                return;
+            }
+            
             Racing2DModel model = Context.ModelLocator.GetItem<Racing2DModel>();
             _titleLabel.Text = "Use Arrow Keys To Move";
             StatusLabelShowLaps();
@@ -105,7 +110,8 @@ namespace RMC.Racing2D.Mini.Features.Game
             RequireIsInitialized();
             
             Racing2DModel model = Context.ModelLocator.GetItem<Racing2DModel>();
-            StatusLabelShowMessage($"Lap {model.LapCurrent.Value} / {model.LapMax.Value}");
+            StatusLabelShowMessage($"Difficulty: {model.GetCurrentEnemyMenuConfiguration().Title}\n" +
+                                   $"Lap {model.LapCurrent.Value} / {model.LapMax.Value}");
         }
         
         public void StatusLabelShowMessage(string message)

@@ -49,9 +49,8 @@ namespace RMC.Racing2D.Standard
         public override async void _Ready()
         {
             // Mingleton Setup  --------------------------------
-            GD.Print($"1 Scene02_Game._Ready()");
+            GD.Print($"Scene02_Game._Ready()");
             await Mingleton.InstantiateAsync();
-            GD.Print($"2 Scene02_Game._Ready()");
                         
 
             // Mini Mvcs Setup ---------------------------------
