@@ -1,6 +1,6 @@
 using Godot;
-using System;
 using System.Collections.Generic;
+using Godot.Collections;
 using RMC.Core.Patterns.StateMachines;
 using RMC.Mingletons;
 using RMC.Mini.Features.SceneSystem;
@@ -8,8 +8,8 @@ using RMC.Racing2D.Players;
 using RMC.Racing2D.Vehicles;
 using RMC.Racing2D.Mini;
 using RMC.Racing2D.Mini.Features.Game;
-using RMC.Racing2D.Mini.Model;
 using RMC.Racing2D.Standard.States;
+using RMC.Racing2D.Tracks;
 
 
 namespace RMC.Racing2D.Standard
@@ -20,23 +20,18 @@ namespace RMC.Racing2D.Standard
         [Export] 
         private GameView _gameView;
 
+        //  Fields For States -----------------------------
         [Export] 
-        private Track _track;
+        public Track Track;
 
         [Export] 
-        private ControllableVehicle _controllablePlayerVehicle;
-
-        [Export] 
-        private Node3D _vehiclesNode;
-
-        private string _lastMeshName = "";
-        private float _lastRotationInDegrees = -1;
-        private List<ControllableVehicle> _controllableVehicles = new List<ControllableVehicle>();
+        public Node3D VehicleParent;
+        
         private StateMachine _stateMachine;
-        private State01_Initializing _state01Initializing;
-        private State02_Starting _state02Starting;
-        private State03_Racing _state03Racing;
-        private State04_Ending _state04Ending;
+        public State01_Initializing State01Initializing;
+        public State02_Starting State02Starting;
+        public State03_Racing State03Racing;
+        public State04_Ending State04Ending;
         
         //  Godot Methods ---------------------------------
 
@@ -47,32 +42,24 @@ namespace RMC.Racing2D.Standard
         {
             GD.Print($"Scene02_Game._Ready()");
             
-            //---------------------------------
+            
+            //Mini Mvcs Setup ---------------------------------
             AddFeature();
-            SetupControllableVehicles();
 
-            //---------------------------------
-            Racing2DMini racing2DMini = Mingleton.Instance.GetOrCreateAsClass<Racing2DMini>();
-            Racing2DModel racing2DModel = racing2DMini.ModelLocator.GetItem<Racing2DModel>();
             
-            GD.Print("Enemy: " + racing2DModel.GetCurrentEnemyMenuConfiguration().Title);
-            GD.Print("Player: " + racing2DModel.GetCurrentPlayerMenuConfiguration().Title);
-
-
-            //---------------------------------
+            //Standard Setup  ---------------------------------
             _stateMachine = new StateMachine();
-            
+            //
             _stateMachine.OnStateEnter.AddListener(StateMachine_OnStateEnter);
             _stateMachine.OnStateExecute.AddListener(StateMachine_OnStateExecute);
             _stateMachine.OnStateExit.AddListener(StateMachine_OnStateExit);
-            
-            _state01Initializing = new State01_Initializing(_stateMachine, this);
-            _state02Starting = new State02_Starting(_stateMachine, this);
-            _state03Racing = new State03_Racing(_stateMachine, this);
-            _state04Ending = new State04_Ending(_stateMachine, this);
-            
             //
-            _stateMachine.StateChange(_state01Initializing);
+            State01Initializing = new State01_Initializing(_stateMachine, this);
+            State02Starting = new State02_Starting(_stateMachine, this);
+            State03Racing = new State03_Racing(_stateMachine, this);
+            State04Ending = new State04_Ending(_stateMachine, this);
+            //
+            _stateMachine.StateChange(State01Initializing);
             
         }
 
@@ -99,21 +86,6 @@ namespace RMC.Racing2D.Standard
 
         
         //  Methods ---------------------------------------
-        public void SetupControllableVehicles()
-        {
-            foreach (var node in _vehiclesNode.GetChildren())
-            {
-                if (node is ControllableVehicle)
-                {
-                    _controllableVehicles.Add((ControllableVehicle)node);
-                }
-            }
-
-            foreach (var vehicle in _controllableVehicles)
-            {
-                vehicle.SetupForRace(_track);
-            }
-        }
 
         private void AddFeature()
         {
@@ -148,28 +120,28 @@ namespace RMC.Racing2D.Standard
         
         private void StateMachine_OnStateExecute(IState previousState, IState currentState)
         {
-            IState nextState = null;
-            switch (currentState)
-            {
-                case State01_Initializing:
-                    nextState = _state02Starting;
-                    break;
-                case State02_Starting:
-                    nextState = _state03Racing;
-                    break;
-                case State03_Racing:
-                    nextState = _state04Ending;
-                    break;
-                case State04_Ending:
-                    nextState = null;
-                    break;
-            }
-
-            if (nextState != null)
-            {
-                GD.Print($"Changing from {currentState} to {nextState}");
-                _stateMachine.StateChange(nextState);
-            }
+            // IState nextState = null;
+            // switch (currentState)
+            // {
+            //     case State01_Initializing:
+            //         nextState = State02Starting;
+            //         break;
+            //     case State02_Starting:
+            //         nextState = State03Racing;
+            //         break;
+            //     case State03_Racing:
+            //         nextState = State04Ending;
+            //         break;
+            //     case State04_Ending:
+            //         nextState = null;
+            //         break;
+            // }
+            //
+            // if (nextState != null)
+            // {
+            //     GD.Print($"Changing from {currentState} to {nextState}");
+            //     _stateMachine.StateChange(nextState);
+            // }
             
   
         }

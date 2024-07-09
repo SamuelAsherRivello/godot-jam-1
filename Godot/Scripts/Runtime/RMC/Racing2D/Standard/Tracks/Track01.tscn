@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbvmouma0cgm"]
+[gd_scene load_steps=7 format=3 uid="uid://cbvmouma0cgm"]
 
 [ext_resource type="Script" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Tracks/Track.cs" id="1_hq0qh"]
 [ext_resource type="MeshLibrary" uid="uid://glbffrw2cube" path="res://Settings/MeshLibraries/Flow/FlowMeshLibrary_1x1.tres" id="2_twe6m"]
+[ext_resource type="PackedScene" uid="uid://wkakitfjobeb" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Tracks/TrackStartingArea.tscn" id="2_wn3f3"]
 [ext_resource type="MeshLibrary" uid="uid://gcwh8vkevmg0" path="res://Settings/MeshLibraries/Ground/GroundMeshLibrary_1x1.tres" id="2_yonee"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ss5lb"]
@@ -10,10 +11,13 @@ size = Vector3(199.866, 1, 200.042)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vhlj0"]
 albedo_color = Color(6.01634e-08, 0.287751, 6.73831e-07, 1)
 
-[node name="Track01" type="Node3D" node_paths=PackedStringArray("_groundGridMap", "_flowGridMap")]
+[node name="Track01" type="Node3D" node_paths=PackedStringArray("_groundGridMap", "_flowGridMap", "_trackStartingArea")]
 script = ExtResource("1_hq0qh")
 _groundGridMap = NodePath("GroundGridMap")
 _flowGridMap = NodePath("FlowGridMap")
+_trackStartingArea = NodePath("TrackStartingArea")
+
+[node name="TrackStartingArea" parent="." instance=ExtResource("2_wn3f3")]
 
 [node name="FlowGridMap" type="GridMap" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -4.805, 0)
