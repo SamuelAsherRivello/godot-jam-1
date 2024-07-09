@@ -11,9 +11,9 @@ namespace RMC.Racing2D.Standard.States
         public State04_Ending(
             
             StateMachine stateMachine,
-            Scene02_Racer2DGame scene02Racer2D)
+            Scene02_Racer2DGame gameScene)
         
-            : base(stateMachine, scene02Racer2D)
+            : base(stateMachine, gameScene)
         {
         }
 

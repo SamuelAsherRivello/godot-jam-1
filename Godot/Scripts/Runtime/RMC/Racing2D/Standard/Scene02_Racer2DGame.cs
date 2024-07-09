@@ -1,13 +1,10 @@
 using Godot;
-using System.Collections.Generic;
-using Godot.Collections;
 using RMC.Core.Patterns.StateMachines;
 using RMC.Mingletons;
 using RMC.Mini.Features.SceneSystem;
-using RMC.Racing2D.Players;
-using RMC.Racing2D.Vehicles;
 using RMC.Racing2D.Mini;
 using RMC.Racing2D.Mini.Features.Game;
+using RMC.Racing2D.Mini.Model;
 using RMC.Racing2D.Standard.States;
 using RMC.Racing2D.Tracks;
 
@@ -16,6 +13,16 @@ namespace RMC.Racing2D.Standard
 {
     public partial class Scene02_Racer2DGame : Node3D
     {
+        //  Properties -------------------------------------
+        public Racing2DModel Racing2DModel
+        {
+            get 
+            {
+                Racing2DMini racing2DMini = Mingleton.Instance.GetOrCreateAsClass<Racing2DMini>();
+                return racing2DMini.ModelLocator.GetItem<Racing2DModel>();
+            }
+        }
+        
         //  Fields ----------------------------------------
         [Export] 
         private GameView _gameView;
@@ -32,6 +39,7 @@ namespace RMC.Racing2D.Standard
         public State02_Starting State02Starting;
         public State03_Racing State03Racing;
         public State04_Ending State04Ending;
+
         
         //  Godot Methods ---------------------------------
 
@@ -41,8 +49,8 @@ namespace RMC.Racing2D.Standard
         public override void _Ready()
         {
             GD.Print($"Scene02_Game._Ready()");
-            
-            
+                        
+
             //Mini Mvcs Setup ---------------------------------
             AddFeature();
 

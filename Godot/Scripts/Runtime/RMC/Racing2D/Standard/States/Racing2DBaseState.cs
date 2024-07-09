@@ -7,18 +7,18 @@ namespace RMC.Racing2D.Standard.States
     /// </summary>
     public partial class Racing2DBaseState : BaseState
     {
-        protected Scene02_Racer2DGame Scene02_Racer2DGame { get { return _scene02Racer2D;}}
-        private Scene02_Racer2DGame _scene02Racer2D;
+        protected Scene02_Racer2DGame GameScene { get { return _gameScene;}}
+        private Scene02_Racer2DGame _gameScene;
         
         // Initialization -------------------------------
         public Racing2DBaseState(
             
             StateMachine stateMachine, 
-            Scene02_Racer2DGame scene02Racer2D) 
+            Scene02_Racer2DGame gameScene) 
         
             : base(stateMachine)
         {
-            _scene02Racer2D = scene02Racer2D;
+            _gameScene = gameScene;
         }
     }
 }
