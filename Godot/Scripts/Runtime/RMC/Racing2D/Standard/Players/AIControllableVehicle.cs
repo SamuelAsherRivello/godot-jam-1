@@ -31,6 +31,8 @@ namespace RMC.Racing2D.Players
         public void SetupAIControllableVehicle(AICharacteristics newAiCharacteristics)
         {
             _aiCharacteristics = newAiCharacteristics;
+
+            GD.Print($"Setting up AI car MaxSpeed={_aiCharacteristics.MaxSpeed} MinCurveSpeed={_aiCharacteristics.MinCurveSpeed}");
         }
 
         private void Race()

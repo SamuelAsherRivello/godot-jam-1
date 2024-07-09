@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_pxhav")
-_MaxSpeed = 80.0
-_MinCurveSpeed = 15.0
+_MaxSpeed = 30.0
+_MinCurveSpeed = 10.0

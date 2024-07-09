@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Tracks/Track.cs" id="1_hq0qh"]
 [ext_resource type="MeshLibrary" uid="uid://glbffrw2cube" path="res://Settings/MeshLibraries/Flow/FlowMeshLibrary_1x1.tres" id="2_twe6m"]
-[ext_resource type="PackedScene" uid="uid://wkakitfjobeb" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Tracks/TrackStartingArea.tscn" id="2_wn3f3"]
+[ext_resource type="PackedScene" uid="uid://1nbnea3wcqpc" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Tracks/TrackStartingArea.tscn" id="2_wn3f3"]
 [ext_resource type="MeshLibrary" uid="uid://gcwh8vkevmg0" path="res://Settings/MeshLibraries/Ground/GroundMeshLibrary_1x1.tres" id="2_yonee"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ss5lb"]
