@@ -7,6 +7,7 @@ using RMC.Racing2D.Players;
 using RMC.Racing2D.Vehicles;
 using RMC.Racing2D.Mini;
 using RMC.Racing2D.Mini.Features.Game;
+using RMC.Racing2D.Mini.Model;
 
 
 namespace RMC.Racing2D.Standard
@@ -40,6 +41,12 @@ namespace RMC.Racing2D.Standard
             GD.Print($"Scene02_Game._Ready()");
             AddFeature();
             SetupControllableVehicles();
+
+            Racing2DMini racing2DMini = Mingleton.Instance.GetOrCreateAsClass<Racing2DMini>();
+            Racing2DModel racing2DModel = racing2DMini.ModelLocator.GetItem<Racing2DModel>();
+            
+            GD.Print("Enemy: " + racing2DModel.GetCurrentEnemyMenuConfiguration().Title);
+            GD.Print("Player: " + racing2DModel.GetCurrentPlayerMenuConfiguration().Title);
         }
 
 

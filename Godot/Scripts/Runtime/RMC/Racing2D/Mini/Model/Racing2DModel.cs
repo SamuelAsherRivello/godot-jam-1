@@ -33,6 +33,17 @@ namespace RMC.Racing2D.Mini.Model
         private readonly Observable<int> _lapCurrent = new Observable<int>();
         private readonly Observable<int> _lapMax = new Observable<int>();
         
+        //  Convenience ----------------------------------------
+        public PlayerMenuConfiguration GetCurrentPlayerMenuConfiguration ()
+        {
+            return _playerMenuConfigurations.Value[_playerMenuConfigurationIndex.Value]; 
+        }
+        
+        public EnemyMenuConfiguration GetCurrentEnemyMenuConfiguration ()
+        {
+            return _enemyMenuConfigurations.Value[_enemyMenuConfigurationIndex.Value]; 
+        }
+        
         //  Initialization  -------------------------------
         public override void Initialize(IContext context) 
         {
