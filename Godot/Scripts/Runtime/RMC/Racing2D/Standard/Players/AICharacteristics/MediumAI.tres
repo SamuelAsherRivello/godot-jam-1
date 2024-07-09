@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AICharacteristics" load_steps=2 format=3 uid="uid://domdwgaq3s3vp"]
+
+[ext_resource type="Script" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Players/AICharacteristics.cs" id="1_pxhav"]
+
+[resource]
+script = ExtResource("1_pxhav")
+_MaxSpeed = 80.0
+_MinCurveSpeed = 15.0

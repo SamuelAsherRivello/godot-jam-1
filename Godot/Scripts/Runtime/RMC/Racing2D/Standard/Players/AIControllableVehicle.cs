@@ -30,10 +30,19 @@ namespace RMC.Racing2D.Players
             base._PhysicsProcess(delta);
         }
 
+        private AICharacteristics _aiCharacteristics;
+
+        public void SetupAI(AICharacteristics newAiCharacteristics)
+        {
+            _aiCharacteristics = newAiCharacteristics;
+        }
+
         private void Race()
         {
             const float maxSpeed = 80.0f;
             const float minCurveSpeed = 15.0f;
+
+            const float predictionSeconds = 0.4f;
             const float maxSteeringThresholdDEG = 45.0f;
 
             float currentTargetSpeed = maxSpeed;
@@ -64,7 +73,6 @@ namespace RMC.Racing2D.Players
                 newSteeringInput = steeringStrength * Mathf.Sign(differenceAngle);
             }
 
-            const float predictionSeconds = 0.5f;
             Vector3 predictedPosition = GlobalPosition + (LinearVelocity * predictionSeconds);
 
             if (HasDirectionalInformationAtWorldPosition(predictedPosition))
