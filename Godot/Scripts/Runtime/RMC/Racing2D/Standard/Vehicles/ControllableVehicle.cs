@@ -17,6 +17,10 @@ namespace RMC.Racing2D.Vehicles
             AI_PLAYER
         }
 
+        public bool IsEnabled { get; set; } = false;
+        public int LapCurrent { get; set; } = 0;
+        public bool HasExitedStartingArea { get; set; } = false;
+
         public abstract ControllableVehicleType GetControllableVehicleType();
 
         protected void SetInputs(float newSteeringInput, float newAccelerationInput)
@@ -64,6 +68,10 @@ namespace RMC.Racing2D.Vehicles
 
         private void ApplyExternalInput()
         {
+            if (!IsEnabled)
+            {
+                return;
+            }
             Steering = _currentSteeringInput * CarCharacteristics.MaxSteeringValue;
             EngineForce = _currentAccelerationInput * CarCharacteristics.MaxEngineStrength;
         }

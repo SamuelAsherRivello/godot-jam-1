@@ -123,7 +123,7 @@ namespace RMC.Racing2D.Standard
         
         private void StateMachine_OnStateEnter(IState previousState, IState currentState)
         {
-            //GD.Print($"StateMachine_OnStateEnter from {previousState} to {currentState}");
+            GD.Print($"StateMachine_OnStateEnter from {previousState} to {currentState}");
         }
         
         private void StateMachine_OnStateExecute(IState previousState, IState currentState)

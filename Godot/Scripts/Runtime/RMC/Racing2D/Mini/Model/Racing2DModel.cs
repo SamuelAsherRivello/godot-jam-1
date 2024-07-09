@@ -59,7 +59,7 @@ namespace RMC.Racing2D.Mini.Model
                 _enemyMenuConfigurationIndex.Value = 0;
                 _hasNavigationBack.Value = false;
                 _lapCurrent.Value = 1;
-                _lapMax.Value = 3;
+                _lapMax.Value = 1;
               
                 //////////////////////////////////////////////
                 // Player Cars 

@@ -27,12 +27,15 @@ namespace RMC.Racing2D.Standard.States
             GD.Print("Enemy: " + GameScene.Racing2DModel.GetCurrentEnemyMenuConfiguration().Title);
             GD.Print("Player: " + GameScene.Racing2DModel.GetCurrentPlayerMenuConfiguration().Title);
             
+            GameScene.Track.ControllableVehicles.Clear();
+            
             // Create player
             var playerPath = FileAccessUtility.FindFileOnceInResources("LocalPlayerControllableVehicle.tscn");
             PackedScene playerScene = GD.Load<PackedScene>(playerPath);
             LocalPlayerControllableVehicle player = playerScene.Instantiate<LocalPlayerControllableVehicle>();
             player.Name = $"Vehicle 01 (Player)";
             GameScene.VehicleParent.AddChild(player);
+            GameScene.Track.ControllableVehicles.Add(player);
             
             // Position Player
             player.GlobalPosition = GameScene.Track.TrackStartingArea.StartingPoints[0].GlobalPosition;
@@ -47,6 +50,7 @@ namespace RMC.Racing2D.Standard.States
                 enemy.SetupControllableVehicle(GameScene.Track);
                 enemy.SetupAIControllableVehicle(GameScene.Racing2DModel.GetCurrentEnemyMenuConfiguration().Resource as AICharacteristics);
                 GameScene.VehicleParent.AddChild(enemy);
+                GameScene.Track.ControllableVehicles.Add(enemy);
                 
                 // Name Enemy (01 through 03)
                 enemy.Name = $"Vehicle {(i+1):00} (Enemy)";

@@ -1,4 +1,8 @@
-﻿using RMC.Core.Patterns.StateMachines;
+﻿using System.Threading.Tasks;
+using Godot;
+using RMC.Core.Patterns.StateMachines;
+using RMC.Mingletons;
+using RMC.Racing2D.Audio;
 
 namespace RMC.Racing2D.Standard.States
 {
@@ -9,7 +13,6 @@ namespace RMC.Racing2D.Standard.States
     {
         // Initialization -------------------------------
         public State02_Starting(
-            
             StateMachine stateMachine,
             Scene02_Racer2DGame gameScene)
         
@@ -18,8 +21,26 @@ namespace RMC.Racing2D.Standard.States
         }
 
         // Methods ---------------------------------------
-        public override void Enter()
+        public override async void Enter()
         {
+            await Task.Delay(500);
+            GD.Print("3");
+            Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("Pickup01.mp3");
+            
+            await Task.Delay(500);
+            GD.Print("2");
+            Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("Pickup01.mp3");
+            
+            await Task.Delay(500);
+            GD.Print("1");
+            Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("Pickup01.mp3");
+            
+            await Task.Delay(500);
+            GD.Print("Go!");
+            Mingleton.Instance.GetSingleton<AudioManager>().PlayAudio("Pickup01.mp3");
+            
+            // Done!
+            _stateMachine.StateChange(GameScene.State03Racing);
         }
 
         public override void Execute(double delta)

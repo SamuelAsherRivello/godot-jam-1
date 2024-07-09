@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using Godot;
+using RMC.Racing2D.Vehicles;
 
 namespace RMC.Racing2D.Tracks
 {
@@ -19,6 +21,8 @@ namespace RMC.Racing2D.Tracks
         {
             get { return _flowGridMap; }
         }
+
+        public List<ControllableVehicle> ControllableVehicles { get; set; } = new();
 
         [Export] private GridMap _groundGridMap;
 
