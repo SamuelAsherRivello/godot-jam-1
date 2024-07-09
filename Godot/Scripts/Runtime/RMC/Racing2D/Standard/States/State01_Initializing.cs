@@ -2,6 +2,7 @@
 using RMC.Core.Patterns.StateMachines;
 using RMC.Core.Utilities;
 using RMC.Racing2D.Players;
+using RMC.Racing2D.Vehicles;
 
 namespace RMC.Racing2D.Standard.States
 {
@@ -43,6 +44,8 @@ namespace RMC.Racing2D.Standard.States
                 var enemyPath = FileAccessUtility.FindFileOnceInResources("AIControllableVehicle.tscn");
                 PackedScene enemyScene = GD.Load<PackedScene>(enemyPath);
                 AIControllableVehicle enemy = enemyScene.Instantiate<AIControllableVehicle>();
+                enemy.SetupControllableVehicle(GameScene.Track);
+                enemy.SetupAIControllableVehicle(GameScene.Racing2DModel.GetCurrentEnemyMenuConfiguration().Resource as AICharacteristics);
                 GameScene.VehicleParent.AddChild(enemy);
                 
                 // Name Enemy (01 through 03)

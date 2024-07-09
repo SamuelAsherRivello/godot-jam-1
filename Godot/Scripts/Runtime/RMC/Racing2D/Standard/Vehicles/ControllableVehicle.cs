@@ -31,7 +31,7 @@ namespace RMC.Racing2D.Vehicles
 
         protected Track GetTrack() { return _track; }
 
-        public void SetupForRace(Track newTrack)
+        public void SetupControllableVehicle(Track newTrack)
         {
             _track = newTrack;
         }
