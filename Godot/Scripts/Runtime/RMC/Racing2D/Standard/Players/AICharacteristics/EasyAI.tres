@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_tnq3i")
-_MaxSpeed = 20.0
+_MaxSpeed = 15.0
 _MinCurveSpeed = 5.0

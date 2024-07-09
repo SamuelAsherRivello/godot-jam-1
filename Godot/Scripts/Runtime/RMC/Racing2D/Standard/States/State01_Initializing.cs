@@ -33,6 +33,7 @@ namespace RMC.Racing2D.Standard.States
             var playerPath = FileAccessUtility.FindFileOnceInResources("LocalPlayerControllableVehicle.tscn");
             PackedScene playerScene = GD.Load<PackedScene>(playerPath);
             LocalPlayerControllableVehicle player = playerScene.Instantiate<LocalPlayerControllableVehicle>();
+            player.SetBodyColor((GameScene.Racing2DModel.GetCurrentPlayerMenuConfiguration().Resource as CarAppearance).BodyColor);
             player.Name = $"Vehicle 01 (Player)";
             GameScene.VehicleParent.AddChild(player);
             GameScene.Track.ControllableVehicles.Add(player);

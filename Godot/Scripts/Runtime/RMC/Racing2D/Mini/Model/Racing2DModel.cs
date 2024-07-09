@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Godot;
 using RMC.Core.Observables;
+using RMC.Core.Utilities;
 using RMC.Mini;
 using RMC.Mini.Model;
 using RMC.Racing2D.Vehicles;
@@ -64,18 +65,21 @@ namespace RMC.Racing2D.Mini.Model
                 //////////////////////////////////////////////
                 // Player Cars 
                 //TODO: Replace nulls and remove this comment
-                _playerMenuConfigurations.Value.Add(new PlayerMenuConfiguration("Red", null));
-                _playerMenuConfigurations.Value.Add(new PlayerMenuConfiguration("Blue", null));
-                _playerMenuConfigurations.Value.Add(new PlayerMenuConfiguration("Green", null));
-                
+                _playerMenuConfigurations.Value.Add(new PlayerMenuConfiguration("Red",
+                    GD.Load<CarAppearance>(FileAccessUtility.FindFileOnceInResources("RedCarAppearance.tres"))));
+                _playerMenuConfigurations.Value.Add(new PlayerMenuConfiguration("Blue",
+                    GD.Load<CarAppearance>(FileAccessUtility.FindFileOnceInResources("BlueCarAppearance.tres"))));
+                _playerMenuConfigurations.Value.Add(new PlayerMenuConfiguration("Green",
+                    GD.Load<CarAppearance>(FileAccessUtility.FindFileOnceInResources("GreenCarAppearance.tres"))));
+
                 //////////////////////////////////////////////
                 // Enemy Cars 
                 _enemyMenuConfigurations.Value.Add(new EnemyMenuConfiguration("Easy",
-                    GD.Load<AICharacteristics>("res://Scripts/Runtime/RMC/Racing2D/Standard/Players/AICharacteristics/EasyAI.tres")));
+                    GD.Load<AICharacteristics>(FileAccessUtility.FindFileOnceInResources("EasyAI.tres"))));
                 _enemyMenuConfigurations.Value.Add(new EnemyMenuConfiguration("Medium",
-                    GD.Load<AICharacteristics>("res://Scripts/Runtime/RMC/Racing2D/Standard/Players/AICharacteristics/MediumAI.tres")));
+                    GD.Load<AICharacteristics>(FileAccessUtility.FindFileOnceInResources("MediumAI.tres"))));
                 _enemyMenuConfigurations.Value.Add(new EnemyMenuConfiguration("Hard",
-                    GD.Load<AICharacteristics>("res://Scripts/Runtime/RMC/Racing2D/Standard/Players/AICharacteristics/HardAI.tres")));
+                    GD.Load<AICharacteristics>(FileAccessUtility.FindFileOnceInResources("HardAI.tres"))));
             }
         }
 

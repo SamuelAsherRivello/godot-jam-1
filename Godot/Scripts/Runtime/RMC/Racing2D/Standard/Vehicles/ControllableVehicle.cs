@@ -10,6 +10,15 @@ namespace RMC.Racing2D.Vehicles
     {
         [Export] private CarCharacteristics CarCharacteristics;
         [Export] private Area3D _collisionArea3D;
+        [Export] private MeshInstance3D _bodyMeshInstance3D;
+
+        public void SetBodyColor(Color color)
+        {
+            var activeMaterial = _bodyMeshInstance3D.GetActiveMaterial(0);
+            var overrideMaterial = activeMaterial.Duplicate() as StandardMaterial3D;
+            overrideMaterial.AlbedoColor = color;
+            _bodyMeshInstance3D.SetSurfaceOverrideMaterial(0, overrideMaterial);
+        }
 
         public enum ControllableVehicleType
         {

@@ -4,7 +4,8 @@
 [ext_resource type="Script" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Players/AIControllableVehicle.cs" id="1_vaq67"]
 [ext_resource type="Resource" uid="uid://bs8fc3ix1upwg" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Vehicles/CarCharacteristics/DefaultRaceCar.tres" id="2_b3p5b"]
 
-[node name="AIControllableVehicle" node_paths=PackedStringArray("_collisionArea3D") instance=ExtResource("1_k3g2v")]
+[node name="AIControllableVehicle" node_paths=PackedStringArray("_collisionArea3D", "_bodyMeshInstance3D") instance=ExtResource("1_k3g2v")]
 script = ExtResource("1_vaq67")
 CarCharacteristics = ExtResource("2_b3p5b")
 _collisionArea3D = NodePath("CollisionArea3D")
+_bodyMeshInstance3D = NodePath("body")

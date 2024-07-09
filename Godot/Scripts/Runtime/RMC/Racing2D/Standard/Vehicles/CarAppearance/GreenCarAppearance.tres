@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CarAppearance" load_steps=2 format=3 uid="uid://b7dw5gn0mtjhk"]
+
+[ext_resource type="Script" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Vehicles/CarAppearance.cs" id="1_6lmfa"]
+
+[resource]
+script = ExtResource("1_6lmfa")
+_BodyColor = Color(0, 1, 0, 1)
