@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvgyqccrk33mf"]
+
+[ext_resource type="PackedScene" uid="uid://cf0pkwrux0ni6" path="res://aaDevelopers/SamR/InheritedSceneDemo/Animal.tscn" id="1_sblun"]
+[ext_resource type="Script" path="res://aaDevelopers/SamR/InheritedSceneDemo/Dog.cs" id="2_waho2"]
+
+[node name="Dog" instance=ExtResource("1_sblun")]
+script = ExtResource("2_waho2")
+
+[node name="Tail" type="CSGBox3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 0.893246, -0.449568, 0, 0.449568, 0.893246, 0.0524597, 0.559412, -0.688744)
+size = Vector3(0.345703, 0.227539, 1)
