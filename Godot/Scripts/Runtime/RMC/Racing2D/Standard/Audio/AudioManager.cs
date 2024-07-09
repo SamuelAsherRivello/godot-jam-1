@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics;
 using Godot;
 using RMC.Core.Utilities;
 using RMC.Mingletons;
@@ -31,6 +32,12 @@ namespace RMC.Racing2D.Audio
                     _audioStreamPlayer3Ds.Add(audioStreamPlayer3D);
                 }
             }
+        }
+
+        public override void _ExitTree()
+        {
+            base._ExitTree();
+            Mingleton.Instance.RemoveSingleton<AudioManager>();
         }
 
         public void PlayAudio(string fileName)
