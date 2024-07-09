@@ -34,8 +34,6 @@ _gameView = NodePath("GameView")
 Track = NodePath("Track01")
 VehicleParent = NodePath("VehicleParent")
 
-[node name="GameView" parent="." instance=ExtResource("2_ns2w0")]
-
 [node name="Common" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Common"]
@@ -50,6 +48,8 @@ shadow_enabled = true
 environment = SubResource("Environment_dub50")
 
 [node name="AudioManager" parent="Common" instance=ExtResource("2_u47hh")]
+
+[node name="GameView" parent="." instance=ExtResource("2_ns2w0")]
 
 [node name="Track01" parent="." instance=ExtResource("2_f6xoa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.855691, 0.294429, -0.27113)

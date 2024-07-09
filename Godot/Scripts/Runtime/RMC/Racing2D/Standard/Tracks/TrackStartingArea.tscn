@@ -1,24 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://wkakitfjobeb"]
+[gd_scene load_steps=7 format=3 uid="uid://wkakitfjobeb"]
 
 [ext_resource type="Script" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Tracks/TrackStartingArea.cs" id="1_1gqsc"]
+[ext_resource type="Texture2D" uid="uid://yqiwtobd21dc" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/flagCheckers_checkers.png" id="3_mfrfl"]
+[ext_resource type="PackedScene" uid="uid://oahmi7n6l5pa" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Tracks/StartingPoint.tscn" id="3_u2mf8"]
 
-[node name="TrackStartingArea" type="Node3D" node_paths=PackedStringArray("StartingPoints")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ww1l3"]
+size = Vector3(1.21729, 0.713623, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xeal0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wpu2t"]
+albedo_texture = ExtResource("3_mfrfl")
+uv1_scale = Vector3(4.295, 4.225, 4.77)
+uv1_offset = Vector3(0.105, -0.03, 0)
+
+[node name="TrackStartingArea" type="Node3D" node_paths=PackedStringArray("Area3D", "StartingPoints")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6623, 0, -15.7104)
 script = ExtResource("1_1gqsc")
-StartingPoints = [NodePath("StartingPoint1"), NodePath("StartingPoint2"), NodePath("StartingPoint3"), NodePath("StartingPoint4")]
+Area3D = NodePath("Area3D")
+StartingPoints = [NodePath("StartingPoints/StartingPoint1"), NodePath("StartingPoints/StartingPoint2"), NodePath("StartingPoints/StartingPoint3"), NodePath("StartingPoints/StartingPoint4")]
 
-[node name="StartingPoint1" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.9556, 0, -1.1261)
-size = Vector3(1, 1, 3)
+[node name="Area3D" type="Area3D" parent="."]
 
-[node name="StartingPoint2" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.9556, 0, 1.8024)
-size = Vector3(1, 1, 3)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1.08643, 3.56323, 0)
+shape = SubResource("BoxShape3D_ww1l3")
 
-[node name="StartingPoint3" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.28403, 0, -1.1261)
-size = Vector3(1, 1, 3)
+[node name="Checkerboard" type="CSGMesh3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 7, 4.01093, 0.130594, 0.747559)
+mesh = SubResource("BoxMesh_xeal0")
+material = SubResource("StandardMaterial3D_wpu2t")
 
-[node name="StartingPoint4" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.34682, 0, 1.80176)
-size = Vector3(1, 1, 3)
+[node name="StartingPoints" type="Node3D" parent="."]
+
+[node name="StartingPoint1" parent="StartingPoints" instance=ExtResource("3_u2mf8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -1)
+
+[node name="StartingPoint2" parent="StartingPoints" instance=ExtResource("3_u2mf8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 2.71171)
+
+[node name="StartingPoint3" parent="StartingPoints" instance=ExtResource("3_u2mf8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, -1)
+
+[node name="StartingPoint4" parent="StartingPoints" instance=ExtResource("3_u2mf8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.03613, 0, 2.68077)
