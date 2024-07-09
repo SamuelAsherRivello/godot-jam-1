@@ -43,10 +43,11 @@ namespace RMC.Racing2D.Standard.States
             player.Rotation = GameScene.Track.TrackStartingArea.StartingPoints[0].Rotation;
 
             // Create enemies
+            var enemyPath = FileAccessUtility.FindFileOnceInResources("AIControllableVehicle.tscn");
+            PackedScene enemyScene = GD.Load<PackedScene>(enemyPath);
+
             for (int i = 1; i <= 3; i++)
             {
-                var enemyPath = FileAccessUtility.FindFileOnceInResources("AIControllableVehicle.tscn");
-                PackedScene enemyScene = GD.Load<PackedScene>(enemyPath);
                 AIControllableVehicle enemy = enemyScene.Instantiate<AIControllableVehicle>();
                 enemy.SetupControllableVehicle(GameScene.Track);
                 enemy.SetupAIControllableVehicle(GameScene.Racing2DModel.GetCurrentEnemyMenuConfiguration().Resource as AICharacteristics);

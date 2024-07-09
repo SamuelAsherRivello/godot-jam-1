@@ -1,4 +1,5 @@
 using Godot;
+using Godot.NativeInterop;
 using RMC.Racing2D.Vehicles;
 using System;
 using System.Diagnostics;
@@ -7,6 +8,10 @@ namespace RMC.Racing2D.Players
 {
     public partial class AIControllableVehicle : ControllableVehicle
     {
+        private float _maxSpeed = 1.0f;
+        private float _minCurveSpeed = 1.0f;
+        private float _maxAccelerationUnsigned = 1.0f;
+
         // Called when the node enters the scene tree for the first time.
         public override void _Ready()
         {
@@ -31,8 +36,15 @@ namespace RMC.Racing2D.Players
         public void SetupAIControllableVehicle(AICharacteristics newAiCharacteristics)
         {
             _aiCharacteristics = newAiCharacteristics;
+            const float maxSpeedRandomDeviation = 5.0f;
+            _maxSpeed = _aiCharacteristics.MaxSpeed + (float) GD.RandRange(-maxSpeedRandomDeviation, maxSpeedRandomDeviation);
+            const float minCurveSpeedRandomDeviation = 2.0f;
+            _minCurveSpeed = _aiCharacteristics.MinCurveSpeed + (float) GD.RandRange(-minCurveSpeedRandomDeviation, minCurveSpeedRandomDeviation);
 
-            GD.Print($"Setting up AI car MaxSpeed={_aiCharacteristics.MaxSpeed} MinCurveSpeed={_aiCharacteristics.MinCurveSpeed}");
+            const float maxAccelerationDeviation = 0.1f;
+            _maxAccelerationUnsigned = 1.0f + (float)GD.RandRange(-maxAccelerationDeviation, 0.0f);
+
+            GD.Print($"Setting up AI car MaxSpeed={_maxSpeed} MinCurveSpeed={_minCurveSpeed} MaxAcceleration={_maxAccelerationUnsigned}");
         }
 
         private void Race()
@@ -40,7 +52,7 @@ namespace RMC.Racing2D.Players
             const float predictionSeconds = 0.4f;
             const float maxSteeringThresholdDEG = 45.0f;
 
-            float currentTargetSpeed = _aiCharacteristics.MaxSpeed;
+            float currentTargetSpeed = _maxSpeed;
 
             float newSteeringInput = 0.0f;
             float newAcceleration = 0.0f;
@@ -58,7 +70,7 @@ namespace RMC.Racing2D.Players
                 if (differenceAbs > maxSteeringThresholdDEG)
                 {
                     steeringStrength = 1.0f;
-                    currentTargetSpeed = _aiCharacteristics.MinCurveSpeed;
+                    currentTargetSpeed = _minCurveSpeed;
                 }
                 else
                 {
@@ -79,7 +91,7 @@ namespace RMC.Racing2D.Players
 
                 if (differenceAbs > maxSteeringThresholdDEG)
                 {
-                    currentTargetSpeed = _aiCharacteristics.MinCurveSpeed;
+                    currentTargetSpeed = _minCurveSpeed;
                 }
             }
 
@@ -98,6 +110,8 @@ namespace RMC.Racing2D.Players
             {
                 newAcceleration = Mathf.Sign(speedDifference);
             }
+
+            newAcceleration = Mathf.Clamp(newAcceleration, -_maxAccelerationUnsigned, _maxAccelerationUnsigned);
 
             SetInputs(newSteeringInput, newAcceleration);
         }
