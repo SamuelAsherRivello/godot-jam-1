@@ -35,13 +35,10 @@ namespace RMC.Racing2D.Players
 
         private void Race()
         {
-            const float maxSpeed = 80.0f;
-            const float minCurveSpeed = 15.0f;
-
             const float predictionSeconds = 0.4f;
             const float maxSteeringThresholdDEG = 45.0f;
 
-            float currentTargetSpeed = maxSpeed;
+            float currentTargetSpeed = _aiCharacteristics.MaxSpeed;
 
             float newSteeringInput = 0.0f;
             float newAcceleration = 0.0f;
@@ -59,7 +56,7 @@ namespace RMC.Racing2D.Players
                 if (differenceAbs > maxSteeringThresholdDEG)
                 {
                     steeringStrength = 1.0f;
-                    currentTargetSpeed = minCurveSpeed;
+                    currentTargetSpeed = _aiCharacteristics.MinCurveSpeed;
                 }
                 else
                 {
@@ -80,7 +77,7 @@ namespace RMC.Racing2D.Players
 
                 if (differenceAbs > maxSteeringThresholdDEG)
                 {
-                    currentTargetSpeed = minCurveSpeed;
+                    currentTargetSpeed = _aiCharacteristics.MinCurveSpeed;
                 }
             }
 

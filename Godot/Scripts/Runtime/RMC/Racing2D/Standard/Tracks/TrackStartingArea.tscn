@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://wkakitfjobeb"]
+[gd_scene load_steps=7 format=3 uid="uid://1nbnea3wcqpc"]
 
 [ext_resource type="Script" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Tracks/TrackStartingArea.cs" id="1_1gqsc"]
 [ext_resource type="Texture2D" uid="uid://yqiwtobd21dc" path="res://addons/kenny.nl/kenney_racing-kit/Models/GLTF format/flagCheckers_checkers.png" id="3_mfrfl"]
-[ext_resource type="PackedScene" uid="uid://oahmi7n6l5pa" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Tracks/StartingPoint.tscn" id="3_u2mf8"]
+[ext_resource type="PackedScene" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Tracks/StartingPoint.tscn" id="3_u2mf8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ww1l3"]
 size = Vector3(1.21729, 0.713623, 1)
@@ -14,10 +14,9 @@ albedo_texture = ExtResource("3_mfrfl")
 uv1_scale = Vector3(4.295, 4.225, 4.77)
 uv1_offset = Vector3(0.105, -0.03, 0)
 
-[node name="TrackStartingArea" type="Node3D" node_paths=PackedStringArray("Area3D", "StartingPoints")]
+[node name="TrackStartingArea" type="Node3D" node_paths=PackedStringArray("StartingPoints")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6623, 0, -15.7104)
 script = ExtResource("1_1gqsc")
-Area3D = NodePath("Area3D")
 StartingPoints = [NodePath("StartingPoints/StartingPoint1"), NodePath("StartingPoints/StartingPoint2"), NodePath("StartingPoints/StartingPoint3"), NodePath("StartingPoints/StartingPoint4")]
 
 [node name="Area3D" type="Area3D" parent="."]
