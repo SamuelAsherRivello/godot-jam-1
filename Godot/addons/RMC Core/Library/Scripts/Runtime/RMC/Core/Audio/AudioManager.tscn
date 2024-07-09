@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dwa3u1c4aucxb"]
 
-[ext_resource type="Script" path="res://Scripts/Runtime/RMC/Racing2D/Standard/Audio/AudioManager.cs" id="1_htwbn"]
+[ext_resource type="Script" path="res://addons/RMC Core/Library/Scripts/Runtime/RMC/Core/Audio/AudioManager.cs" id="1_htwbn"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_htwbn")

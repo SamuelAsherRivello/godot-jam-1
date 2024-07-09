@@ -1,10 +1,9 @@
 using System.Collections.Generic;
-using System.Diagnostics;
 using Godot;
 using RMC.Core.Utilities;
 using RMC.Mingletons;
 
-namespace RMC.Racing2D.Audio
+namespace RMC.Core.Audio
 {
     /// <summary>
     /// This workflow is for a Singleton that is a Node

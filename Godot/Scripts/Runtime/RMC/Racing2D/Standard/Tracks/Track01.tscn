@@ -18,6 +18,7 @@ _flowGridMap = NodePath("FlowGridMap")
 _trackStartingArea = NodePath("TrackStartingArea")
 
 [node name="TrackStartingArea" parent="." instance=ExtResource("2_wn3f3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9994, 0, -15.7104)
 
 [node name="FlowGridMap" type="GridMap" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -4.805, 0)
