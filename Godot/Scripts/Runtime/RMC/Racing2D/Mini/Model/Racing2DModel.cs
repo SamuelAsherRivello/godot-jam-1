@@ -3,6 +3,7 @@ using Godot;
 using RMC.Core.Observables;
 using RMC.Mini;
 using RMC.Mini.Model;
+using RMC.Racing2D.Vehicles;
 
 namespace RMC.Racing2D.Mini.Model
 {
@@ -68,11 +69,13 @@ namespace RMC.Racing2D.Mini.Model
                 _playerMenuConfigurations.Value.Add(new PlayerMenuConfiguration("Green", null));
                 
                 //////////////////////////////////////////////
-                // Player Cars 
-                //TODO: Replace nulls and remove this comment
-                _enemyMenuConfigurations.Value.Add(new EnemyMenuConfiguration("Easy", null));
-                _enemyMenuConfigurations.Value.Add(new EnemyMenuConfiguration("Medium", null));
-                _enemyMenuConfigurations.Value.Add(new EnemyMenuConfiguration("Hard", null));
+                // Enemy Cars 
+                _enemyMenuConfigurations.Value.Add(new EnemyMenuConfiguration("Easy",
+                    GD.Load<AICharacteristics>("res://Scripts/Runtime/RMC/Racing2D/Standard/Players/AICharacteristics/EasyAI.tres")));
+                _enemyMenuConfigurations.Value.Add(new EnemyMenuConfiguration("Medium",
+                    GD.Load<AICharacteristics>("res://Scripts/Runtime/RMC/Racing2D/Standard/Players/AICharacteristics/MediumAI.tres")));
+                _enemyMenuConfigurations.Value.Add(new EnemyMenuConfiguration("Hard",
+                    GD.Load<AICharacteristics>("res://Scripts/Runtime/RMC/Racing2D/Standard/Players/AICharacteristics/HardAI.tres")));
             }
         }
 
