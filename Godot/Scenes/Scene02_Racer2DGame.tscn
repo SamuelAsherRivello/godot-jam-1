@@ -32,7 +32,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.89555e-05, 7.68323e-05, 0)
 script = ExtResource("1_3r6eq")
 _gameView = NodePath("GameView")
 Track = NodePath("Track01")
-VehicleParent = NodePath("Vehicle/VehicleParent")
+VehicleParent = NodePath("VehicleParent")
 
 [node name="GameView" parent="." instance=ExtResource("2_ns2w0")]
 
@@ -54,6 +54,4 @@ environment = SubResource("Environment_dub50")
 [node name="Track01" parent="." instance=ExtResource("2_f6xoa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.855691, 0.294429, -0.27113)
 
-[node name="Vehicle" type="Node3D" parent="."]
-
-[node name="VehicleParent" type="Node3D" parent="Vehicle"]
+[node name="VehicleParent" type="Node3D" parent="."]
