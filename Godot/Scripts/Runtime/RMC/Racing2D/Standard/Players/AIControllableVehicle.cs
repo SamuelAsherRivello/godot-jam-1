@@ -11,8 +11,6 @@ namespace RMC.Racing2D.Players
         public override void _Ready()
         {
             base._Ready();
-            
-            GD.Print("_PhysicsProcess is temporarily disabled below. Fix :)");
         }
 
         // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,16 +21,14 @@ namespace RMC.Racing2D.Players
 
         public override void _PhysicsProcess(double delta)
         {
-            
-            //Disabled here... Fix :)
-            ////////////// Race();
+            Race();
 
             base._PhysicsProcess(delta);
         }
 
         private AICharacteristics _aiCharacteristics;
 
-        public void SetupAI(AICharacteristics newAiCharacteristics)
+        public void SetupAIControllableVehicle(AICharacteristics newAiCharacteristics)
         {
             _aiCharacteristics = newAiCharacteristics;
         }
